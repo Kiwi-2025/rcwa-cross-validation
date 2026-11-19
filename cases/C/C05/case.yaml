@@ -1,0 +1,68 @@
+{
+  "id": "C05",
+  "title": "Shifted bilayer",
+  "description": "Compare layer-to-layer coupling and phase when the upper patterned layer is displaced relative to the lower layer.",
+  "periodic_dimensions": 2,
+  "period_nm": [
+    700,
+    700
+  ],
+  "epsilon_incident": 1.0,
+  "epsilon_exit": 2.25,
+  "layers": [
+    {
+      "thickness_nm": 250,
+      "epsilon": 1.0,
+      "shapes": [
+        {
+          "kind": "rectangle",
+          "epsilon": 5.76,
+          "width_nm": 200,
+          "length_nm": 300,
+          "shift_scan": true
+        }
+      ]
+    },
+    {
+      "thickness_nm": 100,
+      "epsilon": 1.0,
+      "shapes": []
+    },
+    {
+      "thickness_nm": 250,
+      "epsilon": 1.0,
+      "shapes": [
+        {
+          "kind": "rectangle",
+          "epsilon": 5.76,
+          "width_nm": 350,
+          "length_nm": 350
+        }
+      ]
+    }
+  ],
+  "wavelength_nm": 1550,
+  "theta_deg": 0,
+  "phi_deg": 0,
+  "scan": {
+    "wavelength_nm": {
+      "start": 1200,
+      "stop": 1800,
+      "count": 61,
+      "quick": [
+        1200,
+        1450,
+        1550,
+        1800
+      ]
+    }
+  },
+  "variants": {
+    "quarter_shift": {
+      "shift_nm": 175
+    },
+    "half_shift": {
+      "shift_nm": 350
+    }
+  }
+}

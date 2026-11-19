@@ -1,0 +1,45 @@
+{
+  "id": "B06",
+  "title": "Volume index grating",
+  "description": "Compare the Bragg angular response of a thick sinusoidal index grating in index-matched surroundings.",
+  "periodic_dimensions": 1,
+  "period_nm": [
+    1000,
+    100
+  ],
+  "epsilon_incident": 2.25,
+  "epsilon_exit": 2.25,
+  "layers": [
+    {
+      "thickness_nm": 10000,
+      "epsilon": 2.25,
+      "shapes": [
+        {
+          "kind": "sinusoid",
+          "mean_index": 1.5,
+          "index_modulation": 0.02
+        }
+      ]
+    }
+  ],
+  "wavelength_nm": 633,
+  "theta_deg": 12,
+  "phi_deg": 0,
+  "scan": {
+    "theta_deg": {
+      "start": 8,
+      "stop": 16,
+      "count": 81,
+      "quick": [
+        8,
+        10,
+        11.5,
+        12,
+        12.5,
+        14,
+        16
+      ]
+    }
+  },
+  "variants": {}
+}

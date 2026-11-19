@@ -1,0 +1,51 @@
+{
+  "id": "B01",
+  "title": "Binary dielectric grating",
+  "description": "Compare individual propagating orders and order cutoffs. Sample both sides of Rayleigh thresholds.",
+  "periodic_dimensions": 1,
+  "period_nm": [
+    1000,
+    100
+  ],
+  "epsilon_incident": 1.0,
+  "epsilon_exit": 2.25,
+  "layers": [
+    {
+      "thickness_nm": 300,
+      "epsilon": 1.0,
+      "shapes": [
+        {
+          "kind": "rectangle",
+          "epsilon": 4,
+          "width_nm": 500,
+          "length_nm": null
+        }
+      ]
+    }
+  ],
+  "wavelength_nm": 820,
+  "theta_deg": 0,
+  "phi_deg": 0,
+  "scan": {
+    "wavelength_nm": {
+      "start": 505,
+      "stop": 1800,
+      "count": 80,
+      "extra": [
+        749.9,
+        750.1,
+        999.9,
+        1000.1,
+        1499.9,
+        1500.1
+      ],
+      "quick": [
+        620,
+        820,
+        1050,
+        1580
+      ]
+    }
+  },
+  "variants": {}
+}

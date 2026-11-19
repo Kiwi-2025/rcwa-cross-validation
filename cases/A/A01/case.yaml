@@ -1,0 +1,38 @@
+{
+  "id": "A01",
+  "title": "Fresnel interface",
+  "description": "Compare both incidence directions against Fresnel coefficients, including Brewster reflection and total internal reflection.",
+  "periodic_dimensions": 0,
+  "period_nm": [
+    100,
+    100
+  ],
+  "epsilon_incident": 1.0,
+  "epsilon_exit": 2.25,
+  "layers": [],
+  "wavelength_nm": 633,
+  "theta_deg": 0,
+  "phi_deg": 0,
+  "scan": {
+    "theta_deg": {
+      "start": 0,
+      "stop": 80,
+      "count": 81,
+      "quick": [
+        0,
+        30,
+        40,
+        45,
+        56.309932474,
+        65,
+        80
+      ]
+    }
+  },
+  "variants": {
+    "reverse": {
+      "epsilon_incident": 2.25,
+      "epsilon_exit": 1.0
+    }
+  }
+}

@@ -1,0 +1,7 @@
+Case,Solver coverage,Max power difference,Max complex-amplitude difference,Worst solver pair,Convergence,Status,Source run,Configuration hash
+C01 — Metal nanohole array,5/5,0.141,0.117,meent / grcwa,Pending,INCONCLUSIVE,20261119T145906Z-90789b,23aae08e697c58fd128c93f1734614bf1d5678a58ecdf6a9d5647837642f184b
+C02 — Photonic crystal slab,5/5,0.991,1.02,meent / torcwa,Pending,INCONCLUSIVE,20261119T145932Z-01ee41,d9bc4b383aa0d421d2f3196a125390c4b70aee354467d712c212cbd0e2ab807f
+C03 — Cylindrical meta-atom,5/5,0.0188,0.266,meent / grcwa,Pending,INCONCLUSIVE,20261119T145954Z-2dbf03,30476c329c19f0a386667106a168ccca975c62f4cae7d16d36b62989db586e05
+C04 — Rotated nanofin,5/5,0.148,0.468,grcwa / lumerical,Pending,INCONCLUSIVE,20261119T150016Z-e8d8aa,dacea5cd82825b13dfe8f98d7cd3bb3a65c728868f9f984a0173230a671338c9
+C05 — Shifted bilayer,5/5,0.0208,0.123,meent / torcwa,Pending,INCONCLUSIVE,20261119T150038Z-e56999,ad9fd77db2f923b4a4fe13fc8d0474fb3fc85d7165d037f3f20d63ddf198ee19
+C06 — Metagrating supercell,5/5,0.664,1.21,meent / grcwa,Pending,INCONCLUSIVE,20261119T150150Z-fe4a34,bba0a1b175f7181938c533d46955fd0d93b6528af00441f20ac3509e5f99003f

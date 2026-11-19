@@ -1,0 +1,5 @@
+orders_1d: [8]
+orders_2d: [3]
+grid_1d: [128]
+grid_2d: [96]
+slices: [8]

@@ -1,0 +1,46 @@
+{
+  "id": "C01",
+  "title": "Metal nanohole array",
+  "description": "Compare the spectrum, absorption and diffraction of a periodic perforated metal film.",
+  "periodic_dimensions": 2,
+  "period_nm": [
+    1000,
+    1000
+  ],
+  "epsilon_incident": 1.0,
+  "epsilon_exit": 2.25,
+  "layers": [
+    {
+      "thickness_nm": 100,
+      "epsilon": [
+        -100.0,
+        10.0
+      ],
+      "shapes": [
+        {
+          "kind": "circle",
+          "epsilon": 1.0,
+          "radius_nm": 200
+        }
+      ]
+    }
+  ],
+  "wavelength_nm": 1550,
+  "theta_deg": 0,
+  "phi_deg": 0,
+  "scan": {
+    "wavelength_nm": {
+      "start": 1200,
+      "stop": 2000,
+      "count": 101,
+      "quick": [
+        1220,
+        1400,
+        1520,
+        1700,
+        2000
+      ]
+    }
+  },
+  "variants": {}
+}

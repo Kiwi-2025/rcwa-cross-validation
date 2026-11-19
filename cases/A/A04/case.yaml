@@ -1,0 +1,38 @@
+{
+  "id": "A04",
+  "title": "Absorbing metal film",
+  "description": "Check passive absorption and phase against the thin-film reference. The metal uses a fixed illustrative near-infrared permittivity.",
+  "periodic_dimensions": 0,
+  "period_nm": [
+    100,
+    100
+  ],
+  "epsilon_incident": 1.0,
+  "epsilon_exit": 2.25,
+  "layers": [
+    {
+      "thickness_nm": 30,
+      "epsilon": [
+        -100.0,
+        10.0
+      ],
+      "shapes": []
+    }
+  ],
+  "wavelength_nm": 1550,
+  "theta_deg": 0,
+  "phi_deg": 0,
+  "scan": {
+    "wavelength_nm": {
+      "start": 1200,
+      "stop": 1800,
+      "count": 61,
+      "quick": [
+        1200,
+        1500,
+        1800
+      ]
+    }
+  },
+  "variants": {}
+}

@@ -1,0 +1,12 @@
+# Comparison conventions
+
+- Use nanometers, vacuum wavelength, angles in degrees, and fields with time dependence `exp(-i omega t)`. Passive materials have positive imaginary relative permittivity.
+- Use global transverse coordinates x and y, with layers ordered in the +z propagation direction. Set z = 0 at the first finite layer and the output reference plane at the last finite layer boundary. Both planes coincide for an interface.
+- Label an order by integer (m, n) and define the transverse wavevector as the incident transverse wavevector plus 2 pi times the corresponding reciprocal-lattice vector. Treat orders near grazing as cutoff channels. The manifests record the actual order arrays.
+- Use the local s polarization perpendicular to the propagation plane and p = s cross k-hat for each ray. Use the incident azimuth to define the normal-incidence basis.
+- Lumerical supplies Cartesian diffraction electric fields and independently normalized order powers. The adapter converts the incident s sign and shifts the transverse phase reference from the unit-cell corner to its center.
+- Store complex amplitudes as [reflection or transmission, diffraction order, output polarization, input polarization]. In lossless exterior half-spaces, squared magnitude is the fraction of incident power in a single channel. Sum outgoing polarization channels to obtain order power. Absorptance is derived from 1 − R − T.
+- Run lossless energy, passive energy, order-sum and amplitude-power checks. The planar reference uses independent scalar thin-film scattering recursion. The periodic convergence test compares the two finest sampled settings along each active refinement axis while fixing the other settings at their finest values.
+- The default absolute tolerance is 1e-8 for the planar cases and 1e-3 for periodic power and complex amplitudes. Phase differences are wrapped and use a 0.5 degree tolerance for channels whose power is at least 1e-4 in both runs.
+- Each active numerical axis also has a refinement target of 2.5e-4 in absolute power and amplitude and 0.25 degrees in phase. A representative-point check applies only to that point.
+- Solver coverage counts completed runs out of the five target solvers. INCONCLUSIVE includes sample-only runs and incomplete or unconverged periodic comparisons. FAIL identifies a completed check outside tolerance. Solver/runtime errors appear in the run manifest.

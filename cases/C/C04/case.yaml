@@ -1,0 +1,45 @@
+{
+  "id": "C04",
+  "title": "Rotated nanofin",
+  "description": "Compare Jones matrices and circular-polarization conversion under in-plane rotation.",
+  "periodic_dimensions": 2,
+  "period_nm": [
+    400,
+    400
+  ],
+  "epsilon_incident": 1.0,
+  "epsilon_exit": 2.25,
+  "layers": [
+    {
+      "thickness_nm": 600,
+      "epsilon": 1.0,
+      "shapes": [
+        {
+          "kind": "rectangle",
+          "epsilon": 5.76,
+          "width_nm": 250,
+          "length_nm": 100,
+          "rotation_scan": true
+        }
+      ]
+    }
+  ],
+  "wavelength_nm": 633,
+  "theta_deg": 0,
+  "phi_deg": 0,
+  "scan": {
+    "rotation_deg": {
+      "start": 0,
+      "stop": 90,
+      "count": 5,
+      "quick": [
+        0,
+        22.5,
+        45,
+        67.5,
+        90
+      ]
+    }
+  },
+  "variants": {}
+}

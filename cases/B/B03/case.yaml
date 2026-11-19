@@ -1,0 +1,44 @@
+{
+  "id": "B03",
+  "title": "Conical incidence",
+  "description": "Compare cross-polarized complex diffraction amplitudes for off-axis illumination of the B01 structure.",
+  "periodic_dimensions": 1,
+  "period_nm": [
+    1000,
+    100
+  ],
+  "epsilon_incident": 1.0,
+  "epsilon_exit": 2.25,
+  "layers": [
+    {
+      "thickness_nm": 300,
+      "epsilon": 1.0,
+      "shapes": [
+        {
+          "kind": "rectangle",
+          "epsilon": 4,
+          "width_nm": 500,
+          "length_nm": null
+        }
+      ]
+    }
+  ],
+  "wavelength_nm": 920,
+  "theta_deg": 30,
+  "phi_deg": 45,
+  "scan": {
+    "wavelength_nm": {
+      "start": 700,
+      "stop": 1800,
+      "count": 81,
+      "quick": [
+        710,
+        920,
+        1180,
+        1520,
+        1800
+      ]
+    }
+  },
+  "variants": {}
+}

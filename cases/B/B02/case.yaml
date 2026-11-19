@@ -1,0 +1,44 @@
+{
+  "id": "B02",
+  "title": "High-contrast grating",
+  "description": "Compare polarized reflectance, transmittance and phase for a subwavelength high-index grating.",
+  "periodic_dimensions": 1,
+  "period_nm": [
+    700,
+    70
+  ],
+  "epsilon_incident": 1.0,
+  "epsilon_exit": 2.25,
+  "layers": [
+    {
+      "thickness_nm": 460,
+      "epsilon": 1.0,
+      "shapes": [
+        {
+          "kind": "rectangle",
+          "epsilon": 12.1104,
+          "width_nm": 350,
+          "length_nm": null
+        }
+      ]
+    }
+  ],
+  "wavelength_nm": 1550,
+  "theta_deg": 0,
+  "phi_deg": 0,
+  "scan": {
+    "wavelength_nm": {
+      "start": 1200,
+      "stop": 1800,
+      "count": 81,
+      "quick": [
+        1200,
+        1400,
+        1550,
+        1650,
+        1800
+      ]
+    }
+  },
+  "variants": {}
+}

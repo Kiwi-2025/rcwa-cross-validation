@@ -1,0 +1,112 @@
+{
+  "id": "A03",
+  "title": "DBR mirror",
+  "description": "Check layer order, stopband and phase for eight quarter-wave dielectric pairs at a design wavelength of 1550 nm.",
+  "periodic_dimensions": 0,
+  "period_nm": [
+    100,
+    100
+  ],
+  "epsilon_incident": 1.0,
+  "epsilon_exit": 2.25,
+  "layers": [
+    {
+      "thickness_nm": 168.47826086956522,
+      "epsilon": 5.289999999999999,
+      "shapes": []
+    },
+    {
+      "thickness_nm": 267.2413793103448,
+      "epsilon": 2.1025,
+      "shapes": []
+    },
+    {
+      "thickness_nm": 168.47826086956522,
+      "epsilon": 5.289999999999999,
+      "shapes": []
+    },
+    {
+      "thickness_nm": 267.2413793103448,
+      "epsilon": 2.1025,
+      "shapes": []
+    },
+    {
+      "thickness_nm": 168.47826086956522,
+      "epsilon": 5.289999999999999,
+      "shapes": []
+    },
+    {
+      "thickness_nm": 267.2413793103448,
+      "epsilon": 2.1025,
+      "shapes": []
+    },
+    {
+      "thickness_nm": 168.47826086956522,
+      "epsilon": 5.289999999999999,
+      "shapes": []
+    },
+    {
+      "thickness_nm": 267.2413793103448,
+      "epsilon": 2.1025,
+      "shapes": []
+    },
+    {
+      "thickness_nm": 168.47826086956522,
+      "epsilon": 5.289999999999999,
+      "shapes": []
+    },
+    {
+      "thickness_nm": 267.2413793103448,
+      "epsilon": 2.1025,
+      "shapes": []
+    },
+    {
+      "thickness_nm": 168.47826086956522,
+      "epsilon": 5.289999999999999,
+      "shapes": []
+    },
+    {
+      "thickness_nm": 267.2413793103448,
+      "epsilon": 2.1025,
+      "shapes": []
+    },
+    {
+      "thickness_nm": 168.47826086956522,
+      "epsilon": 5.289999999999999,
+      "shapes": []
+    },
+    {
+      "thickness_nm": 267.2413793103448,
+      "epsilon": 2.1025,
+      "shapes": []
+    },
+    {
+      "thickness_nm": 168.47826086956522,
+      "epsilon": 5.289999999999999,
+      "shapes": []
+    },
+    {
+      "thickness_nm": 267.2413793103448,
+      "epsilon": 2.1025,
+      "shapes": []
+    }
+  ],
+  "wavelength_nm": 1550,
+  "theta_deg": 0,
+  "phi_deg": 0,
+  "scan": {
+    "wavelength_nm": {
+      "start": 1100,
+      "stop": 2000,
+      "count": 91,
+      "quick": [
+        1100,
+        1300,
+        1550,
+        1800,
+        2000
+      ]
+    }
+  },
+  "variants": {}
+}

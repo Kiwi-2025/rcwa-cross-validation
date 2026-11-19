@@ -1,0 +1,37 @@
+{
+  "id": "A02",
+  "title": "Antireflection film",
+  "description": "Check the reflection minimum and complex transmission against an independent thin-film calculation.",
+  "periodic_dimensions": 0,
+  "period_nm": [
+    100,
+    100
+  ],
+  "epsilon_incident": 1.0,
+  "epsilon_exit": 2.25,
+  "layers": [
+    {
+      "thickness_nm": 112.26827987756234,
+      "epsilon": 1.5,
+      "shapes": []
+    }
+  ],
+  "wavelength_nm": 550,
+  "theta_deg": 0,
+  "phi_deg": 0,
+  "scan": {
+    "wavelength_nm": {
+      "start": 400,
+      "stop": 800,
+      "count": 81,
+      "quick": [
+        400,
+        500,
+        550,
+        650,
+        800
+      ]
+    }
+  },
+  "variants": {}
+}

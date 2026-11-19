@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=78"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rcwa-cross-validation"
+version = "0.1.0"
+description = "Reproducible optical benchmarks for rigorous coupled-wave analysis solvers"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+dependencies = ["numpy==2.4.6", "scipy==1.17.1", "PyYAML==6.0.3", "matplotlib==3.10.8", "grcwa==0.1.2", "meent==0.13.2", "threadpoolctl==3.8.0"]
+
+[project.optional-dependencies]
+cuda = ["torch==2.8.0", "torcwa==0.1.4.2"]
+
+[dependency-groups]
+dev = ["pytest>=9,<10"]
+
+[project.scripts]
+rcwa-cv = "rcwa_cv.cli:main"
+
+[tool.uv]
+environments = ["sys_platform == 'win32' or sys_platform == 'linux'"]
+
+[tool.uv.sources]
+torch = [{index = "pytorch-cu128", marker = "sys_platform == 'win32' or sys_platform == 'linux'"}]
+
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download-r2.pytorch.org/whl/cu128"
+explicit = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

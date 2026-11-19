@@ -1,0 +1,16 @@
+# C04 solver comparison
+
+Power is normalized to incident flux. Phase is compared above the channel-power floor. Periodic quick runs give provisional differences. See [point coordinates](points.csv).
+
+| Solver pair | Matched points | Max R difference | Max T difference | Max A difference | Max order-power difference | Max complex-amplitude difference | Max phase difference (deg) | Worst amplitude point | Worst amplitude channel | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| meent / torcwa | 5/5 | 0.148 | 0.148 | 4.17e-13 | 0.148 | 0.345 | 33.6 | 0002 | T(0, 0) p to s | INCONCLUSIVE |
+| meent / grcwa | 5/5 | 0.148 | 0.148 | 7.66e-14 | 0.148 | 0.345 | 33.6 | 0002 | T(0, 0) p to s | INCONCLUSIVE |
+| meent / s4 | 5/5 | 0.0516 | 0.0516 | 5.55e-14 | 0.0516 | 0.362 | 121 | 0002 | R(0, 0) s to p | INCONCLUSIVE |
+| meent / lumerical | 5/5 | 0.0671 | 0.0671 | 2.22e-13 | 0.0671 | 0.374 | 120 | 0002 | R(0, 0) s to s | INCONCLUSIVE |
+| torcwa / grcwa | 5/5 | 9.95e-13 | 1.05e-12 | 3.41e-13 | 1.05e-12 | 9.58e-13 | 1.91e-10 | 0002 | T(0, 0) p to s | INCONCLUSIVE |
+| torcwa / s4 | 5/5 | 0.0969 | 0.0969 | 4.28e-13 | 0.0969 | 0.44 | 96.2 | 0002 | T(0, 0) s to s | INCONCLUSIVE |
+| torcwa / lumerical | 5/5 | 0.0813 | 0.0813 | 3.76e-13 | 0.0813 | 0.468 | 95 | 0002 | T(0, 0) s to p | INCONCLUSIVE |
+| grcwa / s4 | 5/5 | 0.0969 | 0.0969 | 8.75e-14 | 0.0969 | 0.44 | 96.2 | 0002 | T(0, 0) p to p | INCONCLUSIVE |
+| grcwa / lumerical | 5/5 | 0.0813 | 0.0813 | 2.31e-13 | 0.0813 | 0.468 | 95 | 0002 | T(0, 0) s to p | INCONCLUSIVE |
+| s4 / lumerical | 5/5 | 0.0156 | 0.0156 | 2.49e-13 | 0.0156 | 0.133 | 15 | 0000 | T(0, 0) s to s | INCONCLUSIVE |
