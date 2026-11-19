@@ -7,8 +7,11 @@ dist/
 configs/local.yaml
 results/*/*/*/
 *.fsp
+!cases/*/*/model.fsp
 *.lms
 *.ldf
 *.mat
 *.log
 .env
+uv.lock
+.ipynb_checkpoints/

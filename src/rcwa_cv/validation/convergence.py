@@ -14,8 +14,6 @@ def settings_series(case, profile, name):
     slices = profile["slices"] if case["id"] == "B04" else [1]
     base = SolverSettings(modes[-1], grid[-1], slices[-1])
     axes = {"order": modes, "grid": grid, "slices": slices}
-    if name == "s4" and case["id"] != "B06":
-        axes.pop("grid")
     return [("base", base), *((key, replace(base, **{key: value}))
                               for key, values in axes.items() for value in values[:-1])]
 

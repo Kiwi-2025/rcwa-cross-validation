@@ -1,4 +1,2 @@
 device: cuda:0
-s4_distribution: Ubuntu-24.04
-s4_python: /usr/bin/python3
 # lumapi_path: 'C:/Program Files/ANSYS Inc/v252/Lumerical/api/python/lumapi.py'

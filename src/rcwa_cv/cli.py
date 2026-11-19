@@ -6,7 +6,7 @@ import json
 import yaml
 
 from .case_loader import ROOT, catalog, load_case, points, resolve
-from .reporting.tables import compare_run, generate_report, update_categories
+from .reporting.tables import compare_run, generate_report, publish_benchmark, update_categories
 from .runner import configure, import_lumerical, run
 from .solvers import MODULES, adapter
 from .validation.convergence import settings_series
@@ -17,6 +17,10 @@ def parser():
     commands = cli.add_subparsers(dest="command", required=True)
     commands.add_parser("doctor")
     commands.add_parser("list")
+    benchmark = commands.add_parser("benchmark", help="Run every case and refresh the README and case figures.")
+    benchmark.add_argument("--profile", choices=["quick","pilot","convergence"], default="quick")
+    benchmark.set_defaults(selection="all", solvers=",".join(MODULES),
+                           point_limit=None, representative=False, resume=None)
     for name in ("run", "converge"):
         cmd = commands.add_parser(name)
         cmd.add_argument("selection", help="Case ID, category, or all.")
@@ -103,6 +107,8 @@ def main():
     resume = find_run(args.resume, cli) if args.resume else None
     if resume is not None and len(selected) != 1:
         cli.error("Resume applies to a single case.")
+    folders = []
+    complete = True
     with ExitStack() as stack:
         if "lumerical" in solvers and len(selected) > 1:
             try:
@@ -112,8 +118,16 @@ def main():
         for p in selected:
             folder = run(p, solvers, args.profile, args.point_limit, args.representative, resume)
             result = generate_report(folder)
+            folders.append(folder)
+            complete &= all(result["solvers"].get(name)=="COMPLETE" for name in MODULES)
             print(f"{folder} [{result['status']}]", flush=True)
-    update_categories()
+    if args.command=="benchmark":
+        if not complete:
+            cli.exit(1, "Benchmark incomplete. See the per-case manifests. The README snapshot is unchanged.\n")
+        update_categories(folders)
+        publish_benchmark(folders)
+    else:
+        update_categories()
 
 
 if __name__=="__main__":

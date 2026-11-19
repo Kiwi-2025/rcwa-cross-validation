@@ -1,4 +1,5 @@
 from dataclasses import replace
+import json
 
 import numpy as np
 import pytest
@@ -6,7 +7,7 @@ import pytest
 from rcwa_cv.case_loader import catalog, load_case, resolve
 from rcwa_cv.models import SolverSettings
 from rcwa_cv.references import multilayer
-from rcwa_cv.solvers import adapter
+from rcwa_cv.solvers import MODULES, adapter
 from rcwa_cv.solvers.lumerical import build_script
 from rcwa_cv.validation.compare import differences, meets
 from rcwa_cv.validation.physics import checks
@@ -24,6 +25,19 @@ def test_catalog_and_lumerical_exports():
         script = build_script(case, SETTINGS)
         assert 'run("RCWA");' in script
         assert 'getresult("RCWA","grating_characterization")' in script
+
+
+def test_case_notebooks_and_models_are_present():
+    for path in catalog():
+        case_id = path.parent.name
+        notebook = json.loads((path.parent/f"{case_id}.ipynb").read_text(encoding="utf-8"))
+        code = "\n".join("".join(cell["source"]) for cell in notebook["cells"] if cell["cell_type"]=="code")
+        compile(code, f"{case_id}.ipynb", "exec")
+        for name, module in MODULES.items():
+            assert f"from rcwa_cv.solvers.{module} import" in code
+            assert f'results["{name}"]' in code
+        assert (path.parent/"model.fsp").stat().st_size > 0
+        assert 'run("RCWA");' in (path.parent/"model.lsf").read_text(encoding="utf-8")
 
 
 @pytest.mark.parametrize("name", ["meent", "grcwa"])

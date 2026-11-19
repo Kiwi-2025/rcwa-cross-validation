@@ -1,6 +1,7 @@
 from contextlib import ExitStack
 from dataclasses import asdict
 from datetime import datetime, timezone
+from importlib.metadata import PackageNotFoundError, version
 from time import perf_counter
 from uuid import uuid4
 import os
@@ -15,7 +16,7 @@ from .models import SolverSettings
 from .references import multilayer
 from .solvers import adapter
 from .solvers.base import Unavailable
-from .storage import digest, read_json, save_result, write_json
+from .storage import read_json, save_result, write_json
 from .validation.convergence import settings_series, check_axis, converged
 from .validation.physics import checks
 
@@ -23,10 +24,20 @@ from .validation.physics import checks
 def configure():
     path = ROOT/"configs/local.yaml"
     local = (yaml.safe_load(path.read_text(encoding="utf-8")) or {}) if path.exists() else {}
-    for k, env in {"device":"RCWA_CUDA_DEVICE", "s4_distribution":"RCWA_S4_DISTRIBUTION",
-                   "s4_python":"RCWA_S4_PYTHON", "lumapi_path":"LUMAPI_PATH"}.items():
+    for k, env in {"device":"RCWA_CUDA_DEVICE", "lumapi_path":"LUMAPI_PATH"}.items():
         if k in local:
             os.environ.setdefault(env, str(local[k]))
+
+
+def software_versions():
+    versions = {"Python": platform.python_version()}
+    for name in ("rcwa-cross-validation", "numpy", "scipy", "matplotlib", "PyYAML",
+                 "threadpoolctl", "meent", "grcwa", "torcwa", "torch", "jupyterlab", "ipykernel"):
+        try:
+            versions[name] = version(name)
+        except PackageNotFoundError:
+            continue
+    return versions
 
 
 def run(path, solvers, profile_name, point_limit=None, representative=False, resume=None):
@@ -39,10 +50,10 @@ def run(path, solvers, profile_name, point_limit=None, representative=False, res
     if point_limit is not None:
         selected = selected[:point_limit]
     manifest = {"case": case_id, "title": case["title"], "profile": profile_name,
-                "run_id": run_id, "configuration_hash": digest({"case":case,"profile":profile,"points":selected}),
+                "run_id": run_id, "profile_settings": profile,
                 "lossy": resolve(case, "nominal", {}, SolverSettings(0, 2, 1)).lossy,
                 "representative": representative, "point_limit": point_limit,
-                "requested_solvers": solvers, "host": platform.platform(),
+                "requested_solvers": solvers, "host": platform.platform(), "software": software_versions(),
                 "points": [], "solvers": {}}
     labels = ["reference", *solvers] if case["periodic_dimensions"] == 0 else solvers
     for variant, overrides in selected:
@@ -52,9 +63,9 @@ def run(path, solvers, profile_name, point_limit=None, representative=False, res
     if resume:
         folder = resume
         existing = read_json(folder/"manifest.json")
-        keys = ("case","profile","configuration_hash","requested_solvers","point_limit","representative")
-        if any(manifest[key] != existing[key] for key in keys):
-            raise ValueError("Resume requires the original case, solver list, profile, and point selection.")
+        keys = ("case","profile","profile_settings","requested_solvers","points")
+        if any(manifest[key] != existing.get(key) for key in keys) or load_case(folder/"resolved_case.yaml") != case:
+            raise ValueError("Resume requires the original case, solver list, settings, and point selection.")
         manifest = existing
     else:
         folder.mkdir(parents=True)
@@ -71,7 +82,8 @@ def run(path, solvers, profile_name, point_limit=None, representative=False, res
             with ExitStack() as stack:
                 stack.enter_context(threadpool_limits(limits=1, user_api="blas"))
                 if name == "lumerical":
-                    stack.enter_context(backend.session())
+                    fdtd = stack.enter_context(backend.session())
+                    base_info["build"] = fdtd.version()
                 for j, (variant, overrides) in enumerate(selected):
                     try:
                         all_results = []
@@ -139,7 +151,7 @@ def import_lumerical(folder, index, source):
                      "physics":checks(result,point.lossy), "refinements":[],
                      "converged":case["periodic_dimensions"] == 0})
     manifest["solvers"]["lumerical"] = {"completed":existing, "errors":[],
-        "device":result.metadata["device"], "version":result.metadata["version"],
+        "device":result.metadata["device"], "version":result.metadata["version"], "build":result.metadata["build"],
         "status":"COMPLETE" if len(existing) == len(manifest["points"]) else "PARTIAL"}
     if "lumerical" not in manifest["requested_solvers"]:
         manifest["requested_solvers"].append("lumerical")

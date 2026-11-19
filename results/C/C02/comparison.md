@@ -6,11 +6,7 @@ Power is normalized to incident flux. Phase is compared above the channel-power 
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | meent / torcwa | 5/5 | 0.991 | 0.991 | 2.09e-13 | 0.991 | 1.02 | 120 | 0002 | T(0, 0) s to s | INCONCLUSIVE |
 | meent / grcwa | 5/5 | 0.991 | 0.991 | 4.61e-13 | 0.991 | 1.02 | 120 | 0002 | T(0, 0) s to s | INCONCLUSIVE |
-| meent / s4 | 5/5 | 0.986 | 0.986 | 5.56e-13 | 0.986 | 1.02 | 118 | 0002 | T(0, 0) s to s | INCONCLUSIVE |
 | meent / lumerical | 5/5 | 0.962 | 0.962 | 7.9e-13 | 0.962 | 0.965 | 115 | 0003 | R(0, 0) p to p | INCONCLUSIVE |
 | torcwa / grcwa | 5/5 | 3.22e-13 | 3.02e-13 | 5.2e-13 | 3.22e-13 | 1.86e-12 | 1.07e-10 | 0001 | T(0, 0) s to s | INCONCLUSIVE |
-| torcwa / s4 | 5/5 | 0.0269 | 0.0269 | 5.27e-13 | 0.0269 | 0.0353 | 2.03 | 0003 | T(0, 0) p to p | INCONCLUSIVE |
 | torcwa / lumerical | 5/5 | 0.459 | 0.459 | 8.19e-13 | 0.459 | 0.464 | 27.8 | 0002 | T(0, 0) p to p | INCONCLUSIVE |
-| grcwa / s4 | 5/5 | 0.0269 | 0.0269 | 2.64e-13 | 0.0269 | 0.0353 | 2.03 | 0003 | T(0, 0) p to p | INCONCLUSIVE |
 | grcwa / lumerical | 5/5 | 0.459 | 0.459 | 1.25e-12 | 0.459 | 0.464 | 27.8 | 0002 | T(0, 0) p to p | INCONCLUSIVE |
-| s4 / lumerical | 5/5 | 0.486 | 0.486 | 1.35e-12 | 0.486 | 0.49 | 29.5 | 0002 | T(0, 0) p to p | INCONCLUSIVE |

@@ -1,4 +1,3 @@
-from hashlib import sha256
 import json
 from pathlib import Path
 
@@ -14,10 +13,6 @@ def write_json(path: Path, data):
 
 def read_json(path):
     return json.loads(path.read_text(encoding="utf-8"))
-
-
-def digest(data):
-    return sha256(json.dumps(data, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
 
 
 def save_result(path, result):
