@@ -1,30 +1,26 @@
 # A01 — Fresnel interface
 
+## Physical scenario
+
+A plane wave meets a single, flat air–glass boundary. The angular sweep runs in both directions. Air-to-glass incidence shows the Brewster minimum for p polarization, while glass-to-air incidence crosses into total internal reflection. The reflected phase above the critical angle is part of the comparison.
+
+## Possible applications
+
+Useful as a reference for prism coupling, total-internal-reflection illumination, and polarization at glass windows. The Fresnel solution also gives a direct check on amplitude normalization and forward/reverse incidence conventions.
+
+## Benchmark objective
+
 Compare both incidence directions against Fresnel coefficients, including Brewster reflection and total internal reflection.
 
-The geometry and scan points are defined in [case.yaml](case.yaml). Lengths and vacuum wavelengths use nanometers, and angles use degrees.
+The geometry, materials, and sweep are defined in [case.yaml](case.yaml). Lengths and vacuum wavelengths are in nanometers. Angles are in degrees.
+
+## Reproduce
+
+- Open [A01.ipynb](A01.ipynb) to run the four solvers and draw the comparison plots.
+- Open [model.fsp](model.fsp) in Lumerical FDTD to inspect quick-sweep point 0, or use [model.lsf](model.lsf) to rebuild it in a new unsaved document.
 
 ```powershell
-rcwa-cv run A/A01 --profile quick
-rcwa-cv converge A/A01
+rcwa-cv run A/A01
 ```
 
-See the [category consistency table](../../../results/A/consistency.md).
-
-## Notebook and Lumerical model
-
-- [Open the Jupyter notebook](A01.ipynb) to run each solver and generate the plots.
-- Open [model.fsp](model.fsp) in Lumerical FDTD to inspect quick-sweep point 0.
-- Run [model.lsf](model.lsf) in a new unsaved FDTD document to reconstruct that point and export the native results.
-
-## Benchmark figures
-
-![Nominal geometry](figures/geometry.png)
-
-![Reflection, transmission and phase](figures/spectrum-0.png)
-
-![Propagating diffraction-order efficiencies](figures/diffraction-orders.png)
-
-![Pairwise solver differences](figures/solver-differences.png)
-
-See the [pairwise table](../../../results/A/A01/comparison.md) for numerical differences and [sweep coordinates](../../../results/A/A01/points.csv).
+[Comparison tables and figures](../../../BENCHMARK_REPORT.md#a01) · [Numerical dataset](../../../results/benchmark.json)

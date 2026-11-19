@@ -5,7 +5,6 @@ import numpy as np
 from ..case_loader import load_case, resolve
 from ..geometry import raster
 from ..models import Layer, SolverSettings
-from ..storage import load_result
 from ..validation.compare import differences
 
 
@@ -147,24 +146,15 @@ def geometry_figure(path):
     return fig
 
 
-def save_geometry(path, target):
-    import matplotlib.pyplot as plt
-
-    figure = geometry_figure(path)
-    figure.savefig(target, dpi=125)
-    plt.close(figure)
-
-
-def plot_report(folder, manifest):
+def save_figures(target, manifest, results, case_path):
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
 
-    results = {name: {row["index"]:load_result(folder/row["path"]) for row in state["completed"]}
-               for name,state in manifest["solvers"].items()}
-    figures = spectral_figures(manifest, results) + diagnostic_figures(manifest, results)
-    (folder/"figures").mkdir(exist_ok=True)
+    figures = [("geometry.png", geometry_figure(case_path))]
+    figures += spectral_figures(manifest, results) + diagnostic_figures(manifest, results)
+    target.mkdir(parents=True, exist_ok=True)
     for name, figure in figures:
-        figure.savefig(folder/"figures"/name, dpi=125)
+        figure.savefig(target/name, dpi=125)
         plt.close(figure)
-    return [f"figures/{name}" for name, _ in figures]
+    return [target/name for name, _ in figures]

@@ -1,30 +1,26 @@
 # B05 — Wire-grid polarizer
 
+## Physical scenario
+
+A subwavelength array of lossy metal wires discriminates between electric fields parallel and perpendicular to the wires. Currents driven along the wires can suppress transmission through reflection and absorption. The benchmark compares extinction together with the reflected, transmitted, and absorbed power.
+
+## Possible applications
+
+Wire grids are used as compact infrared polarizers and polarizing beam splitters in imaging, spectroscopy, and thermal optics. The illustrative metal permittivity here should be replaced by measured dispersion for performance predictions.
+
+## Benchmark objective
+
 Compare polarized transmission, absorption and extinction for a metal wire-grid polarizer.
 
-The geometry and scan points are defined in [case.yaml](case.yaml). Lengths and vacuum wavelengths use nanometers, and angles use degrees.
+The geometry, materials, and sweep are defined in [case.yaml](case.yaml). Lengths and vacuum wavelengths are in nanometers. Angles are in degrees.
+
+## Reproduce
+
+- Open [B05.ipynb](B05.ipynb) to run the four solvers and draw the comparison plots.
+- Open [model.fsp](model.fsp) in Lumerical FDTD to inspect quick-sweep point 0, or use [model.lsf](model.lsf) to rebuild it in a new unsaved document.
 
 ```powershell
-rcwa-cv run B/B05 --profile quick
-rcwa-cv converge B/B05
+rcwa-cv run B/B05
 ```
 
-See the [category consistency table](../../../results/B/consistency.md).
-
-## Notebook and Lumerical model
-
-- [Open the Jupyter notebook](B05.ipynb) to run each solver and generate the plots.
-- Open [model.fsp](model.fsp) in Lumerical FDTD to inspect quick-sweep point 0.
-- Run [model.lsf](model.lsf) in a new unsaved FDTD document to reconstruct that point and export the native results.
-
-## Benchmark figures
-
-![Nominal geometry](figures/geometry.png)
-
-![Reflection, transmission and phase](figures/spectrum-0.png)
-
-![Propagating diffraction-order efficiencies](figures/diffraction-orders.png)
-
-![Pairwise solver differences](figures/solver-differences.png)
-
-See the [pairwise table](../../../results/B/B05/comparison.md) for numerical differences and [sweep coordinates](../../../results/B/B05/points.csv).
+[Comparison tables and figures](../../../BENCHMARK_REPORT.md#b05) · [Numerical dataset](../../../results/benchmark.json)

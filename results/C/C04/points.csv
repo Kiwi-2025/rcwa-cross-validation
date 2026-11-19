@@ -1,6 +1,0 @@
-Point,variant,wavelength_nm,theta_deg,phi_deg,rotation_deg
-0000,nominal,633,0,0,0.0
-0001,nominal,633,0,0,22.5
-0002,nominal,633,0,0,45.0
-0003,nominal,633,0,0,67.5
-0004,nominal,633,0,0,90.0

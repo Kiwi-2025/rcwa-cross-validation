@@ -21,6 +21,9 @@ from .validation.convergence import settings_series, check_axis, converged
 from .validation.physics import checks
 
 
+RUNS = ROOT/".runs"
+
+
 def configure():
     path = ROOT/"configs/local.yaml"
     local = (yaml.safe_load(path.read_text(encoding="utf-8")) or {}) if path.exists() else {}
@@ -40,12 +43,12 @@ def software_versions():
     return versions
 
 
-def run(path, solvers, profile_name, point_limit=None, representative=False, resume=None):
+def run(path, solvers, profile_name, point_limit=None, representative=False, resume=None, run_root=RUNS):
     case = load_case(path)
     case_id = case["id"]
     profile = yaml.safe_load((ROOT/f"configs/{profile_name}.yaml").read_text(encoding="utf-8"))
     run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")+"-"+uuid4().hex[:6]
-    folder = ROOT/"results"/case_id[0]/case_id/run_id
+    folder = run_root/case_id[0]/case_id/run_id
     selected = list(points(case, profile_name)) if not representative else [("nominal", {})]
     if point_limit is not None:
         selected = selected[:point_limit]
@@ -89,15 +92,8 @@ def run(path, solvers, profile_name, point_limit=None, representative=False, res
                         all_results = []
                         for step, (label, settings) in enumerate(settings_series(case, profile, name)):
                             point = resolve(case, variant, overrides, settings)
-                            if name == "lumerical" and step == 0:
-                                script_path = folder/name/"scripts"/f"{j:04d}.lsf"
-                                script_path.parent.mkdir(parents=True, exist_ok=True)
-                                script_path.write_text(backend.build_script(point,settings,"rcwa_output.mat"), encoding="utf-8")
                             start = perf_counter()
-                            if name == "lumerical" and step == 0:
-                                measurement = backend.solve(point, settings, script_path.with_suffix(".mat"))
-                            else:
-                                measurement = backend.solve(point, settings)
+                            measurement = backend.solve(point, settings)
                             measurement.metadata.setdefault("wall_seconds", perf_counter()-start)
                             if any(not np.all(np.isfinite(x)) for x in (
                                 measurement.totals, measurement.power, measurement.amplitude)):

@@ -66,7 +66,7 @@ def _value(value):
     return f"{value:.17g}"
 
 
-def build_script(case, settings, output=None, *, model_only=False):
+def build_script(case, settings, output=None):
     """Generate a standalone LSF model from the resolved benchmark point."""
     lines = ["# Generated RCWA benchmark. Run in a new Lumerical FDTD document.",
              "switchtolayout;", "deleteall;"]
@@ -138,8 +138,6 @@ def build_script(case, settings, output=None, *, model_only=False):
         frequency_center=299792458/(case.wavelength*nm), frequency_span=0,
         frequency_points=1, report_grating_power=1, report_grating_characterization=1,
         report_grating_orders=1, report_field_amplitudes=1)
-    if model_only:
-        return "\n".join(lines) + "\n"
     lines += ['run("RCWA");', 'power=getresult("RCWA","grating_power");',
               'amplitudes=getresult("RCWA","grating_characterization");',
               'totals=getresult("RCWA","total_energy");',
@@ -199,12 +197,12 @@ def normalize(case, power, amplitudes, totals, modes, fields, metadata):
     return result_from_amplitudes(case, orders[keep], amp[:, keep], metadata, eff[:, keep], total)
 
 
-def solve(case, settings, raw_path=None):
+def solve(case, settings):
     if _session is None:
         with session():
-            return solve(case, settings, raw_path)
+            return solve(case, settings)
     start = perf_counter()
-    script = build_script(case, settings, raw_path)
+    script = build_script(case, settings)
     _session.eval(script)
     datasets = [_session.getv(key) for key in ("power", "amplitudes", "totals", "modes", "fields")]
     return normalize(case, *datasets, dict(probe(), build=_session.version(), compute_seconds=perf_counter()-start))

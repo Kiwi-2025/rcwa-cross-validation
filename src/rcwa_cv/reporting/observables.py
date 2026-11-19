@@ -4,21 +4,16 @@ from itertools import groupby
 import numpy as np
 from scipy.signal import find_peaks, peak_widths
 
-from ..storage import load_result
-
-
 COLUMNS = ("Solver", "Variant", "Point", "Observable", "Value", "Unit")
 
 
-def collect(folder, manifest):
+def collect(manifest, results):
     case = manifest["case"]
     rows = []
-    for solver, state in manifest["solvers"].items():
+    for solver, samples in results.items():
         spectrum = []
-        for entry in state["completed"]:
-            idx = entry["index"]
+        for idx, result in samples.items():
             point = manifest["points"][idx]
-            result = load_result(folder/entry["path"])
             def row(name, value, unit="fraction"):
                 rows.append([solver, point["variant"], idx, name, value, unit])
             if manifest["lossy"]:

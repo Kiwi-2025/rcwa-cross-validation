@@ -1,30 +1,26 @@
 # B06 — Volume index grating
 
+## Physical scenario
+
+A 10 µm thick film contains a weak sinusoidal index modulation across the grating direction. The neighboring media match its mean index. Varying incidence angle through the Bragg condition transfers energy from the incident beam to a selected transmitted order within a narrow angular band.
+
+## Possible applications
+
+This is the mechanism of angle-selective volume holograms and Bragg couplers, including waveguide couplers for display optics. [Ansys volume holographic grating example](https://optics.ansys.com/hc/en-us/articles/37118679173267-Volume-Holographic-Grating)
+
+## Benchmark objective
+
 Compare the Bragg angular response of a thick sinusoidal index grating in index-matched surroundings.
 
-The geometry and scan points are defined in [case.yaml](case.yaml). Lengths and vacuum wavelengths use nanometers, and angles use degrees.
+The geometry, materials, and sweep are defined in [case.yaml](case.yaml). Lengths and vacuum wavelengths are in nanometers. Angles are in degrees.
+
+## Reproduce
+
+- Open [B06.ipynb](B06.ipynb) to run the four solvers and draw the comparison plots.
+- Open [model.fsp](model.fsp) in Lumerical FDTD to inspect quick-sweep point 0, or use [model.lsf](model.lsf) to rebuild it in a new unsaved document.
 
 ```powershell
-rcwa-cv run B/B06 --profile quick
-rcwa-cv converge B/B06
+rcwa-cv run B/B06
 ```
 
-See the [category consistency table](../../../results/B/consistency.md).
-
-## Notebook and Lumerical model
-
-- [Open the Jupyter notebook](B06.ipynb) to run each solver and generate the plots.
-- Open [model.fsp](model.fsp) in Lumerical FDTD to inspect quick-sweep point 0.
-- Run [model.lsf](model.lsf) in a new unsaved FDTD document to reconstruct that point and export the native results.
-
-## Benchmark figures
-
-![Nominal geometry](figures/geometry.png)
-
-![Reflection, transmission and phase](figures/spectrum-0.png)
-
-![Propagating diffraction-order efficiencies](figures/diffraction-orders.png)
-
-![Pairwise solver differences](figures/solver-differences.png)
-
-See the [pairwise table](../../../results/B/B06/comparison.md) for numerical differences and [sweep coordinates](../../../results/B/B06/points.csv).
+[Comparison tables and figures](../../../BENCHMARK_REPORT.md#b06) · [Numerical dataset](../../../results/benchmark.json)

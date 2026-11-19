@@ -1,7 +1,0 @@
-Solver pair,Matched points,Max R difference,Max T difference,Max A difference,Max order-power difference,Max complex-amplitude difference,Max phase difference (deg),Worst amplitude point,Worst amplitude channel,Status
-meent / torcwa,5/5,0.0188,0.0188,2.2e-14,0.0188,0.266,15.4,0002,"T(0, 0) s to s",INCONCLUSIVE
-meent / grcwa,5/5,0.0188,0.0188,4.57e-14,0.0188,0.266,15.4,0002,"T(0, 0) s to s",INCONCLUSIVE
-meent / lumerical,5/5,0.0124,0.0124,1.25e-13,0.0124,0.127,7.59,0003,"T(0, 0) s to s",INCONCLUSIVE
-torcwa / grcwa,5/5,3.05e-14,3.42e-14,3.87e-14,3.42e-14,1.88e-13,1.14e-11,0003,"T(0, 0) s to s",INCONCLUSIVE
-torcwa / lumerical,5/5,0.00637,0.00637,1.33e-13,0.00637,0.14,8.12,0002,"T(0, 0) s to s",INCONCLUSIVE
-grcwa / lumerical,5/5,0.00637,0.00637,1.17e-13,0.00637,0.14,8.12,0002,"T(0, 0) s to s",INCONCLUSIVE

@@ -1,30 +1,26 @@
 # C03 — Cylindrical meta-atom
 
+## Physical scenario
+
+A square array of cylindrical dielectric pillars is illuminated at fixed wavelength while the pillar radius varies. Changing radius changes the modal response and therefore the transmission amplitude and phase. The symmetric nominal cell also makes the two linear polarizations a useful consistency check.
+
+## Possible applications
+
+The radius sweep is the basis of a unit-cell library for metalenses and other phase-gradient metasurfaces. Design would select geometries that supply the required phase while maintaining useful transmission.
+
+## Benchmark objective
+
 Compare transmitted phase and efficiency as the radius of a dielectric pillar changes.
 
-The geometry and scan points are defined in [case.yaml](case.yaml). Lengths and vacuum wavelengths use nanometers, and angles use degrees.
+The geometry, materials, and sweep are defined in [case.yaml](case.yaml). Lengths and vacuum wavelengths are in nanometers. Angles are in degrees.
+
+## Reproduce
+
+- Open [C03.ipynb](C03.ipynb) to run the four solvers and draw the comparison plots.
+- Open [model.fsp](model.fsp) in Lumerical FDTD to inspect quick-sweep point 0, or use [model.lsf](model.lsf) to rebuild it in a new unsaved document.
 
 ```powershell
-rcwa-cv run C/C03 --profile quick
-rcwa-cv converge C/C03
+rcwa-cv run C/C03
 ```
 
-See the [category consistency table](../../../results/C/consistency.md).
-
-## Notebook and Lumerical model
-
-- [Open the Jupyter notebook](C03.ipynb) to run each solver and generate the plots.
-- Open [model.fsp](model.fsp) in Lumerical FDTD to inspect quick-sweep point 0.
-- Run [model.lsf](model.lsf) in a new unsaved FDTD document to reconstruct that point and export the native results.
-
-## Benchmark figures
-
-![Nominal geometry](figures/geometry.png)
-
-![Reflection, transmission and phase](figures/spectrum-0.png)
-
-![Propagating diffraction-order efficiencies](figures/diffraction-orders.png)
-
-![Pairwise solver differences](figures/solver-differences.png)
-
-See the [pairwise table](../../../results/C/C03/comparison.md) for numerical differences and [sweep coordinates](../../../results/C/C03/points.csv).
+[Comparison tables and figures](../../../BENCHMARK_REPORT.md#c03) · [Numerical dataset](../../../results/benchmark.json)

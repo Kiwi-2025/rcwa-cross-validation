@@ -1,30 +1,26 @@
 # C04 — Rotated nanofin
 
+## Physical scenario
+
+An anisotropic rectangular dielectric nanofin is rotated within a square unit cell. Its principal axes have different complex transmission coefficients. Rotation mixes the lab-frame polarization components, making the full Jones matrix and the opposite-helicity transmission useful observables.
+
+## Possible applications
+
+Rotated elements are used in geometric-phase metasurfaces, polarization converters, and vector-beam optics. The benchmark evaluates the unit-cell response without assuming ideal half-wave retardance.
+
+## Benchmark objective
+
 Compare Jones matrices and circular-polarization conversion under in-plane rotation.
 
-The geometry and scan points are defined in [case.yaml](case.yaml). Lengths and vacuum wavelengths use nanometers, and angles use degrees.
+The geometry, materials, and sweep are defined in [case.yaml](case.yaml). Lengths and vacuum wavelengths are in nanometers. Angles are in degrees.
+
+## Reproduce
+
+- Open [C04.ipynb](C04.ipynb) to run the four solvers and draw the comparison plots.
+- Open [model.fsp](model.fsp) in Lumerical FDTD to inspect quick-sweep point 0, or use [model.lsf](model.lsf) to rebuild it in a new unsaved document.
 
 ```powershell
-rcwa-cv run C/C04 --profile quick
-rcwa-cv converge C/C04
+rcwa-cv run C/C04
 ```
 
-See the [category consistency table](../../../results/C/consistency.md).
-
-## Notebook and Lumerical model
-
-- [Open the Jupyter notebook](C04.ipynb) to run each solver and generate the plots.
-- Open [model.fsp](model.fsp) in Lumerical FDTD to inspect quick-sweep point 0.
-- Run [model.lsf](model.lsf) in a new unsaved FDTD document to reconstruct that point and export the native results.
-
-## Benchmark figures
-
-![Nominal geometry](figures/geometry.png)
-
-![Reflection, transmission and phase](figures/spectrum-0.png)
-
-![Propagating diffraction-order efficiencies](figures/diffraction-orders.png)
-
-![Pairwise solver differences](figures/solver-differences.png)
-
-See the [pairwise table](../../../results/C/C04/comparison.md) for numerical differences and [sweep coordinates](../../../results/C/C04/points.csv).
+[Comparison tables and figures](../../../BENCHMARK_REPORT.md#c04) · [Numerical dataset](../../../results/benchmark.json)

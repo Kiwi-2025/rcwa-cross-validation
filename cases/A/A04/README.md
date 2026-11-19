@@ -1,30 +1,26 @@
 # A04 — Absorbing metal film
 
+## Physical scenario
+
+A 30 nm metal film sits between air and glass and is illuminated at normal incidence. Its complex permittivity causes absorption in addition to reflection and transmission. The benchmark uses a fixed illustrative permittivity, so the sweep isolates thin-film interference and loss handling.
+
+## Possible applications
+
+A starting point for modeling thin metallic mirrors, neutral-density coatings, or partially transmitting electrodes. A real device would require wavelength-dependent material data and a specified film morphology.
+
+## Benchmark objective
+
 Check passive absorption and phase against the thin-film reference. The metal uses a fixed illustrative near-infrared permittivity.
 
-The geometry and scan points are defined in [case.yaml](case.yaml). Lengths and vacuum wavelengths use nanometers, and angles use degrees.
+The geometry, materials, and sweep are defined in [case.yaml](case.yaml). Lengths and vacuum wavelengths are in nanometers. Angles are in degrees.
+
+## Reproduce
+
+- Open [A04.ipynb](A04.ipynb) to run the four solvers and draw the comparison plots.
+- Open [model.fsp](model.fsp) in Lumerical FDTD to inspect quick-sweep point 0, or use [model.lsf](model.lsf) to rebuild it in a new unsaved document.
 
 ```powershell
-rcwa-cv run A/A04 --profile quick
-rcwa-cv converge A/A04
+rcwa-cv run A/A04
 ```
 
-See the [category consistency table](../../../results/A/consistency.md).
-
-## Notebook and Lumerical model
-
-- [Open the Jupyter notebook](A04.ipynb) to run each solver and generate the plots.
-- Open [model.fsp](model.fsp) in Lumerical FDTD to inspect quick-sweep point 0.
-- Run [model.lsf](model.lsf) in a new unsaved FDTD document to reconstruct that point and export the native results.
-
-## Benchmark figures
-
-![Nominal geometry](figures/geometry.png)
-
-![Reflection, transmission and phase](figures/spectrum-0.png)
-
-![Propagating diffraction-order efficiencies](figures/diffraction-orders.png)
-
-![Pairwise solver differences](figures/solver-differences.png)
-
-See the [pairwise table](../../../results/A/A04/comparison.md) for numerical differences and [sweep coordinates](../../../results/A/A04/points.csv).
+[Comparison tables and figures](../../../BENCHMARK_REPORT.md#a04) · [Numerical dataset](../../../results/benchmark.json)
