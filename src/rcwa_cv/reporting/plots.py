@@ -1,11 +1,9 @@
-from itertools import combinations
-
 import numpy as np
 
 from ..case_loader import load_case, resolve
 from ..geometry import raster
 from ..models import Layer, SolverSettings
-from ..validation.compare import differences
+from .tables import BASELINE, OPEN_SOLVERS, POWER_METRICS, comparison_tolerance, reference_differences
 
 
 def spectral_figures(manifest, results):
@@ -19,7 +17,8 @@ def spectral_figures(manifest, results):
         group = [p for p in manifest["points"] if p["variant"]==variant]
         key = next((k for k in xkeys if len({p.get(k) for p in group}) > 1), "wavelength_nm")
         present = False
-        for name, data in results.items():
+        for name in (BASELINE, *OPEN_SOLVERS):
+            data = results.get(name, {})
             entries = [(manifest["points"][index][key], result)
                        for index, result in data.items() if manifest["points"][index]["variant"]==variant]
             if not entries:
@@ -29,15 +28,18 @@ def spectral_figures(manifest, results):
             x = [t for t, _ in entries]
             power = np.array([r.totals for _,r in entries])
             for i, pol in enumerate("sp"):
-                line, = axes[0,i].plot(x, power[:,0,i], ".-", label=name)
-                axes[0,i].plot(x, power[:,1,i], ":", color=line.get_color())
+                style = {"color": "#242934", "linewidth": 2.4} if name == BASELINE else {}
+                line, = axes[0,i].plot(x, power[:,0,i], ".-", label=name, **style)
+                axes[0,i].plot(x, power[:,1,i], ":", color=line.get_color(),
+                               linewidth=line.get_linewidth())
                 phase = []
                 for _, res in entries:
                     target = (1, 0) if manifest["case"]=="C06" else (0, 0)
                     found = np.flatnonzero(np.all(res.orders==target, axis=1))
                     a = res.amplitude[1, found[0], i, i] if len(found) else 0
                     phase.append(np.angle(a, deg=True) if abs(a)**2 >= 1e-4 else np.nan)
-                axes[1,i].plot(x, phase, ".-", label=name)
+                axes[1,i].plot(x, phase, ".-", label=name, color=line.get_color(),
+                               linewidth=line.get_linewidth())
                 axes[0,i].set_title(f"{pol} input: reflection (solid), transmission (dotted)")
                 axes[1,i].set(xlabel=key.replace("_"," "), ylabel="Co-polarized transmission phase (deg)")
                 axes[0,i].set_ylabel("Power / incident power")
@@ -52,32 +54,30 @@ def spectral_figures(manifest, results):
 
 def diagnostic_figures(manifest, results):
     import matplotlib.pyplot as plt
-    from matplotlib.colors import LogNorm
-
     output = []
-    names = [name for name, data in results.items() if data]
-    comparisons = [(left, right, [differences(results[left][i], results[right][i])
-                                  for i in results[left].keys() & results[right].keys()])
-                   for left, right in combinations(names, 2)]
-    if any(samples for _, _, samples in comparisons):
-        fig, axes = plt.subplots(1, 2, figsize=(10, 4.7), constrained_layout=True)
-        for ax, metrics, title in zip(axes, (("max_R","max_T","max_A","max_order_power"), ("max_amplitude",)),
+    comparisons = [(name, samples) for name, samples in reference_differences(results) if samples]
+    if comparisons:
+        fig, axes = plt.subplots(1, 2, figsize=(10, 3.1), layout="constrained")
+        for ax, metrics, title in zip(axes, (POWER_METRICS, ("max_amplitude",)),
                                       ("Max absolute power difference", "Max complex-amplitude difference"), strict=True):
-            matrix = np.full((len(names), len(names)), np.nan)
-            for left, right, samples in comparisons:
-                if samples:
-                    i, j = names.index(left), names.index(right)
-                    matrix[i,j] = matrix[j,i] = max(sample[m] for sample in samples for m in metrics)
-            color = ax.imshow(np.maximum(matrix, 1e-16), cmap="viridis", norm=LogNorm(vmin=1e-16,
-                              vmax=max(1e-15, float(np.nanmax(matrix)))))
-            ax.set(xticks=range(len(names)), yticks=range(len(names)), xticklabels=names, yticklabels=names,
-                   title=title)
-            ax.tick_params(axis="x", labelrotation=35)
-            for i, j in zip(*np.where(np.isfinite(matrix)), strict=True):
-                ax.text(j, i, f"{matrix[i,j]:.1e}", ha="center", va="center", color="white", fontsize=8,
-                        bbox=dict(facecolor="#1b2435", alpha=.6, edgecolor="none", pad=2))
-            fig.colorbar(color, ax=ax, shrink=.8)
+            names = [name for name, _ in comparisons]
+            values = [max(sample[metric] for sample in samples.values() for metric in metrics)
+                      for _, samples in comparisons]
+            tolerance = comparison_tolerance(manifest["case"])
+            plotted_values = [max(value, 1e-16) for value in values]
+            for i, (value, plotted) in enumerate(zip(values, plotted_values, strict=True)):
+                ax.scatter(plotted, i, color="#166a88", zorder=3)
+                ax.annotate(f"{value:.2g}", (plotted, i), xytext=(5, 0), textcoords="offset points",
+                            va="center", fontsize=8)
+            ax.axvline(tolerance, color="#b45726", linestyle="--")
+            ax.set(xscale="log", xlim=(min(tolerance, *plotted_values)/3, max(tolerance, *plotted_values)*8),
+                   yticks=range(len(names)), yticklabels=names, title=title)
+            ax.invert_yaxis()
+            ax.grid(axis="x", alpha=.23)
+        fig.suptitle(f"{manifest['case']} · Each solver vs Lumerical")
+        fig.supxlabel("Absolute difference (log scale) · dashed line: magnitude tolerance", fontsize=9)
         output.append(("solver-differences.png", fig))
+    names = [BASELINE, *(name for name, _ in comparisons)] if comparisons else []
     shared = set.intersection(*(set(results[name]) for name in names)) if names else set()
     if shared:
         ordered = sorted(shared)
@@ -103,7 +103,8 @@ def diagnostic_figures(manifest, results):
                 width = .82/len(names)
                 for k, name in enumerate(names):
                     values = [power[name].get(order, (0.,0.))[pol] for order in shown]
-                    axis.bar(x+(k-(len(names)-1)/2)*width, values, width, label=name)
+                    style = {"color": "#242934"} if name == BASELINE else {}
+                    axis.bar(x+(k-(len(names)-1)/2)*width, values, width, label=name, **style)
                 axis.set_xticks(x, [str(order) for order in shown], rotation=30)
         point = manifest["points"][index]
         fig.suptitle(f"{manifest['case']} · {point['variant']} · {point['wavelength_nm']:.5g} nm · "
@@ -146,12 +147,12 @@ def geometry_figure(path):
     return fig
 
 
-def save_figures(target, manifest, results, case_path):
+def save_figures(target, manifest, results, case_path=None):
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
 
-    figures = [("geometry.png", geometry_figure(case_path))]
+    figures = [("geometry.png", geometry_figure(case_path))] if case_path else []
     figures += spectral_figures(manifest, results) + diagnostic_figures(manifest, results)
     target.mkdir(parents=True, exist_ok=True)
     for name, figure in figures:

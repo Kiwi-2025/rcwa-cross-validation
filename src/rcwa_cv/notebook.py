@@ -1,14 +1,11 @@
 """Shared sweep and display helpers for the case notebooks."""
-from itertools import combinations
-
 import yaml
 from threadpoolctl import threadpool_limits
 
 from .case_loader import ROOT, load_case, points, resolve
 from .reporting.plots import diagnostic_figures, spectral_figures
-from .reporting.tables import markdown_table, pretty
+from .reporting.tables import POWER_METRICS, markdown_table, pretty, reference_differences
 from .runner import configure, software_versions
-from .validation.compare import differences
 from .validation.convergence import settings_series
 
 
@@ -37,15 +34,17 @@ def show_results(meta, results):
     import matplotlib.pyplot as plt
 
     rows = []
-    for a,b in combinations(results, 2):
-        shared = sorted(results[a].keys() & results[b].keys())
-        metrics = [differences(results[a][i],results[b][i]) for i in shared]
+    for name, samples in reference_differences(results):
+        metrics = list(samples.values())
         if metrics:
-            rows.append([f"{a} / {b}", len(shared),
-                         pretty(max(row[k] for row in metrics for k in ("max_R","max_T","max_A","max_order_power"))),
+            rows.append([name, len(samples),
+                         pretty(max(row[k] for row in metrics for k in POWER_METRICS)),
                          pretty(max(row["max_amplitude"] for row in metrics))])
-    display(Markdown(markdown_table(
-        ("Solver pair", "Matched points", "Max absolute power difference", "Max complex-amplitude difference"), rows)))
+    if rows:
+        display(Markdown(markdown_table(
+            ("Solver vs Lumerical", "Matched points", "Max absolute power difference", "Max complex-amplitude difference"), rows)))
+    else:
+        display(Markdown("Comparison requires a Lumerical result and an open-source result at a common point."))
     for _, fig in spectral_figures(meta, results)+diagnostic_figures(meta, results):
         display(fig)
         plt.close(fig)

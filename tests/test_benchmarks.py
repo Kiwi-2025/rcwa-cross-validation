@@ -7,6 +7,8 @@ import pytest
 from rcwa_cv.case_loader import catalog, load_case, resolve
 from rcwa_cv.models import SolverSettings
 from rcwa_cv.references import multilayer
+from rcwa_cv.reporting.benchmark import optical_data, read_sample
+from rcwa_cv.reporting.tables import compare_to_lumerical, summarize
 from rcwa_cv.solvers import MODULES, adapter
 from rcwa_cv.solvers.lumerical import build_script
 from rcwa_cv.validation.compare import differences, meets
@@ -98,3 +100,25 @@ def test_matched_meent_operator_for_asymmetric_supercell():
     reference = adapter("grcwa").solve(case, settings)
     result = adapter("meent").solve(case, settings, material_operator="direct-dfs")
     assert meets(differences(reference, result), 1e-8)
+
+
+def test_reporting_uses_lumerical_and_requires_a_common_point():
+    spec = load_case(catalog("A01")[0])
+    case = resolve(spec, "reverse", {"theta_deg": 55}, SETTINGS)
+    original = multilayer.solve(case, SETTINGS)
+    restored = read_sample(optical_data(original))
+    assert meets(differences(original, restored), 0)
+    completed = {"status": "COMPLETE", "completed": [
+        {"index": 0, "converged": True, "physics": checks(original, case.lossy)}]}
+    manifest = {"case": "A01", "points": [{}], "representative": False, "point_limit": None,
+                "solvers": {name: completed for name in (*MODULES, "reference")}}
+    results = {name: {0: original} for name in (*MODULES, "reference")}
+    results["lumerical"] = {0: restored}
+    pairs = compare_to_lumerical(manifest, results)
+    assert [pair["solvers"] for pair in pairs] == [
+        ["meent", "lumerical"], ["torcwa", "lumerical"], ["grcwa", "lumerical"]]
+    assert summarize(manifest, pairs)["status"] == "PASS"
+    results["lumerical"] = {}
+    pairs = compare_to_lumerical(manifest, results)
+    assert all(pair["status"] == "NOT_RUN" for pair in pairs)
+    assert summarize(manifest, pairs)["status"] == "NOT_RUN"

@@ -1,5 +1,6 @@
 # Comparison conventions
 
+- Report meent, torcwa, and grcwa each against Lumerical at the same excitation point. Lumerical serves as the numerical reference. Periodic passes require convergence evidence for both solvers in the comparison.
 - Use nanometers, vacuum wavelength, angles in degrees, and fields with time dependence `exp(-i omega t)`. Passive materials have positive imaginary relative permittivity.
 - Use global transverse coordinates x and y, with layers ordered in the +z propagation direction. Set z = 0 at the first finite layer and the output reference plane at the last finite layer boundary. Both planes coincide for an interface.
 - Label an order by integer (m, n) and define the transverse wavevector as the incident transverse wavevector plus 2 pi times the corresponding reciprocal-lattice vector. Treat orders near grazing as cutoff channels. The manifests record the actual order arrays.

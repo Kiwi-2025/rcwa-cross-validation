@@ -7,9 +7,9 @@ import json
 import yaml
 
 from .case_loader import ROOT, catalog, load_case, points, resolve
-from .reporting.benchmark import publish_benchmark
+from .reporting.benchmark import publish_benchmark, refresh_published_report
 from .reporting.plots import save_figures
-from .reporting.tables import comparison_table, pairwise, read_run, summarize
+from .reporting.tables import compare_to_lumerical, comparison_table, read_run, summarize
 from .runner import RUNS, configure, import_lumerical, run
 from .solvers import MODULES, adapter
 from .storage import read_json
@@ -37,7 +37,11 @@ def parser():
         limits.add_argument("--representative", action="store_true")
     for name in ("compare","report"):
         cmd = commands.add_parser(name)
-        cmd.add_argument("--run", required=True, help="Run ID or directory.")
+        source = cmd.add_mutually_exclusive_group(required=True)
+        source.add_argument("--run", help="Run ID or directory.")
+        if name == "report":
+            source.add_argument("--published", action="store_true",
+                                help="Refresh reports and figures from the published numerical samples.")
     export = commands.add_parser("export-lumerical")
     export.add_argument("selection")
     export.add_argument("--profile", choices=["quick","pilot","convergence"], default="quick")
@@ -61,7 +65,7 @@ def find_run(run, cli):
 
 def show_run(folder, figures=False):
     manifest, results = read_run(folder)
-    pairs = pairwise(manifest, results)
+    pairs = compare_to_lumerical(manifest, results)
     summary = summarize(manifest, pairs)
     print(f"{manifest['case']}: {summary['status']} ({summary['coverage']})")
     print(comparison_table(pairs, len(manifest["points"])))
@@ -87,6 +91,9 @@ def main():
             print(f"{case['id']}  {case['title']}")
         return
     if args.command in ("compare","report","import-lumerical"):
+        if args.command == "report" and args.published:
+            refresh_published_report()
+            return
         directory = find_run(args.run, cli)
         if args.command == "import-lumerical":
             if not args.mat.is_file():

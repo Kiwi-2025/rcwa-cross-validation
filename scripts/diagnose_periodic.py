@@ -13,7 +13,7 @@ from threadpoolctl import threadpool_limits
 from rcwa_cv.case_loader import ROOT, catalog, load_case, resolve
 from rcwa_cv.geometry import raster
 from rcwa_cv.models import SolverSettings
-from rcwa_cv.reporting.benchmark import optical_data
+from rcwa_cv.reporting.benchmark import optical_data, read_sample
 from rcwa_cv.runner import configure, software_versions
 from rcwa_cv.solvers import grcwa_cpu, lumerical, meent_cpu, torcwa_cuda
 from rcwa_cv.storage import read_json, write_json
@@ -63,6 +63,50 @@ def matched_lumerical_basis(case, settings, reference, published):
         "relative_to_published_basis": metrics(published, matched),
         "transmittance": matched.totals[1].tolist(),
     }
+
+
+def meent_against_lumerical(records, include_lumerical):
+    rows = []
+    for record in records:
+        if record["case"][0] not in "BC":
+            continue
+        samples = {
+            name: {sample["point"]: sample for sample in state["samples"]}
+            for name, state in record["solvers"].items()
+        }
+        meent, lumerical_samples = samples["meent"], samples["lumerical"]
+        selected = max(sorted(meent.keys() & lumerical_samples.keys()), key=lambda i: metrics(
+            read_sample(meent[i]), read_sample(lumerical_samples[i]))["amplitude"])
+        settings = SolverSettings(**meent[selected]["settings"])
+        point = dict(record["points"][selected])
+        case_id = record["case"]
+        spec = load_case(catalog(case_id)[0])
+        case = resolve(spec, point.pop("variant"), point, settings)
+        modes = ("native", "direct-cfs", "direct-dfs")
+        controls = {mode: meent_cpu.solve(case, settings, material_operator=mode) for mode in modes}
+        published = read_sample(lumerical_samples[selected])
+        context = {"case": case_id, "point_index": selected, "point": record["points"][selected],
+                   "settings": asdict(settings),
+                   "replay_difference": metrics(read_sample(meent[selected]), controls["native"]),
+                   "lumerical_published": {mode: metrics(value, published) for mode, value in controls.items()},
+                   "operator_effect": {mode: metrics(controls["native"], controls[mode]) for mode in modes[1:]}}
+        if include_lumerical:
+            matched = lumerical.solve(case, settings, match_fourier_order=True)
+            orders = np.asarray(matched.metadata["native_orders"])
+            bounds = np.abs(orders).max(axis=0).tolist()
+            expected = [settings.order, settings.order if case.dimensions == 2 else 1]
+            if bounds != expected:
+                raise RuntimeError(f"{case_id} requested native bounds {expected}, returned {bounds}.")
+            context["matched_lumerical"] = {
+                "native_bounds": bounds, "native_orders": len(orders),
+                "basis_effect": metrics(matched, published),
+                "meent": {mode: metrics(value, matched) for mode, value in controls.items()},
+                "grcwa": metrics(read_sample(samples["grcwa"][selected]), matched),
+                "torcwa": metrics(read_sample(samples["torcwa"][selected]), matched),
+            }
+        rows.append(context)
+        print(f"{case_id} Meent comparison complete", flush=True)
+    return rows
 
 
 def run_case(record, include_lumerical):
@@ -315,6 +359,8 @@ def main():
     parser = ArgumentParser(description=__doc__)
     parser.add_argument("--open-only", action="store_true",
                         help="Use the three open-source solvers for new calculations.")
+    parser.add_argument("--meent-study", action="store_true",
+                        help="Refresh only the Meent operator study and its Lumerical controls.")
     args = parser.parse_args()
     configure()
     path = ROOT/"results/benchmark.json"
@@ -329,6 +375,17 @@ def main():
         if not args.open_only:
             fdtd = stack.enter_context(lumerical.session())
             versions["Lumerical RCWA"] = f"{lumerical.probe()['version']} / build {fdtd.version()}"
+        meent_study = {
+            "software": versions,
+            "published_reference": dataset["software"]["Lumerical RCWA"],
+            "point_selection": "Largest published Meent–Lumerical complex-amplitude difference in each periodic case.",
+            "cases": meent_against_lumerical(dataset["cases"], fdtd is not None),
+        }
+        if args.meent_study:
+            dataset.setdefault("periodic_diagnostics", {})["meent_against_lumerical"] = meent_study
+            write_json(path, dataset)
+            print(f"Updated {path}", flush=True)
+            return
         for record in dataset["cases"]:
             if record["case"][0] not in "BC":
                 continue
@@ -341,11 +398,12 @@ def main():
     dataset["periodic_diagnostics"] = {
         "software":versions,
         "scope":"open-source solvers" if args.open_only else "all four solvers",
-        "point_selection":"Largest absolute complex-amplitude discrepancy in the quick benchmark for each case.",
+        "point_selection":"Largest absolute complex-amplitude discrepancy against Lumerical in each benchmark case.",
         "reference_for_control":"grcwa at the same numerical settings, used as a matched operator control.",
         "cases":records, "translation_control":translation, "c02_spectrum":spectrum,
         "b06_phase_ramp":b06_phase,
         "c04_rotation_control": rotation,
+        "meent_against_lumerical": meent_study,
     }
     write_json(path,dataset)
     plot_c02_spectrum(spectrum)

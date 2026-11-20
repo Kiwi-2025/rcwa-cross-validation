@@ -1,11 +1,11 @@
 # RCWA Cross-Validation
 
-A reproducible comparison of meent, torcwa on CUDA, grcwa, and Lumerical RCWA across 16 optical cases.
+A reproducible benchmark of meent, torcwa on CUDA, and grcwa against Lumerical RCWA across 16 optical cases.
 
 | Start here | Contents |
 | --- | --- |
-| [Benchmark report](BENCHMARK_REPORT.md) | All solver comparisons, figures, software versions, and the conclusion |
-| [Periodic-case diagnosis](PERIODIC_DIAGNOSIS.md) | Controlled experiments on the twelve periodic discrepancies |
+| [Benchmark report](BENCHMARK_REPORT.md) | Each solver's agreement with Lumerical, figures, software versions, and the conclusion |
+| [Periodic-case diagnosis](PERIODIC_DIAGNOSIS.md) | Meent material-operator controls and Lumerical basis and phase checks |
 | [Case catalog](cases/README.md) | Physical scenarios, possible applications, notebooks, and Lumerical models |
 | [Numerical dataset](results/benchmark.json) | Point coordinates, normalized powers and complex amplitudes, settings, and comparison metrics |
 | [Comparison conventions](docs/conventions.md) | Polarization, reference planes, tolerances, and convergence criteria |
@@ -30,10 +30,11 @@ Each case contains `case.yaml`, a Jupyter notebook, and Lumerical `model.fsp` an
 & .\.venv\Scripts\rcwa-cv.exe run B/B01
 & .\.venv\Scripts\rcwa-cv.exe converge C/C02 --profile pilot --representative
 & .\.venv\Scripts\rcwa-cv.exe report --run <run_id>
+& .\.venv\Scripts\rcwa-cv.exe report --published
 & .\.venv\Scripts\python.exe -m pytest -q
 ```
 
-Individual runs, temporary files, and manually exported Lumerical scripts use the local `.runs/` directory. A complete benchmark publishes one JSON data document and a set of figures under `results/`. The report links to those figures.
+Individual runs, temporary files, and manually exported Lumerical scripts use the local `.runs/` directory. A complete benchmark publishes one JSON data document and a set of figures under `results/`. Use `report --published` to refresh the report and comparison figures directly from those saved optical samples.
 
 To export a different sweep point or add a manually computed point to an individual run, use the same zero-based index:
 

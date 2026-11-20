@@ -162,102 +162,6 @@
       "pairs": [
         {
           "solvers": [
-            "reference",
-            "meent"
-          ],
-          "points": 14,
-          "status": "PASS",
-          "max_R": 2.6645352591003757e-15,
-          "max_T": 1.4432899320127035e-15,
-          "max_A": 2.6645352591003757e-15,
-          "max_order_power": 2.6645352591003757e-15,
-          "max_amplitude": 1.3426356273935429e-15,
-          "max_phase_deg": 2.736569522061792e-14,
-          "worst_point": 13,
-          "worst_channel": "R(0, 0) s to s"
-        },
-        {
-          "solvers": [
-            "reference",
-            "torcwa"
-          ],
-          "points": 14,
-          "status": "PASS",
-          "max_R": 4.440892098500626e-16,
-          "max_T": 9.992007221626409e-16,
-          "max_A": 7.771561172376096e-16,
-          "max_order_power": 9.992007221626409e-16,
-          "max_amplitude": 1.8452761694870047e-15,
-          "max_phase_deg": 1.0629159301076557e-13,
-          "worst_point": 10,
-          "worst_channel": "R(0, 0) p to p"
-        },
-        {
-          "solvers": [
-            "reference",
-            "grcwa"
-          ],
-          "points": 14,
-          "status": "PASS",
-          "max_R": 9.71445146547012e-16,
-          "max_T": 3.552713678800501e-15,
-          "max_A": 2.6645352591003757e-15,
-          "max_order_power": 3.552713678800501e-15,
-          "max_amplitude": 1.9984014443252818e-15,
-          "max_phase_deg": 8.518059260235879e-14,
-          "worst_point": 6,
-          "worst_channel": "T(0, 0) p to p"
-        },
-        {
-          "solvers": [
-            "reference",
-            "lumerical"
-          ],
-          "points": 14,
-          "status": "PASS",
-          "max_R": 9.625633623500107e-14,
-          "max_T": 9.588031281028918e-14,
-          "max_A": 3.608224830031759e-14,
-          "max_order_power": 9.625633623500107e-14,
-          "max_amplitude": 1.5905492013983264e-13,
-          "max_phase_deg": 1.2416752990345497e-11,
-          "worst_point": 6,
-          "worst_channel": "R(0, 0) s to s"
-        },
-        {
-          "solvers": [
-            "meent",
-            "torcwa"
-          ],
-          "points": 14,
-          "status": "PASS",
-          "max_R": 2.4424906541753444e-15,
-          "max_T": 8.881784197001252e-16,
-          "max_A": 2.4424906541753444e-15,
-          "max_order_power": 2.4424906541753444e-15,
-          "max_amplitude": 1.9389211565826713e-15,
-          "max_phase_deg": 1.12271035811917e-13,
-          "worst_point": 10,
-          "worst_channel": "R(0, 0) p to p"
-        },
-        {
-          "solvers": [
-            "meent",
-            "grcwa"
-          ],
-          "points": 14,
-          "status": "PASS",
-          "max_R": 2.4424906541753444e-15,
-          "max_T": 3.3306690738754696e-15,
-          "max_A": 2.6645352591003757e-15,
-          "max_order_power": 3.3306690738754696e-15,
-          "max_amplitude": 1.7763568394002505e-15,
-          "max_phase_deg": 6.013368368611935e-14,
-          "worst_point": 6,
-          "worst_channel": "T(0, 0) p to p"
-        },
-        {
-          "solvers": [
             "meent",
             "lumerical"
           ],
@@ -271,22 +175,6 @@
           "max_phase_deg": 1.2416752990345497e-11,
           "worst_point": 6,
           "worst_channel": "R(0, 0) s to s"
-        },
-        {
-          "solvers": [
-            "torcwa",
-            "grcwa"
-          ],
-          "points": 14,
-          "status": "PASS",
-          "max_R": 9.71445146547012e-16,
-          "max_T": 3.552713678800501e-15,
-          "max_A": 2.6645352591003757e-15,
-          "max_order_power": 3.552713678800501e-15,
-          "max_amplitude": 1.9984014443252818e-15,
-          "max_phase_deg": 8.22982115223063e-14,
-          "worst_point": 6,
-          "worst_channel": "T(0, 0) p to p"
         },
         {
           "solvers": [
@@ -7009,102 +6897,6 @@
       "pairs": [
         {
           "solvers": [
-            "reference",
-            "meent"
-          ],
-          "points": 5,
-          "status": "PASS",
-          "max_R": 1.0408340855860843e-17,
-          "max_T": 5.551115123125783e-16,
-          "max_A": 5.551115123125783e-16,
-          "max_order_power": 5.551115123125783e-16,
-          "max_amplitude": 4.565586548226427e-16,
-          "max_phase_deg": 5.349261627531834e-13,
-          "worst_point": 3,
-          "worst_channel": "R(0, 0) p to p"
-        },
-        {
-          "solvers": [
-            "reference",
-            "torcwa"
-          ],
-          "points": 5,
-          "status": "PASS",
-          "max_R": 1.5612511283791264e-17,
-          "max_T": 4.440892098500626e-16,
-          "max_A": 5.551115123125783e-16,
-          "max_order_power": 4.440892098500626e-16,
-          "max_amplitude": 3.510833468576701e-16,
-          "max_phase_deg": 2.410179786071062e-13,
-          "worst_point": 4,
-          "worst_channel": "T(0, 0) s to s"
-        },
-        {
-          "solvers": [
-            "reference",
-            "grcwa"
-          ],
-          "points": 5,
-          "status": "PASS",
-          "max_R": 4.163336342344337e-17,
-          "max_T": 8.881784197001252e-16,
-          "max_A": 8.881784197001252e-16,
-          "max_order_power": 8.881784197001252e-16,
-          "max_amplitude": 5.661048867003677e-16,
-          "max_phase_deg": 3.0425016056334035e-13,
-          "worst_point": 0,
-          "worst_channel": "T(0, 0) s to s"
-        },
-        {
-          "solvers": [
-            "reference",
-            "lumerical"
-          ],
-          "points": 5,
-          "status": "PASS",
-          "max_R": 6.019490461639521e-16,
-          "max_T": 1.3766765505351941e-14,
-          "max_A": 1.432187701766452e-14,
-          "max_order_power": 1.3766765505351941e-14,
-          "max_amplitude": 7.944109290391274e-15,
-          "max_phase_deg": 1.8535365656803223e-12,
-          "worst_point": 0,
-          "worst_channel": "T(0, 0) s to s"
-        },
-        {
-          "solvers": [
-            "meent",
-            "torcwa"
-          ],
-          "points": 5,
-          "status": "PASS",
-          "max_R": 1.9081958235744878e-17,
-          "max_T": 5.551115123125783e-16,
-          "max_A": 6.661338147750939e-16,
-          "max_order_power": 5.551115123125783e-16,
-          "max_amplitude": 3.8864000809048077e-16,
-          "max_phase_deg": 4.438235560185918e-13,
-          "worst_point": 3,
-          "worst_channel": "R(0, 0) s to s"
-        },
-        {
-          "solvers": [
-            "meent",
-            "grcwa"
-          ],
-          "points": 5,
-          "status": "PASS",
-          "max_R": 4.5102810375396984e-17,
-          "max_T": 1.2212453270876722e-15,
-          "max_A": 1.2212453270876722e-15,
-          "max_order_power": 1.2212453270876722e-15,
-          "max_amplitude": 6.753223014464258e-16,
-          "max_phase_deg": 5.166343706166253e-13,
-          "worst_point": 0,
-          "worst_channel": "T(0, 0) s to s"
-        },
-        {
-          "solvers": [
             "meent",
             "lumerical"
           ],
@@ -7118,22 +6910,6 @@
           "max_phase_deg": 2.163618674524865e-12,
           "worst_point": 0,
           "worst_channel": "T(0, 0) p to p"
-        },
-        {
-          "solvers": [
-            "torcwa",
-            "grcwa"
-          ],
-          "points": 5,
-          "status": "PASS",
-          "max_R": 2.6020852139652106e-17,
-          "max_T": 6.661338147750939e-16,
-          "max_A": 7.771561172376096e-16,
-          "max_order_power": 6.661338147750939e-16,
-          "max_amplitude": 5.661048867003677e-16,
-          "max_phase_deg": 1.8906420244277742e-13,
-          "worst_point": 0,
-          "worst_channel": "T(0, 0) s to s"
         },
         {
           "solvers": [
@@ -9829,105 +9605,9 @@
         "coverage": "4/4",
         "physics_failed": false,
         "max_power": 2.554623179662485e-13,
-        "max_amplitude": 1.3774784936662364e-13
+        "max_amplitude": 1.3759118357150516e-13
       },
       "pairs": [
-        {
-          "solvers": [
-            "reference",
-            "meent"
-          ],
-          "points": 5,
-          "status": "PASS",
-          "max_R": 1.0824674490095276e-15,
-          "max_T": 2.9976021664879227e-15,
-          "max_A": 2.886579864025407e-15,
-          "max_order_power": 2.9976021664879227e-15,
-          "max_amplitude": 3.730518700950602e-15,
-          "max_phase_deg": 2.1288636022214362e-13,
-          "worst_point": 1,
-          "worst_channel": "T(0, 0) p to p"
-        },
-        {
-          "solvers": [
-            "reference",
-            "torcwa"
-          ],
-          "points": 5,
-          "status": "PASS",
-          "max_R": 8.881784197001252e-16,
-          "max_T": 2.3314683517128287e-15,
-          "max_A": 2.9976021664879227e-15,
-          "max_order_power": 2.3314683517128287e-15,
-          "max_amplitude": 3.410916328649657e-15,
-          "max_phase_deg": 4.031228756824526e-13,
-          "worst_point": 1,
-          "worst_channel": "T(0, 0) p to p"
-        },
-        {
-          "solvers": [
-            "reference",
-            "grcwa"
-          ],
-          "points": 5,
-          "status": "PASS",
-          "max_R": 1.1171619185290638e-15,
-          "max_T": 2.7755575615628914e-15,
-          "max_A": 3.552713678800501e-15,
-          "max_order_power": 2.7755575615628914e-15,
-          "max_amplitude": 4.274358644806853e-15,
-          "max_phase_deg": 4.821165586649409e-13,
-          "worst_point": 0,
-          "worst_channel": "T(0, 0) s to s"
-        },
-        {
-          "solvers": [
-            "reference",
-            "lumerical"
-          ],
-          "points": 5,
-          "status": "PASS",
-          "max_R": 2.0483614804334138e-14,
-          "max_T": 2.532418719169982e-13,
-          "max_A": 2.539080057317733e-13,
-          "max_order_power": 2.532418719169982e-13,
-          "max_amplitude": 1.3774784936662364e-13,
-          "max_phase_deg": 1.9633479317915274e-11,
-          "worst_point": 1,
-          "worst_channel": "T(0, 0) p to p"
-        },
-        {
-          "solvers": [
-            "meent",
-            "torcwa"
-          ],
-          "points": 5,
-          "status": "PASS",
-          "max_R": 7.216449660063518e-16,
-          "max_T": 4.551914400963142e-15,
-          "max_A": 4.107825191113079e-15,
-          "max_order_power": 4.551914400963142e-15,
-          "max_amplitude": 2.4949545433241837e-15,
-          "max_phase_deg": 2.811902229292744e-13,
-          "worst_point": 1,
-          "worst_channel": "T(0, 0) s to s"
-        },
-        {
-          "solvers": [
-            "meent",
-            "grcwa"
-          ],
-          "points": 5,
-          "status": "PASS",
-          "max_R": 1.2906342661267445e-15,
-          "max_T": 5.329070518200751e-15,
-          "max_A": 5.995204332975845e-15,
-          "max_order_power": 5.329070518200751e-15,
-          "max_amplitude": 4.47545209131181e-15,
-          "max_phase_deg": 3.6018390591176206e-13,
-          "worst_point": 0,
-          "worst_channel": "T(0, 0) p to p"
-        },
         {
           "solvers": [
             "meent",
@@ -9943,22 +9623,6 @@
           "max_phase_deg": 1.9511546665162096e-11,
           "worst_point": 1,
           "worst_channel": "T(0, 0) p to p"
-        },
-        {
-          "solvers": [
-            "torcwa",
-            "grcwa"
-          ],
-          "points": 5,
-          "status": "PASS",
-          "max_R": 1.27675647831893e-15,
-          "max_T": 4.440892098500626e-15,
-          "max_A": 5.662137425588298e-15,
-          "max_order_power": 4.440892098500626e-15,
-          "max_amplitude": 6.0208490917174056e-15,
-          "max_phase_deg": 3.3327390466504393e-13,
-          "worst_point": 0,
-          "worst_channel": "T(0, 0) s to s"
         },
         {
           "solvers": [
@@ -12641,106 +12305,10 @@
         "status": "PASS",
         "coverage": "4/4",
         "physics_failed": false,
-        "max_power": 1.7763568394002505e-15,
+        "max_power": 1.5543122344752192e-15,
         "max_amplitude": 5.246978499005562e-15
       },
       "pairs": [
-        {
-          "solvers": [
-            "reference",
-            "meent"
-          ],
-          "points": 3,
-          "status": "PASS",
-          "max_R": 5.551115123125783e-16,
-          "max_T": 2.7755575615628914e-17,
-          "max_A": 5.551115123125783e-16,
-          "max_order_power": 5.551115123125783e-16,
-          "max_amplitude": 1.5700924586837752e-16,
-          "max_phase_deg": 7.1824955591088e-15,
-          "worst_point": 0,
-          "worst_channel": "R(0, 0) p to p"
-        },
-        {
-          "solvers": [
-            "reference",
-            "torcwa"
-          ],
-          "points": 3,
-          "status": "PASS",
-          "max_R": 4.440892098500626e-16,
-          "max_T": 2.0816681711721685e-17,
-          "max_A": 4.440892098500626e-16,
-          "max_order_power": 4.440892098500626e-16,
-          "max_amplitude": 2.237726045655905e-16,
-          "max_phase_deg": 8.924919263299757e-15,
-          "worst_point": 0,
-          "worst_channel": "R(0, 0) s to s"
-        },
-        {
-          "solvers": [
-            "reference",
-            "grcwa"
-          ],
-          "points": 3,
-          "status": "PASS",
-          "max_R": 2.220446049250313e-16,
-          "max_T": 1.3877787807814457e-17,
-          "max_A": 2.220446049250313e-16,
-          "max_order_power": 2.220446049250313e-16,
-          "max_amplitude": 1.1443916996305594e-16,
-          "max_phase_deg": 7.006955064047108e-15,
-          "worst_point": 0,
-          "worst_channel": "R(0, 0) s to s"
-        },
-        {
-          "solvers": [
-            "reference",
-            "lumerical"
-          ],
-          "points": 3,
-          "status": "PASS",
-          "max_R": 1.6653345369377348e-15,
-          "max_T": 4.163336342344337e-17,
-          "max_A": 1.7763568394002505e-15,
-          "max_order_power": 1.6653345369377348e-15,
-          "max_amplitude": 5.245803791353865e-15,
-          "max_phase_deg": 3.0270338664198475e-13,
-          "worst_point": 2,
-          "worst_channel": "R(0, 0) s to s"
-        },
-        {
-          "solvers": [
-            "meent",
-            "torcwa"
-          ],
-          "points": 3,
-          "status": "PASS",
-          "max_R": 3.3306690738754696e-16,
-          "max_T": 4.85722573273506e-17,
-          "max_A": 3.3306690738754696e-16,
-          "max_order_power": 3.3306690738754696e-16,
-          "max_amplitude": 1.3877787807814457e-16,
-          "max_phase_deg": 1.3991379578324742e-14,
-          "worst_point": 0,
-          "worst_channel": "R(0, 0) p to p"
-        },
-        {
-          "solvers": [
-            "meent",
-            "grcwa"
-          ],
-          "points": 3,
-          "status": "PASS",
-          "max_R": 5.551115123125783e-16,
-          "max_T": 2.0816681711721685e-17,
-          "max_A": 5.551115123125783e-16,
-          "max_order_power": 5.551115123125783e-16,
-          "max_amplitude": 1.3877787807814457e-16,
-          "max_phase_deg": 7.285784386447452e-15,
-          "worst_point": 1,
-          "worst_channel": "R(0, 0) p to p"
-        },
         {
           "solvers": [
             "meent",
@@ -12755,22 +12323,6 @@
           "max_amplitude": 5.246978499005562e-15,
           "max_phase_deg": 3.043061988543074e-13,
           "worst_point": 2,
-          "worst_channel": "R(0, 0) s to s"
-        },
-        {
-          "solvers": [
-            "torcwa",
-            "grcwa"
-          ],
-          "points": 3,
-          "status": "PASS",
-          "max_R": 2.220446049250313e-16,
-          "max_T": 3.469446951953614e-17,
-          "max_A": 2.220446049250313e-16,
-          "max_order_power": 2.220446049250313e-16,
-          "max_amplitude": 1.1102230246251565e-16,
-          "max_phase_deg": 1.6582217049296384e-14,
-          "worst_point": 0,
           "worst_channel": "R(0, 0) s to s"
         },
         {
@@ -14665,42 +14217,10 @@
         "status": "INCONCLUSIVE",
         "coverage": "4/4",
         "physics_failed": false,
-        "max_power": 0.008178177484214524,
-        "max_amplitude": 0.02627235773768283
+        "max_power": 0.00447520027695221,
+        "max_amplitude": 0.021809337671157145
       },
       "pairs": [
-        {
-          "solvers": [
-            "meent",
-            "torcwa"
-          ],
-          "points": 4,
-          "status": "INCONCLUSIVE",
-          "max_R": 0.002970067357228795,
-          "max_T": 0.002970067357230821,
-          "max_A": 1.0547118733938987e-14,
-          "max_order_power": 0.008178177484212207,
-          "max_amplitude": 0.026272357737681915,
-          "max_phase_deg": 4.721623412005402,
-          "worst_point": 0,
-          "worst_channel": "T(0, 0) p to p"
-        },
-        {
-          "solvers": [
-            "meent",
-            "grcwa"
-          ],
-          "points": 4,
-          "status": "INCONCLUSIVE",
-          "max_R": 0.0029700673572270048,
-          "max_T": 0.002970067357225048,
-          "max_A": 5.140332604014475e-14,
-          "max_order_power": 0.008178177484214524,
-          "max_amplitude": 0.02627235773768283,
-          "max_phase_deg": 4.721623412004793,
-          "worst_point": 0,
-          "worst_channel": "T(0, 0) p to p"
-        },
         {
           "solvers": [
             "meent",
@@ -14716,22 +14236,6 @@
           "max_phase_deg": 4.62756647222428,
           "worst_point": 0,
           "worst_channel": "T(2, 0) p to p"
-        },
-        {
-          "solvers": [
-            "torcwa",
-            "grcwa"
-          ],
-          "points": 4,
-          "status": "INCONCLUSIVE",
-          "max_R": 4.548444954011188e-14,
-          "max_T": 7.105427357601002e-15,
-          "max_A": 4.5630166312093934e-14,
-          "max_order_power": 2.4227148065492088e-14,
-          "max_amplitude": 9.828362196997683e-14,
-          "max_phase_deg": 3.1034224577606926e-11,
-          "worst_point": 0,
-          "worst_channel": "R(0, 0) s to s"
         },
         {
           "solvers": [
@@ -17835,42 +17339,10 @@
         "status": "INCONCLUSIVE",
         "coverage": "4/4",
         "physics_failed": false,
-        "max_power": 0.1163927111004871,
-        "max_amplitude": 0.14683013444795795
+        "max_power": 0.05877315685167417,
+        "max_amplitude": 0.07397572954565118
       },
       "pairs": [
-        {
-          "solvers": [
-            "meent",
-            "torcwa"
-          ],
-          "points": 5,
-          "status": "INCONCLUSIVE",
-          "max_R": 0.1163927111004871,
-          "max_T": 0.11639271110048582,
-          "max_A": 3.774758283725532e-15,
-          "max_order_power": 0.1163927111004871,
-          "max_amplitude": 0.14683013444795795,
-          "max_phase_deg": 9.658618610541323,
-          "worst_point": 0,
-          "worst_channel": "R(0, 0) p to p"
-        },
-        {
-          "solvers": [
-            "meent",
-            "grcwa"
-          ],
-          "points": 5,
-          "status": "INCONCLUSIVE",
-          "max_R": 0.11639271110047689,
-          "max_T": 0.11639271110047605,
-          "max_A": 1.7541523789077473e-14,
-          "max_order_power": 0.11639271110047689,
-          "max_amplitude": 0.14683013444794069,
-          "max_phase_deg": 9.658618610540936,
-          "worst_point": 0,
-          "worst_channel": "R(0, 0) p to p"
-        },
         {
           "solvers": [
             "meent",
@@ -17886,22 +17358,6 @@
           "max_phase_deg": 4.877954915204477,
           "worst_point": 0,
           "worst_channel": "R(0, 0) p to p"
-        },
-        {
-          "solvers": [
-            "torcwa",
-            "grcwa"
-          ],
-          "points": 5,
-          "status": "INCONCLUSIVE",
-          "max_R": 1.928457393773897e-13,
-          "max_T": 1.7849610678410954e-13,
-          "max_A": 1.4210854715202004e-14,
-          "max_order_power": 1.928457393773897e-13,
-          "max_amplitude": 1.9736150421671022e-13,
-          "max_phase_deg": 6.330101670164696e-12,
-          "worst_point": 4,
-          "worst_channel": "T(0, 0) p to p"
         },
         {
           "solvers": [
@@ -20076,42 +19532,10 @@
         "status": "INCONCLUSIVE",
         "coverage": "4/4",
         "physics_failed": false,
-        "max_power": 0.00628306445297816,
+        "max_power": 0.0032572269504421714,
         "max_amplitude": 0.017669619194273654
       },
       "pairs": [
-        {
-          "solvers": [
-            "meent",
-            "torcwa"
-          ],
-          "points": 5,
-          "status": "INCONCLUSIVE",
-          "max_R": 0.0038696675777776107,
-          "max_T": 0.0038696675777761813,
-          "max_A": 3.097522238704187e-14,
-          "max_order_power": 0.006283064452973941,
-          "max_amplitude": 0.015756634555450167,
-          "max_phase_deg": 7.703571317562189,
-          "worst_point": 0,
-          "worst_channel": "T(-2, 0) p to p"
-        },
-        {
-          "solvers": [
-            "meent",
-            "grcwa"
-          ],
-          "points": 5,
-          "status": "INCONCLUSIVE",
-          "max_R": 0.0038696675777778744,
-          "max_T": 0.0038696675777785128,
-          "max_A": 2.453592884421596e-14,
-          "max_order_power": 0.00628306445297816,
-          "max_amplitude": 0.01575663455544958,
-          "max_phase_deg": 7.703571317567639,
-          "worst_point": 0,
-          "worst_channel": "T(-2, 0) p to p"
-        },
         {
           "solvers": [
             "meent",
@@ -20127,22 +19551,6 @@
           "max_phase_deg": 4.4356214497629045,
           "worst_point": 1,
           "worst_channel": "T(1, 0) s to s"
-        },
-        {
-          "solvers": [
-            "torcwa",
-            "grcwa"
-          ],
-          "points": 5,
-          "status": "INCONCLUSIVE",
-          "max_R": 1.1962653090336062e-14,
-          "max_T": 4.418687638008123e-14,
-          "max_A": 5.551115123125783e-14,
-          "max_order_power": 4.181377466494496e-14,
-          "max_amplitude": 1.3011500351287402e-13,
-          "max_phase_deg": 4.686360369811281e-11,
-          "worst_point": 4,
-          "worst_channel": "T(-1, 0) s to p"
         },
         {
           "solvers": [
@@ -23543,42 +22951,10 @@
         "status": "INCONCLUSIVE",
         "coverage": "4/4",
         "physics_failed": false,
-        "max_power": 0.005788549999113657,
+        "max_power": 0.004004457345572088,
         "max_amplitude": 0.018781730128276105
       },
       "pairs": [
-        {
-          "solvers": [
-            "meent",
-            "torcwa"
-          ],
-          "points": 4,
-          "status": "INCONCLUSIVE",
-          "max_R": 0.00030573700332616263,
-          "max_T": 0.0003057370033308082,
-          "max_A": 7.027711745877241e-14,
-          "max_order_power": 0.005788549999112824,
-          "max_amplitude": 0.015224743485392805,
-          "max_phase_deg": 4.897075980827923,
-          "worst_point": 0,
-          "worst_channel": "T(0, 0) p to p"
-        },
-        {
-          "solvers": [
-            "meent",
-            "grcwa"
-          ],
-          "points": 4,
-          "status": "INCONCLUSIVE",
-          "max_R": 0.00030573700332429954,
-          "max_T": 0.00030573700332847675,
-          "max_A": 6.816769371198461e-14,
-          "max_order_power": 0.005788549999113657,
-          "max_amplitude": 0.015224743485391606,
-          "max_phase_deg": 4.897075980828159,
-          "worst_point": 0,
-          "worst_channel": "T(0, 0) p to p"
-        },
         {
           "solvers": [
             "meent",
@@ -23594,22 +22970,6 @@
           "max_phase_deg": 5.075509242813187,
           "worst_point": 0,
           "worst_channel": "T(1, 0) p to p"
-        },
-        {
-          "solvers": [
-            "torcwa",
-            "grcwa"
-          ],
-          "points": 4,
-          "status": "INCONCLUSIVE",
-          "max_R": 8.433358178461248e-15,
-          "max_T": 1.0103029524088925e-14,
-          "max_A": 8.659739592076221e-15,
-          "max_order_power": 8.433358178461248e-15,
-          "max_amplitude": 6.251916760778825e-14,
-          "max_phase_deg": 2.3596924084029662e-11,
-          "worst_point": 2,
-          "worst_channel": "R(0, 0) s to s"
         },
         {
           "solvers": [
@@ -26701,42 +26061,10 @@
         "status": "INCONCLUSIVE",
         "coverage": "4/4",
         "physics_failed": false,
-        "max_power": 0.26763445939084995,
-        "max_amplitude": 0.20273084046995343
+        "max_power": 0.24849592930080855,
+        "max_amplitude": 0.17967334870280677
       },
       "pairs": [
-        {
-          "solvers": [
-            "meent",
-            "torcwa"
-          ],
-          "points": 3,
-          "status": "INCONCLUSIVE",
-          "max_R": 0.11554644235524505,
-          "max_T": 0.26763445939084995,
-          "max_A": 0.15208801703560493,
-          "max_order_power": 0.26763445939084995,
-          "max_amplitude": 0.20273084046995343,
-          "max_phase_deg": 8.671203038306272,
-          "worst_point": 0,
-          "worst_channel": "T(0, 0) p to p"
-        },
-        {
-          "solvers": [
-            "meent",
-            "grcwa"
-          ],
-          "points": 3,
-          "status": "INCONCLUSIVE",
-          "max_R": 0.11554644235497002,
-          "max_T": 0.2676344593904515,
-          "max_A": 0.15208801703548147,
-          "max_order_power": 0.2676344593904515,
-          "max_amplitude": 0.2027308404695786,
-          "max_phase_deg": 8.671203038286066,
-          "worst_point": 0,
-          "worst_channel": "T(0, 0) p to p"
-        },
         {
           "solvers": [
             "meent",
@@ -26751,22 +26079,6 @@
           "max_amplitude": 0.02806031947979277,
           "max_phase_deg": 1.6135864762988301,
           "worst_point": 0,
-          "worst_channel": "T(0, 0) p to p"
-        },
-        {
-          "solvers": [
-            "torcwa",
-            "grcwa"
-          ],
-          "points": 3,
-          "status": "INCONCLUSIVE",
-          "max_R": 2.750299987752669e-13,
-          "max_T": 3.984590435379687e-13,
-          "max_A": 1.234568003383174e-13,
-          "max_order_power": 3.984590435379687e-13,
-          "max_amplitude": 3.893985195732617e-13,
-          "max_phase_deg": 2.565282042671497e-11,
-          "worst_point": 2,
           "worst_channel": "T(0, 0) p to p"
         },
         {
@@ -28420,38 +27732,6 @@
         {
           "solvers": [
             "meent",
-            "torcwa"
-          ],
-          "points": 7,
-          "status": "INCONCLUSIVE",
-          "max_R": 1.7434315698297456e-08,
-          "max_T": 1.743432520573407e-08,
-          "max_A": 4.196643033083092e-14,
-          "max_order_power": 9.060311083608497e-05,
-          "max_amplitude": 8.685988883369893e-05,
-          "max_phase_deg": 0.006230041542501737,
-          "worst_point": 2,
-          "worst_channel": "T(0, 0) s to s"
-        },
-        {
-          "solvers": [
-            "meent",
-            "grcwa"
-          ],
-          "points": 7,
-          "status": "INCONCLUSIVE",
-          "max_R": 1.7434314240899343e-08,
-          "max_T": 1.743431177203547e-08,
-          "max_A": 6.650235917504688e-14,
-          "max_order_power": 9.060311082803585e-05,
-          "max_amplitude": 8.685988885381111e-05,
-          "max_phase_deg": 0.006230041550449362,
-          "worst_point": 2,
-          "worst_channel": "T(0, 0) s to s"
-        },
-        {
-          "solvers": [
-            "meent",
             "lumerical"
           ],
           "points": 7,
@@ -28464,22 +27744,6 @@
           "max_phase_deg": 2.6478985581742482,
           "worst_point": 3,
           "worst_channel": "T(-1, 0) s to s"
-        },
-        {
-          "solvers": [
-            "torcwa",
-            "grcwa"
-          ],
-          "points": 7,
-          "status": "INCONCLUSIVE",
-          "max_R": 5.5152381956118796e-14,
-          "max_T": 3.064215547965432e-14,
-          "max_A": 2.808864252301646e-14,
-          "max_order_power": 7.704947790898586e-14,
-          "max_amplitude": 1.082906087130254e-11,
-          "max_phase_deg": 1.7357419744998353e-11,
-          "worst_point": 5,
-          "worst_channel": "R(-2, 0) p to p"
         },
         {
           "solvers": [
@@ -37086,41 +36350,9 @@
         "coverage": "4/4",
         "physics_failed": false,
         "max_power": 0.14145414670860612,
-        "max_amplitude": 0.11662049527820181
+        "max_amplitude": 0.10344680584743492
       },
       "pairs": [
-        {
-          "solvers": [
-            "meent",
-            "torcwa"
-          ],
-          "points": 5,
-          "status": "INCONCLUSIVE",
-          "max_R": 0.10592769015091597,
-          "max_T": 0.125857648606679,
-          "max_A": 0.03622990662775061,
-          "max_order_power": 0.10592769015091597,
-          "max_amplitude": 0.11662049527819972,
-          "max_phase_deg": 9.332735093631271,
-          "worst_point": 0,
-          "worst_channel": "T(-1, 0) p to p"
-        },
-        {
-          "solvers": [
-            "meent",
-            "grcwa"
-          ],
-          "points": 5,
-          "status": "INCONCLUSIVE",
-          "max_R": 0.10592769015091597,
-          "max_T": 0.12585764860668228,
-          "max_A": 0.03622990662775116,
-          "max_order_power": 0.10592769015091597,
-          "max_amplitude": 0.11662049527820181,
-          "max_phase_deg": 9.332735093631603,
-          "worst_point": 0,
-          "worst_channel": "T(-1, 0) p to p"
-        },
         {
           "solvers": [
             "meent",
@@ -37136,22 +36368,6 @@
           "max_phase_deg": 23.717683883141024,
           "worst_point": 3,
           "worst_channel": "T(0, 0) s to s"
-        },
-        {
-          "solvers": [
-            "torcwa",
-            "grcwa"
-          ],
-          "points": 5,
-          "status": "INCONCLUSIVE",
-          "max_R": 2.6645352591003757e-15,
-          "max_T": 3.2751579226442118e-15,
-          "max_A": 2.220446049250313e-15,
-          "max_order_power": 2.6645352591003757e-15,
-          "max_amplitude": 2.932944952876816e-15,
-          "max_phase_deg": 7.063025286194832e-13,
-          "worst_point": 0,
-          "worst_channel": "T(0, 1) s to p"
         },
         {
           "solvers": [
@@ -40548,42 +39764,10 @@
         "status": "INCONCLUSIVE",
         "coverage": "4/4",
         "physics_failed": false,
-        "max_power": 0.9906470723361956,
-        "max_amplitude": 1.0166677056404905
+        "max_power": 0.9616014706479308,
+        "max_amplitude": 0.9646038743370394
       },
       "pairs": [
-        {
-          "solvers": [
-            "meent",
-            "torcwa"
-          ],
-          "points": 5,
-          "status": "INCONCLUSIVE",
-          "max_R": 0.9906470723361956,
-          "max_T": 0.9906470723359866,
-          "max_A": 2.0905499553691698e-13,
-          "max_order_power": 0.9906470723361956,
-          "max_amplitude": 1.0166677056404905,
-          "max_phase_deg": 119.78796290938301,
-          "worst_point": 2,
-          "worst_channel": "T(0, 0) s to s"
-        },
-        {
-          "solvers": [
-            "meent",
-            "grcwa"
-          ],
-          "points": 5,
-          "status": "INCONCLUSIVE",
-          "max_R": 0.9906470723358733,
-          "max_T": 0.9906470723361845,
-          "max_A": 4.6118664442929e-13,
-          "max_order_power": 0.9906470723361845,
-          "max_amplitude": 1.016667705640466,
-          "max_phase_deg": 119.7879629094771,
-          "worst_point": 2,
-          "worst_channel": "T(0, 0) s to s"
-        },
         {
           "solvers": [
             "meent",
@@ -40599,22 +39783,6 @@
           "max_phase_deg": 115.03445384749475,
           "worst_point": 3,
           "worst_channel": "R(0, 0) p to p"
-        },
-        {
-          "solvers": [
-            "torcwa",
-            "grcwa"
-          ],
-          "points": 5,
-          "status": "INCONCLUSIVE",
-          "max_R": 3.223003461338969e-13,
-          "max_T": 3.018141292443488e-13,
-          "max_A": 5.203615316418109e-13,
-          "max_order_power": 3.223003461338969e-13,
-          "max_amplitude": 1.863436309461383e-12,
-          "max_phase_deg": 1.0702616212224605e-10,
-          "worst_point": 1,
-          "worst_channel": "T(0, 0) s to s"
         },
         {
           "solvers": [
@@ -42794,42 +41962,10 @@
         "status": "INCONCLUSIVE",
         "coverage": "4/4",
         "physics_failed": false,
-        "max_power": 0.01880048678886126,
-        "max_amplitude": 0.26590402757287357
+        "max_power": 0.012431569362105988,
+        "max_amplitude": 0.14025064127364714
       },
       "pairs": [
-        {
-          "solvers": [
-            "meent",
-            "torcwa"
-          ],
-          "points": 5,
-          "status": "INCONCLUSIVE",
-          "max_R": 0.01880048678885643,
-          "max_T": 0.01880048678886126,
-          "max_A": 2.19824158875781e-14,
-          "max_order_power": 0.01880048678886126,
-          "max_amplitude": 0.265904027572706,
-          "max_phase_deg": 15.414354843084178,
-          "worst_point": 2,
-          "worst_channel": "T(0, 0) s to s"
-        },
-        {
-          "solvers": [
-            "meent",
-            "grcwa"
-          ],
-          "points": 5,
-          "status": "INCONCLUSIVE",
-          "max_R": 0.018800486788859386,
-          "max_T": 0.018800486788857818,
-          "max_A": 4.574118861455645e-14,
-          "max_order_power": 0.018800486788859386,
-          "max_amplitude": 0.26590402757287357,
-          "max_phase_deg": 15.414354843093939,
-          "worst_point": 2,
-          "worst_channel": "T(0, 0) s to s"
-        },
         {
           "solvers": [
             "meent",
@@ -42843,22 +41979,6 @@
           "max_order_power": 0.012431569362105988,
           "max_amplitude": 0.12682442521488654,
           "max_phase_deg": 7.5878592928012765,
-          "worst_point": 3,
-          "worst_channel": "T(0, 0) s to s"
-        },
-        {
-          "solvers": [
-            "torcwa",
-            "grcwa"
-          ],
-          "points": 5,
-          "status": "INCONCLUSIVE",
-          "max_R": 3.047562202596055e-14,
-          "max_T": 3.419486915845482e-14,
-          "max_A": 3.8746783559417963e-14,
-          "max_order_power": 3.419486915845482e-14,
-          "max_amplitude": 1.8840389864751693e-13,
-          "max_phase_deg": 1.1355260087438775e-11,
           "worst_point": 3,
           "worst_channel": "T(0, 0) s to s"
         },
@@ -45040,42 +44160,10 @@
         "status": "INCONCLUSIVE",
         "coverage": "4/4",
         "physics_failed": false,
-        "max_power": 0.14842744109868378,
+        "max_power": 0.08129763982823535,
         "max_amplitude": 0.4679824254784732
       },
       "pairs": [
-        {
-          "solvers": [
-            "meent",
-            "torcwa"
-          ],
-          "points": 5,
-          "status": "INCONCLUSIVE",
-          "max_R": 0.14842744109796252,
-          "max_T": 0.1484274410975821,
-          "max_A": 4.1733283495659634e-13,
-          "max_order_power": 0.14842744109796252,
-          "max_amplitude": 0.34506570287905547,
-          "max_phase_deg": 33.627536716785954,
-          "worst_point": 2,
-          "worst_channel": "T(0, 0) p to s"
-        },
-        {
-          "solvers": [
-            "meent",
-            "grcwa"
-          ],
-          "points": 5,
-          "status": "INCONCLUSIVE",
-          "max_R": 0.14842744109868378,
-          "max_T": 0.14842744109863126,
-          "max_A": 7.66053886991358e-14,
-          "max_order_power": 0.14842744109868378,
-          "max_amplitude": 0.34506570287993227,
-          "max_phase_deg": 33.62753671681253,
-          "worst_point": 2,
-          "worst_channel": "T(0, 0) p to s"
-        },
         {
           "solvers": [
             "meent",
@@ -45091,22 +44179,6 @@
           "max_phase_deg": 119.76046361361132,
           "worst_point": 2,
           "worst_channel": "R(0, 0) s to s"
-        },
-        {
-          "solvers": [
-            "torcwa",
-            "grcwa"
-          ],
-          "points": 5,
-          "status": "INCONCLUSIVE",
-          "max_R": 9.953149415764528e-13,
-          "max_T": 1.049160758270773e-12,
-          "max_A": 3.4072744625746054e-13,
-          "max_order_power": 1.049160758270773e-12,
-          "max_amplitude": 9.584218170618454e-13,
-          "max_phase_deg": 1.9067514653403288e-10,
-          "worst_point": 2,
-          "worst_channel": "T(0, 0) p to s"
         },
         {
           "solvers": [
@@ -47652,42 +46724,10 @@
         "status": "INCONCLUSIVE",
         "coverage": "4/4",
         "physics_failed": false,
-        "max_power": 0.020824229276452836,
-        "max_amplitude": 0.12332615933445343
+        "max_power": 0.014036444316736438,
+        "max_amplitude": 0.07240354446624564
       },
       "pairs": [
-        {
-          "solvers": [
-            "meent",
-            "torcwa"
-          ],
-          "points": 12,
-          "status": "INCONCLUSIVE",
-          "max_R": 0.020824229276452836,
-          "max_T": 0.02082422927644556,
-          "max_A": 1.0658141036401503e-14,
-          "max_order_power": 0.020824229276452836,
-          "max_amplitude": 0.12332615933445343,
-          "max_phase_deg": 9.890058087867056,
-          "worst_point": 8,
-          "worst_channel": "T(0, 0) s to s"
-        },
-        {
-          "solvers": [
-            "meent",
-            "grcwa"
-          ],
-          "points": 12,
-          "status": "INCONCLUSIVE",
-          "max_R": 0.0208242292764404,
-          "max_T": 0.020824229276436457,
-          "max_A": 4.907185768843192e-14,
-          "max_order_power": 0.0208242292764404,
-          "max_amplitude": 0.12332615933437792,
-          "max_phase_deg": 9.89005808789252,
-          "worst_point": 8,
-          "worst_channel": "T(0, 0) s to s"
-        },
         {
           "solvers": [
             "meent",
@@ -47703,22 +46743,6 @@
           "max_phase_deg": 5.711541370281985,
           "worst_point": 8,
           "worst_channel": "T(0, 0) s to s"
-        },
-        {
-          "solvers": [
-            "torcwa",
-            "grcwa"
-          ],
-          "points": 12,
-          "status": "INCONCLUSIVE",
-          "max_R": 6.392456008974534e-14,
-          "max_T": 1.84297022087776e-14,
-          "max_A": 4.551914400963142e-14,
-          "max_order_power": 6.392456008974534e-14,
-          "max_amplitude": 5.223062807811844e-13,
-          "max_phase_deg": 2.4378502503637223e-10,
-          "worst_point": 11,
-          "worst_channel": "R(0, 0) s to s"
         },
         {
           "solvers": [
@@ -52793,41 +51817,9 @@
         "coverage": "4/4",
         "physics_failed": false,
         "max_power": 0.66433889971321,
-        "max_amplitude": 1.2088839745698188
+        "max_amplitude": 1.1094144854226868
       },
       "pairs": [
-        {
-          "solvers": [
-            "meent",
-            "torcwa"
-          ],
-          "points": 4,
-          "status": "INCONCLUSIVE",
-          "max_R": 0.203631176204246,
-          "max_T": 0.20363117620425542,
-          "max_A": 8.393286066166183e-14,
-          "max_order_power": 0.5365130983222742,
-          "max_amplitude": 1.2088839745698152,
-          "max_phase_deg": 170.2215897244539,
-          "worst_point": 0,
-          "worst_channel": "T(1, 0) p to p"
-        },
-        {
-          "solvers": [
-            "meent",
-            "grcwa"
-          ],
-          "points": 4,
-          "status": "INCONCLUSIVE",
-          "max_R": 0.20363117620407922,
-          "max_T": 0.20363117620411575,
-          "max_A": 1.4477308241112041e-13,
-          "max_order_power": 0.5365130983222731,
-          "max_amplitude": 1.2088839745698188,
-          "max_phase_deg": 170.2215897244564,
-          "worst_point": 0,
-          "worst_channel": "T(1, 0) p to p"
-        },
         {
           "solvers": [
             "meent",
@@ -52843,22 +51835,6 @@
           "max_phase_deg": 178.7963016274977,
           "worst_point": 1,
           "worst_channel": "T(1, 0) p to p"
-        },
-        {
-          "solvers": [
-            "torcwa",
-            "grcwa"
-          ],
-          "points": 4,
-          "status": "INCONCLUSIVE",
-          "max_R": 1.6678325387431414e-13,
-          "max_T": 1.396660564978447e-13,
-          "max_A": 6.084022174945858e-14,
-          "max_order_power": 3.0539459849876494e-13,
-          "max_amplitude": 4.809040125470338e-13,
-          "max_phase_deg": 1.2481761448567875e-10,
-          "worst_point": 2,
-          "worst_channel": "T(2, 0) s to s"
         },
         {
           "solvers": [
@@ -63391,6 +62367,1235 @@
           "matched_orders": true
         }
       }
-    ]
-  }
+    ],
+    "meent_against_lumerical": {
+      "software": {
+        "Python": "3.11.8",
+        "rcwa-cross-validation": "0.2.0",
+        "numpy": "2.4.6",
+        "scipy": "1.17.1",
+        "matplotlib": "3.10.8",
+        "PyYAML": "6.0.3",
+        "threadpoolctl": "3.8.0",
+        "meent": "0.13.2",
+        "grcwa": "0.1.2",
+        "torcwa": "0.1.4.2",
+        "torch": "2.8.0+cu128",
+        "jupyterlab": "4.6.6",
+        "ipykernel": "7.4.0",
+        "torcwa device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+        "PyTorch CUDA runtime": "12.8",
+        "Lumerical RCWA": "v252 / build 8.34.4175"
+      },
+      "published_reference": "v252 / build 8.34.4175",
+      "point_selection": "Largest published Meent\u2013Lumerical complex-amplitude difference in each periodic case.",
+      "cases": [
+        {
+          "case": "B01",
+          "point_index": 0,
+          "point": {
+            "variant": "nominal",
+            "wavelength_nm": 620.0,
+            "theta_deg": 0,
+            "phi_deg": 0
+          },
+          "settings": {
+            "order": 8,
+            "grid": 128,
+            "slices": 1
+          },
+          "replay_difference": {
+            "power": 0.0,
+            "amplitude": 0.0,
+            "phase_deg": 1.81272355599694e-15,
+            "matched_orders": true
+          },
+          "lumerical_published": {
+            "native": {
+              "power": 0.0037029772072623146,
+              "amplitude": 0.021809337671157145,
+              "phase_deg": 4.62756647222428,
+              "matched_orders": true
+            },
+            "direct-cfs": {
+              "power": 0.004638093466459506,
+              "amplitude": 0.02079696900673823,
+              "phase_deg": 4.338567675280143,
+              "matched_orders": true
+            },
+            "direct-dfs": {
+              "power": 0.004475200276949198,
+              "amplitude": 0.0206696501069151,
+              "phase_deg": 4.312936300585752,
+              "matched_orders": true
+            }
+          },
+          "operator_effect": {
+            "direct-cfs": {
+              "power": 0.00834107067372182,
+              "amplitude": 0.026550616471053834,
+              "phase_deg": 4.742319874849582,
+              "matched_orders": true
+            },
+            "direct-dfs": {
+              "power": 0.008178177484211513,
+              "amplitude": 0.026272357737681804,
+              "phase_deg": 4.721623412005623,
+              "matched_orders": true
+            }
+          },
+          "matched_lumerical": {
+            "native_bounds": [
+              8,
+              1
+            ],
+            "native_orders": 51,
+            "basis_effect": {
+              "power": 0.004475200276948144,
+              "amplitude": 0.013350275234353946,
+              "phase_deg": 2.265357846068618,
+              "matched_orders": true
+            },
+            "meent": {
+              "native": {
+                "power": 0.008178177484210458,
+                "amplitude": 0.030886148330682046,
+                "phase_deg": 6.458885125751339,
+                "matched_orders": true
+              },
+              "direct-cfs": {
+                "power": 0.00016289318951136222,
+                "amplitude": 0.01754436376675195,
+                "phase_deg": 2.8616561485948724,
+                "matched_orders": true
+              },
+              "direct-dfs": {
+                "power": 8.659739592076221e-15,
+                "amplitude": 0.01724329781498072,
+                "phase_deg": 2.8125000000019265,
+                "matched_orders": true
+              }
+            },
+            "grcwa": {
+              "power": 4.381217610927024e-14,
+              "amplitude": 0.017243297814979065,
+              "phase_deg": 2.812500000001658,
+              "matched_orders": true
+            },
+            "torcwa": {
+              "power": 8.382183835919932e-15,
+              "amplitude": 0.017243297814981663,
+              "phase_deg": 2.812500000002081,
+              "matched_orders": true
+            }
+          }
+        },
+        {
+          "case": "B02",
+          "point_index": 0,
+          "point": {
+            "variant": "nominal",
+            "wavelength_nm": 1200.0,
+            "theta_deg": 0,
+            "phi_deg": 0
+          },
+          "settings": {
+            "order": 8,
+            "grid": 128,
+            "slices": 1
+          },
+          "replay_difference": {
+            "power": 0.0,
+            "amplitude": 0.0,
+            "phase_deg": 7.050554529837555e-16,
+            "matched_orders": true
+          },
+          "lumerical_published": {
+            "native": {
+              "power": 0.05877315685167417,
+              "amplitude": 0.07312130817344209,
+              "phase_deg": 4.877954915204477,
+              "matched_orders": true
+            },
+            "direct-cfs": {
+              "power": 0.059263042226352924,
+              "amplitude": 0.07619984332385905,
+              "phase_deg": 4.91681375905018,
+              "matched_orders": true
+            },
+            "direct-dfs": {
+              "power": 0.057619554248859894,
+              "amplitude": 0.07397572954565317,
+              "phase_deg": 4.780663695337312,
+              "matched_orders": true
+            }
+          },
+          "operator_effect": {
+            "direct-cfs": {
+              "power": 0.1180361990779798,
+              "amplitude": 0.1490398837426047,
+              "phase_deg": 9.794768674254657,
+              "matched_orders": true
+            },
+            "direct-dfs": {
+              "power": 0.11639271110048677,
+              "amplitude": 0.14683013444795984,
+              "phase_deg": 9.65861861054179,
+              "matched_orders": true
+            }
+          },
+          "matched_lumerical": {
+            "native_bounds": [
+              8,
+              1
+            ],
+            "native_orders": 51,
+            "basis_effect": {
+              "power": 0.05761955424871468,
+              "amplitude": 0.07397572954543144,
+              "phase_deg": 4.780663695324113,
+              "matched_orders": true
+            },
+            "meent": {
+              "native": {
+                "power": 0.11639271110036375,
+                "amplitude": 0.14683013444774048,
+                "phase_deg": 9.65861861052859,
+                "matched_orders": true
+              },
+              "direct-cfs": {
+                "power": 0.0016434879776382472,
+                "amplitude": 0.0022308085468399235,
+                "phase_deg": 0.13615006372606933,
+                "matched_orders": true
+              },
+              "direct-dfs": {
+                "power": 1.4521717162097048e-13,
+                "amplitude": 2.240900968418868e-13,
+                "phase_deg": 1.4016249547879781e-11,
+                "matched_orders": true
+              }
+            },
+            "grcwa": {
+              "power": 1.3533618670180658e-13,
+              "amplitude": 2.04213342815914e-13,
+              "phase_deg": 1.273415601467698e-11,
+              "matched_orders": true
+            },
+            "torcwa": {
+              "power": 1.4555023852835802e-13,
+              "amplitude": 2.2195293882793364e-13,
+              "phase_deg": 1.3855675226631669e-11,
+              "matched_orders": true
+            }
+          }
+        },
+        {
+          "case": "B03",
+          "point_index": 1,
+          "point": {
+            "variant": "nominal",
+            "wavelength_nm": 920.0,
+            "theta_deg": 30,
+            "phi_deg": 45
+          },
+          "settings": {
+            "order": 8,
+            "grid": 128,
+            "slices": 1
+          },
+          "replay_difference": {
+            "power": 0.0,
+            "amplitude": 0.0,
+            "phase_deg": 2.24517044303766e-15,
+            "matched_orders": true
+          },
+          "lumerical_published": {
+            "native": {
+              "power": 0.0032572269504421714,
+              "amplitude": 0.017669619194273654,
+              "phase_deg": 4.4356214497629045,
+              "matched_orders": true
+            },
+            "direct-cfs": {
+              "power": 0.003158247700812411,
+              "amplitude": 0.013560083396818391,
+              "phase_deg": 3.343368438445482,
+              "matched_orders": true
+            },
+            "direct-dfs": {
+              "power": 0.0030258375025355444,
+              "amplitude": 0.013604478929248747,
+              "phase_deg": 3.355161030430264,
+              "matched_orders": true
+            }
+          },
+          "operator_effect": {
+            "direct-cfs": {
+              "power": 0.006415474651254582,
+              "amplitude": 0.01141676132899221,
+              "phase_deg": 7.691778725582306,
+              "matched_orders": true
+            },
+            "direct-dfs": {
+              "power": 0.006283064452977716,
+              "amplitude": 0.011301953692294545,
+              "phase_deg": 7.703571317570186,
+              "matched_orders": true
+            }
+          },
+          "matched_lumerical": {
+            "native_bounds": [
+              8,
+              1
+            ],
+            "native_orders": 51,
+            "basis_effect": {
+              "power": 0.0030258375026376294,
+              "amplitude": 0.005688934587868497,
+              "phase_deg": 3.8444491695333185,
+              "matched_orders": true
+            },
+            "meent": {
+              "native": {
+                "power": 0.006283064453079801,
+                "amplitude": 0.02018430366215334,
+                "phase_deg": 8.280070619296227,
+                "matched_orders": true
+              },
+              "direct-cfs": {
+                "power": 0.0001324101981747816,
+                "amplitude": 0.01605529665334887,
+                "phase_deg": 1.4292410664579234,
+                "matched_orders": true
+              },
+              "direct-dfs": {
+                "power": 1.0208500711428314e-13,
+                "amplitude": 0.01609987951648349,
+                "phase_deg": 1.4062500000186455,
+                "matched_orders": true
+              }
+            },
+            "grcwa": {
+              "power": 1.0164091790443308e-13,
+              "amplitude": 0.01609987951648217,
+              "phase_deg": 1.4062500000237066,
+              "matched_orders": true
+            },
+            "torcwa": {
+              "power": 1.0585976539800868e-13,
+              "amplitude": 0.016099879516480134,
+              "phase_deg": 1.4062500000217528,
+              "matched_orders": true
+            }
+          }
+        },
+        {
+          "case": "B04",
+          "point_index": 0,
+          "point": {
+            "variant": "nominal",
+            "wavelength_nm": 620.0,
+            "theta_deg": 0,
+            "phi_deg": 0
+          },
+          "settings": {
+            "order": 8,
+            "grid": 128,
+            "slices": 8
+          },
+          "replay_difference": {
+            "power": 0.0,
+            "amplitude": 0.0,
+            "phase_deg": 2.837168810123341e-15,
+            "matched_orders": true
+          },
+          "lumerical_published": {
+            "native": {
+              "power": 0.004004457345572088,
+              "amplitude": 0.018781730128276105,
+              "phase_deg": 5.075509242813187,
+              "matched_orders": true
+            },
+            "direct-cfs": {
+              "power": 0.0019508475627302846,
+              "amplitude": 0.0153393828339631,
+              "phase_deg": 3.756118715504028,
+              "matched_orders": true
+            },
+            "direct-dfs": {
+              "power": 0.0017840926535376278,
+              "amplitude": 0.015264513399978502,
+              "phase_deg": 3.831749689803143,
+              "matched_orders": true
+            }
+          },
+          "operator_effect": {
+            "direct-cfs": {
+              "power": 0.005955304908302372,
+              "amplitude": 0.015378517193984911,
+              "phase_deg": 4.952438328504317,
+              "matched_orders": true
+            },
+            "direct-dfs": {
+              "power": 0.005788549999109716,
+              "amplitude": 0.015224743485393624,
+              "phase_deg": 4.897075980828443,
+              "matched_orders": true
+            }
+          },
+          "matched_lumerical": {
+            "native_bounds": [
+              8,
+              1
+            ],
+            "native_orders": 51,
+            "basis_effect": {
+              "power": 0.0026318261859897274,
+              "amplitude": 0.005712862386244011,
+              "phase_deg": 1.7442869642744299,
+              "matched_orders": true
+            },
+            "meent": {
+              "native": {
+                "power": 0.006636283531561815,
+                "amplitude": 0.022087803123592476,
+                "phase_deg": 5.881789055638243,
+                "matched_orders": true
+              },
+              "direct-cfs": {
+                "power": 0.0011127101010217355,
+                "amplitude": 0.015877194267966334,
+                "phase_deg": 4.8953091853605795,
+                "matched_orders": true
+              },
+              "direct-dfs": {
+                "power": 0.0011659825128006451,
+                "amplitude": 0.01597458080745839,
+                "phase_deg": 4.970940159659693,
+                "matched_orders": true
+              }
+            },
+            "grcwa": {
+              "power": 0.0011659825127937617,
+              "amplitude": 0.015974580807460698,
+              "phase_deg": 4.970940159666149,
+              "matched_orders": true
+            },
+            "torcwa": {
+              "power": 0.0011659825127989798,
+              "amplitude": 0.015974580807461048,
+              "phase_deg": 4.9709401596665135,
+              "matched_orders": true
+            }
+          }
+        },
+        {
+          "case": "B05",
+          "point_index": 0,
+          "point": {
+            "variant": "nominal",
+            "wavelength_nm": 1200.0,
+            "theta_deg": 0,
+            "phi_deg": 0
+          },
+          "settings": {
+            "order": 8,
+            "grid": 128,
+            "slices": 1
+          },
+          "replay_difference": {
+            "power": 0.0,
+            "amplitude": 0.0,
+            "phase_deg": 8.830474177420997e-16,
+            "matched_orders": true
+          },
+          "lumerical_published": {
+            "native": {
+              "power": 0.019138530090042405,
+              "amplitude": 0.02806031947979277,
+              "phase_deg": 1.6135864762988301,
+              "matched_orders": true
+            },
+            "direct-cfs": {
+              "power": 0.2430796661425575,
+              "amplitude": 0.18179590625844155,
+              "phase_deg": 7.598971618252887,
+              "matched_orders": true
+            },
+            "direct-dfs": {
+              "power": 0.24849592930078734,
+              "amplitude": 0.17967334870280552,
+              "phase_deg": 7.307637725387812,
+              "matched_orders": true
+            }
+          },
+          "operator_effect": {
+            "direct-cfs": {
+              "power": 0.2622181962325989,
+              "amplitude": 0.20547972948080478,
+              "phase_deg": 9.212558094551712,
+              "matched_orders": true
+            },
+            "direct-dfs": {
+              "power": 0.26763445939082875,
+              "amplitude": 0.20273084046995382,
+              "phase_deg": 8.671203038307365,
+              "matched_orders": true
+            }
+          },
+          "matched_lumerical": {
+            "native_bounds": [
+              8,
+              1
+            ],
+            "native_orders": 51,
+            "basis_effect": {
+              "power": 0.24849592930081232,
+              "amplitude": 0.17967334870283,
+              "phase_deg": 7.307637725388025,
+              "matched_orders": true
+            },
+            "meent": {
+              "native": {
+                "power": 0.2676344593908545,
+                "amplitude": 0.2027308404699786,
+                "phase_deg": 8.671203038308727,
+                "matched_orders": true
+              },
+              "direct-cfs": {
+                "power": 0.010714965748069183,
+                "amplitude": 0.008123634625633957,
+                "phase_deg": 0.6787541951036853,
+                "matched_orders": true
+              },
+              "direct-dfs": {
+                "power": 2.5757174171303632e-14,
+                "amplitude": 2.481596819649299e-14,
+                "phase_deg": 1.5636310027885206e-12,
+                "matched_orders": true
+              }
+            },
+            "grcwa": {
+              "power": 4.030109579389318e-13,
+              "amplitude": 4.02069778356304e-13,
+              "phase_deg": 2.2666158188935234e-11,
+              "matched_orders": true
+            },
+            "torcwa": {
+              "power": 2.4452662117369073e-14,
+              "amplitude": 3.3347789892584255e-14,
+              "phase_deg": 2.4585591078637555e-12,
+              "matched_orders": true
+            }
+          }
+        },
+        {
+          "case": "B06",
+          "point_index": 3,
+          "point": {
+            "variant": "nominal",
+            "wavelength_nm": 633,
+            "theta_deg": 12.0,
+            "phi_deg": 0
+          },
+          "settings": {
+            "order": 8,
+            "grid": 128,
+            "slices": 1
+          },
+          "replay_difference": {
+            "power": 0.0,
+            "amplitude": 0.0,
+            "phase_deg": 2.47540234873838e-15,
+            "matched_orders": true
+          },
+          "lumerical_published": {
+            "native": {
+              "power": 7.963034997388041e-05,
+              "amplitude": 0.019552985349577043,
+              "phase_deg": 2.647807079748798,
+              "matched_orders": true
+            },
+            "direct-cfs": {
+              "power": 7.963034997388041e-05,
+              "amplitude": 0.019552985349577043,
+              "phase_deg": 2.647807079748798,
+              "matched_orders": true
+            },
+            "direct-dfs": {
+              "power": 0.00017023346076205925,
+              "amplitude": 0.019559665388829153,
+              "phase_deg": 2.647969191356323,
+              "matched_orders": true
+            }
+          },
+          "operator_effect": {
+            "direct-cfs": {
+              "power": 1.7763479065457943e-07,
+              "amplitude": 4.134801784438592e-06,
+              "phase_deg": 0.0002976396794100193,
+              "matched_orders": true
+            },
+            "direct-dfs": {
+              "power": 9.060311078817884e-05,
+              "amplitude": 8.66403968422645e-05,
+              "phase_deg": 0.00472638144266631,
+              "matched_orders": true
+            }
+          },
+          "matched_lumerical": {
+            "native_bounds": [
+              8,
+              1
+            ],
+            "native_orders": 51,
+            "basis_effect": {
+              "power": 0.00017023346110706106,
+              "amplitude": 0.0012101665985174207,
+              "phase_deg": 0.16457793998162945,
+              "matched_orders": true
+            },
+            "meent": {
+              "native": {
+                "power": 9.060311113318065e-05,
+                "amplitude": 0.020760129915195786,
+                "phase_deg": 2.8123378883680488,
+                "matched_orders": true
+              },
+              "direct-cfs": {
+                "power": 9.060311113318065e-05,
+                "amplitude": 0.020760129915195786,
+                "phase_deg": 2.8123634063042515,
+                "matched_orders": true
+              },
+              "direct-dfs": {
+                "power": 3.823608096809039e-13,
+                "amplitude": 0.020766580398318468,
+                "phase_deg": 2.8125000000167484,
+                "matched_orders": true
+              }
+            },
+            "grcwa": {
+              "power": 3.226308109560705e-13,
+              "amplitude": 0.020766580398559373,
+              "phase_deg": 2.812500000017393,
+              "matched_orders": true
+            },
+            "torcwa": {
+              "power": 3.1730174043786974e-13,
+              "amplitude": 0.02076658039850279,
+              "phase_deg": 2.812500000021981,
+              "matched_orders": true
+            }
+          }
+        },
+        {
+          "case": "C01",
+          "point_index": 3,
+          "point": {
+            "variant": "nominal",
+            "wavelength_nm": 1700.0,
+            "theta_deg": 0,
+            "phi_deg": 0
+          },
+          "settings": {
+            "order": 3,
+            "grid": 96,
+            "slices": 1
+          },
+          "replay_difference": {
+            "power": 0.0,
+            "amplitude": 0.0,
+            "phase_deg": 1.1241551196179099e-15,
+            "matched_orders": true
+          },
+          "lumerical_published": {
+            "native": {
+              "power": 0.06452858654393656,
+              "amplitude": 0.10344680584743492,
+              "phase_deg": 6.247421824297242,
+              "matched_orders": true
+            },
+            "direct-cfs": {
+              "power": 0.01025274883508951,
+              "amplitude": 0.026733202993259847,
+              "phase_deg": 1.2414992961871516,
+              "matched_orders": true
+            },
+            "direct-dfs": {
+              "power": 0.010740696450282028,
+              "amplitude": 0.02785016011905458,
+              "phase_deg": 1.1521925363411947,
+              "matched_orders": true
+            }
+          },
+          "operator_effect": {
+            "direct-cfs": {
+              "power": 0.062084420627976034,
+              "amplitude": 0.08891130260874275,
+              "phase_deg": 7.488921120483608,
+              "matched_orders": true
+            },
+            "direct-dfs": {
+              "power": 0.06133439367047633,
+              "amplitude": 0.09000961996968539,
+              "phase_deg": 7.3996143606374325,
+              "matched_orders": true
+            }
+          },
+          "matched_lumerical": {
+            "native_bounds": [
+              3,
+              3
+            ],
+            "native_orders": 49,
+            "basis_effect": {
+              "power": 0.01074069645028397,
+              "amplitude": 0.027850160119054505,
+              "phase_deg": 1.1521925363397658,
+              "matched_orders": true
+            },
+            "meent": {
+              "native": {
+                "power": 0.061334393670469445,
+                "amplitude": 0.09000961996968514,
+                "phase_deg": 7.3996143606363045,
+                "matched_orders": true
+              },
+              "direct-cfs": {
+                "power": 0.00075002695750781,
+                "amplitude": 0.0012171515142927758,
+                "phase_deg": 0.08930675984738402,
+                "matched_orders": true
+              },
+              "direct-dfs": {
+                "power": 8.104628079763643e-15,
+                "amplitude": 6.903052155098262e-15,
+                "phase_deg": 1.430223574617253e-12,
+                "matched_orders": true
+              }
+            },
+            "grcwa": {
+              "power": 7.105427357601002e-15,
+              "amplitude": 6.114295653343033e-15,
+              "phase_deg": 1.191029430629932e-12,
+              "matched_orders": true
+            },
+            "torcwa": {
+              "power": 8.770761894538737e-15,
+              "amplitude": 6.85129953720907e-15,
+              "phase_deg": 1.426639541147643e-12,
+              "matched_orders": true
+            }
+          }
+        },
+        {
+          "case": "C02",
+          "point_index": 3,
+          "point": {
+            "variant": "nominal",
+            "wavelength_nm": 1845.0184501845017,
+            "theta_deg": 0,
+            "phi_deg": 0,
+            "normalized_frequency": 0.542
+          },
+          "settings": {
+            "order": 3,
+            "grid": 96,
+            "slices": 1
+          },
+          "replay_difference": {
+            "power": 0.0,
+            "amplitude": 0.0,
+            "phase_deg": 2.4888607880027176e-15,
+            "matched_orders": true
+          },
+          "lumerical_published": {
+            "native": {
+              "power": 0.9616014706479308,
+              "amplitude": 0.9646038743370394,
+              "phase_deg": 74.01761184821075,
+              "matched_orders": true
+            },
+            "direct-cfs": {
+              "power": 0.029972851968690963,
+              "amplitude": 0.12908862075262886,
+              "phase_deg": 7.426428775658566,
+              "matched_orders": true
+            },
+            "direct-dfs": {
+              "power": 0.030459982146962453,
+              "amplitude": 0.1298375255740923,
+              "phase_deg": 7.46941513145952,
+              "matched_orders": true
+            }
+          },
+          "operator_effect": {
+            "direct-cfs": {
+              "power": 0.9316286186794165,
+              "amplitude": 0.9237050289609197,
+              "phase_deg": 66.59118307255267,
+              "matched_orders": true
+            },
+            "direct-dfs": {
+              "power": 0.931141488501162,
+              "amplitude": 0.9233045051541083,
+              "phase_deg": 66.54819671675185,
+              "matched_orders": true
+            }
+          },
+          "matched_lumerical": {
+            "native_bounds": [
+              3,
+              3
+            ],
+            "native_orders": 49,
+            "basis_effect": {
+              "power": 0.04505467523390361,
+              "amplitude": 0.16879302964169132,
+              "phase_deg": 9.731227366427444,
+              "matched_orders": true
+            },
+            "meent": {
+              "native": {
+                "power": 0.9165467954142797,
+                "amplitude": 0.9087543175723316,
+                "phase_deg": 64.2863844817833,
+                "matched_orders": true
+              },
+              "direct-cfs": {
+                "power": 0.01508182326524965,
+                "amplitude": 0.04010045938698606,
+                "phase_deg": 2.304798590775109,
+                "matched_orders": true
+              },
+              "direct-dfs": {
+                "power": 0.014594693086973143,
+                "amplitude": 0.03932795513075842,
+                "phase_deg": 2.261812234974293,
+                "matched_orders": true
+              }
+            },
+            "grcwa": {
+              "power": 0.0145946930869989,
+              "amplitude": 0.03932795513085392,
+              "phase_deg": 2.2618122349783554,
+              "matched_orders": true
+            },
+            "torcwa": {
+              "power": 0.01459469308695438,
+              "amplitude": 0.03932795513077552,
+              "phase_deg": 2.2618122349710936,
+              "matched_orders": true
+            }
+          }
+        },
+        {
+          "case": "C03",
+          "point_index": 3,
+          "point": {
+            "variant": "nominal",
+            "wavelength_nm": 633,
+            "theta_deg": 0,
+            "phi_deg": 0,
+            "radius_nm": 110.0
+          },
+          "settings": {
+            "order": 3,
+            "grid": 96,
+            "slices": 1
+          },
+          "replay_difference": {
+            "power": 0.0,
+            "amplitude": 0.0,
+            "phase_deg": 9.324133570705513e-16,
+            "matched_orders": true
+          },
+          "lumerical_published": {
+            "native": {
+              "power": 0.012431569362105988,
+              "amplitude": 0.12682442521488654,
+              "phase_deg": 7.5878592928012765,
+              "matched_orders": true
+            },
+            "direct-cfs": {
+              "power": 0.006368526034545713,
+              "amplitude": 0.09163820692215781,
+              "phase_deg": 5.512644122489419,
+              "matched_orders": true
+            },
+            "direct-dfs": {
+              "power": 0.006368917426771731,
+              "amplitude": 0.09124699372601637,
+              "phase_deg": 5.489060671555863,
+              "matched_orders": true
+            }
+          },
+          "operator_effect": {
+            "direct-cfs": {
+              "power": 0.018800095396624097,
+              "amplitude": 0.2181984771791882,
+              "phase_deg": 13.100503415290696,
+              "matched_orders": true
+            },
+            "direct-dfs": {
+              "power": 0.01880048678885049,
+              "amplitude": 0.2178081672956687,
+              "phase_deg": 13.076919964356513,
+              "matched_orders": true
+            }
+          },
+          "matched_lumerical": {
+            "native_bounds": [
+              3,
+              3
+            ],
+            "native_orders": 49,
+            "basis_effect": {
+              "power": 0.00565206113500423,
+              "amplitude": 0.08461425167572627,
+              "phase_deg": 5.0890676412662605,
+              "matched_orders": true
+            },
+            "meent": {
+              "native": {
+                "power": 0.0180836304970875,
+                "amplitude": 0.21121186000068592,
+                "phase_deg": 12.676926934066431,
+                "matched_orders": true
+              },
+              "direct-cfs": {
+                "power": 0.0007164648995442446,
+                "amplitude": 0.007038373482921908,
+                "phase_deg": 0.4235764812242647,
+                "matched_orders": true
+              },
+              "direct-dfs": {
+                "power": 0.0007168562917726495,
+                "amplitude": 0.006647667027258069,
+                "phase_deg": 0.39999303029008615,
+                "matched_orders": true
+              }
+            },
+            "grcwa": {
+              "power": 0.0007168562917767712,
+              "amplitude": 0.006647667027260538,
+              "phase_deg": 0.3999930302902247,
+              "matched_orders": true
+            },
+            "torcwa": {
+              "power": 0.0007168562917778676,
+              "amplitude": 0.006647667027331295,
+              "phase_deg": 0.39999303029448036,
+              "matched_orders": true
+            }
+          }
+        },
+        {
+          "case": "C04",
+          "point_index": 2,
+          "point": {
+            "variant": "nominal",
+            "wavelength_nm": 633,
+            "theta_deg": 0,
+            "phi_deg": 0,
+            "rotation_deg": 45.0
+          },
+          "settings": {
+            "order": 3,
+            "grid": 96,
+            "slices": 1
+          },
+          "replay_difference": {
+            "power": 0.0,
+            "amplitude": 0.0,
+            "phase_deg": 1.2002323919859032e-15,
+            "matched_orders": true
+          },
+          "lumerical_published": {
+            "native": {
+              "power": 0.06712980127061209,
+              "amplitude": 0.37415602515947083,
+              "phase_deg": 119.76046361361132,
+              "matched_orders": true
+            },
+            "direct-cfs": {
+              "power": 0.05692537348993096,
+              "amplitude": 0.45622433564351794,
+              "phase_deg": 97.33867824711164,
+              "matched_orders": true
+            },
+            "direct-dfs": {
+              "power": 0.08129763982707061,
+              "amplitude": 0.4679824254778576,
+              "phase_deg": 94.99191278544198,
+              "matched_orders": true
+            }
+          },
+          "operator_effect": {
+            "direct-cfs": {
+              "power": 0.12405517476041626,
+              "amplitude": 0.3245573224914765,
+              "phase_deg": 22.421785366499677,
+              "matched_orders": true
+            },
+            "direct-dfs": {
+              "power": 0.14842744109756612,
+              "amplitude": 0.3450657028788981,
+              "phase_deg": 24.76855082816953,
+              "matched_orders": true
+            }
+          },
+          "matched_lumerical": {
+            "native_bounds": [
+              3,
+              3
+            ],
+            "native_orders": 49,
+            "basis_effect": {
+              "power": 0.00954816571416367,
+              "amplitude": 0.07355146844485473,
+              "phase_deg": 5.868207930482498,
+              "matched_orders": true
+            },
+            "meent": {
+              "native": {
+                "power": 0.05758163555647422,
+                "amplitude": 0.36660128473549275,
+                "phase_deg": 120.50947243259783,
+                "matched_orders": true
+              },
+              "direct-cfs": {
+                "power": 0.06647353920397145,
+                "amplitude": 0.4303755837326193,
+                "phase_deg": 98.08768706610002,
+                "matched_orders": true
+              },
+              "direct-dfs": {
+                "power": 0.09084580554111898,
+                "amplitude": 0.443579001618533,
+                "phase_deg": 95.74092160442831,
+                "matched_orders": true
+              }
+            },
+            "grcwa": {
+              "power": 0.09084580554228372,
+              "amplitude": 0.4435790016191378,
+              "phase_deg": 95.74092160431213,
+              "matched_orders": true
+            },
+            "torcwa": {
+              "power": 0.09084580554162913,
+              "amplitude": 0.4435790016189055,
+              "phase_deg": 95.74092160441471,
+              "matched_orders": true
+            }
+          }
+        },
+        {
+          "case": "C05",
+          "point_index": 8,
+          "point": {
+            "variant": "half_shift",
+            "wavelength_nm": 1200.0,
+            "theta_deg": 0,
+            "phi_deg": 0,
+            "shift_nm": 350
+          },
+          "settings": {
+            "order": 3,
+            "grid": 96,
+            "slices": 1
+          },
+          "replay_difference": {
+            "power": 0.0,
+            "amplitude": 0.0,
+            "phase_deg": 5.336432849178419e-16,
+            "matched_orders": true
+          },
+          "lumerical_published": {
+            "native": {
+              "power": 0.0067877849597467455,
+              "amplitude": 0.053031051644095974,
+              "phase_deg": 4.614456247189429,
+              "matched_orders": true
+            },
+            "direct-cfs": {
+              "power": 0.01411832992440732,
+              "amplitude": 0.07077688713869491,
+              "phase_deg": 7.884754215860555,
+              "matched_orders": true
+            },
+            "direct-dfs": {
+              "power": 0.014036444316733773,
+              "amplitude": 0.07044388016182573,
+              "phase_deg": 7.8666852873078374,
+              "matched_orders": true
+            }
+          },
+          "operator_effect": {
+            "direct-cfs": {
+              "power": 0.020906114884129412,
+              "amplitude": 0.12365801386372073,
+              "phase_deg": 7.178226078426298,
+              "matched_orders": true
+            },
+            "direct-dfs": {
+              "power": 0.020824229276460215,
+              "amplitude": 0.12332615933442374,
+              "phase_deg": 7.1588509096448965,
+              "matched_orders": true
+            }
+          },
+          "matched_lumerical": {
+            "native_bounds": [
+              3,
+              3
+            ],
+            "native_orders": 49,
+            "basis_effect": {
+              "power": 0.010730335351803833,
+              "amplitude": 0.059053235532480715,
+              "phase_deg": 4.007372681427432,
+              "matched_orders": true
+            },
+            "meent": {
+              "native": {
+                "power": 0.017518120311539986,
+                "amplitude": 0.10883710823266445,
+                "phase_deg": 6.292027399249678,
+                "matched_orders": true
+              },
+              "direct-cfs": {
+                "power": 0.0033879945726035393,
+                "amplitude": 0.01524956065628568,
+                "phase_deg": 3.8773815344331233,
+                "matched_orders": true
+              },
+              "direct-dfs": {
+                "power": 0.003306108964929992,
+                "amplitude": 0.01491602118966876,
+                "phase_deg": 3.8593126058804033,
+                "matched_orders": true
+              }
+            },
+            "grcwa": {
+              "power": 0.003306108964920222,
+              "amplitude": 0.014916021189622168,
+              "phase_deg": 3.8593126058304534,
+              "matched_orders": true
+            },
+            "torcwa": {
+              "power": 0.0033061089649326567,
+              "amplitude": 0.014916021189697655,
+              "phase_deg": 3.859312605865791,
+              "matched_orders": true
+            }
+          }
+        },
+        {
+          "case": "C06",
+          "point_index": 1,
+          "point": {
+            "variant": "nominal",
+            "wavelength_nm": 1550.0,
+            "theta_deg": 0,
+            "phi_deg": 0
+          },
+          "settings": {
+            "order": 3,
+            "grid": 96,
+            "slices": 1
+          },
+          "replay_difference": {
+            "power": 0.0,
+            "amplitude": 0.0,
+            "phase_deg": 2.1676862366562306e-15,
+            "matched_orders": true
+          },
+          "lumerical_published": {
+            "native": {
+              "power": 0.6408269886188434,
+              "amplitude": 1.1094144854226868,
+              "phase_deg": 178.7963016274977,
+              "matched_orders": true
+            },
+            "direct-cfs": {
+              "power": 0.22125672600199386,
+              "amplitude": 0.5242399908293077,
+              "phase_deg": 171.28602184622235,
+              "matched_orders": true
+            },
+            "direct-dfs": {
+              "power": 0.2203344703033316,
+              "amplitude": 0.5243738784241755,
+              "phase_deg": 171.32906739871086,
+              "matched_orders": true
+            }
+          },
+          "operator_effect": {
+            "direct-cfs": {
+              "power": 0.5099882715019072,
+              "amplitude": 1.1194557422521128,
+              "phase_deg": 160.69453203593957,
+              "matched_orders": true
+            },
+            "direct-dfs": {
+              "power": 0.5098934700280244,
+              "amplitude": 1.1194107788173788,
+              "phase_deg": 160.46401589515364,
+              "matched_orders": true
+            }
+          },
+          "matched_lumerical": {
+            "native_bounds": [
+              3,
+              3
+            ],
+            "native_orders": 49,
+            "basis_effect": {
+              "power": 0.22154993224570363,
+              "amplitude": 0.5180233244133589,
+              "phase_deg": 169.44876634258662,
+              "matched_orders": true
+            },
+            "meent": {
+              "native": {
+                "power": 0.5143512913632484,
+                "amplitude": 1.120802221881268,
+                "phase_deg": 169.1079032482882,
+                "matched_orders": true
+              },
+              "direct-cfs": {
+                "power": 0.02335072685562045,
+                "amplitude": 0.042889182024240885,
+                "phase_deg": 9.878518136633554,
+                "matched_orders": true
+              },
+              "direct-dfs": {
+                "power": 0.02395494202026649,
+                "amplitude": 0.042619251470272734,
+                "phase_deg": 9.82271642314987,
+                "matched_orders": true
+              }
+            },
+            "grcwa": {
+              "power": 0.023954942020257386,
+              "amplitude": 0.04261925147027336,
+              "phase_deg": 9.822716423149982,
+              "matched_orders": true
+            },
+            "torcwa": {
+              "power": 0.023954942020265935,
+              "amplitude": 0.042619251470279715,
+              "phase_deg": 9.822716423151421,
+              "matched_orders": true
+            }
+          }
+        }
+      ]
+    }
+  },
+  "comparison_reference": "lumerical"
 }
