@@ -1,6 +1,6 @@
 # RCWA Benchmark Against Lumerical
 
-Profile **quick** · **91 excitation points** · **16 cases** · s and p incidence at each point. [Numerical dataset](results/benchmark.json) · [Periodic-case diagnosis](PERIODIC_DIAGNOSIS.md) · [Conclusion](#conclusion)
+Profile **quick** · **91 excitation points** · **16 cases** · s and p incidence at each point. [Numerical dataset](results/benchmark.json) · [Periodic-case diagnosis](PERIODIC_DIAGNOSIS.md) · [Conclusion](#conclusion) · [Class B convergence comparisons](B_CONVERGENCE.md)
 
 Each reported difference uses Lumerical as the reference at the same excitation point. The quick profile retains the published solver settings. The [periodic study](PERIODIC_DIAGNOSIS.md) checks the effect of aligning the actual Fourier basis.
 
@@ -78,13 +78,13 @@ The common 1e-3 cutoff is descriptive. A pass also requires full coverage, the c
 <details>
 <summary>Geometry, additional spectra, diffraction orders and solver differences</summary>
 
-![A01 geometry](results/figures/A01/geometry.png)
+![A01 diffraction orders](results/figures/A01/diffraction-orders.png)
 
-![A01 spectrum 1](results/figures/A01/spectrum-1.png)
+![A01 geometry](results/figures/A01/geometry.png)
 
 ![A01 solver differences](results/figures/A01/solver-differences.png)
 
-![A01 diffraction orders](results/figures/A01/diffraction-orders.png)
+![A01 spectrum 1](results/figures/A01/spectrum-1.png)
 
 </details>
 
@@ -105,11 +105,11 @@ The common 1e-3 cutoff is descriptive. A pass also requires full coverage, the c
 <details>
 <summary>Geometry, additional spectra, diffraction orders and solver differences</summary>
 
+![A02 diffraction orders](results/figures/A02/diffraction-orders.png)
+
 ![A02 geometry](results/figures/A02/geometry.png)
 
 ![A02 solver differences](results/figures/A02/solver-differences.png)
-
-![A02 diffraction orders](results/figures/A02/diffraction-orders.png)
 
 </details>
 
@@ -130,11 +130,11 @@ The common 1e-3 cutoff is descriptive. A pass also requires full coverage, the c
 <details>
 <summary>Geometry, additional spectra, diffraction orders and solver differences</summary>
 
+![A03 diffraction orders](results/figures/A03/diffraction-orders.png)
+
 ![A03 geometry](results/figures/A03/geometry.png)
 
 ![A03 solver differences](results/figures/A03/solver-differences.png)
-
-![A03 diffraction orders](results/figures/A03/diffraction-orders.png)
 
 </details>
 
@@ -155,11 +155,11 @@ The common 1e-3 cutoff is descriptive. A pass also requires full coverage, the c
 <details>
 <summary>Geometry, additional spectra, diffraction orders and solver differences</summary>
 
+![A04 diffraction orders](results/figures/A04/diffraction-orders.png)
+
 ![A04 geometry](results/figures/A04/geometry.png)
 
 ![A04 solver differences](results/figures/A04/solver-differences.png)
-
-![A04 diffraction orders](results/figures/A04/diffraction-orders.png)
 
 </details>
 
@@ -180,11 +180,11 @@ The common 1e-3 cutoff is descriptive. A pass also requires full coverage, the c
 <details>
 <summary>Geometry, additional spectra, diffraction orders and solver differences</summary>
 
+![B01 diffraction orders](results/figures/B01/diffraction-orders.png)
+
 ![B01 geometry](results/figures/B01/geometry.png)
 
 ![B01 solver differences](results/figures/B01/solver-differences.png)
-
-![B01 diffraction orders](results/figures/B01/diffraction-orders.png)
 
 </details>
 
@@ -205,11 +205,11 @@ The common 1e-3 cutoff is descriptive. A pass also requires full coverage, the c
 <details>
 <summary>Geometry, additional spectra, diffraction orders and solver differences</summary>
 
+![B02 diffraction orders](results/figures/B02/diffraction-orders.png)
+
 ![B02 geometry](results/figures/B02/geometry.png)
 
 ![B02 solver differences](results/figures/B02/solver-differences.png)
-
-![B02 diffraction orders](results/figures/B02/diffraction-orders.png)
 
 </details>
 
@@ -230,11 +230,11 @@ The common 1e-3 cutoff is descriptive. A pass also requires full coverage, the c
 <details>
 <summary>Geometry, additional spectra, diffraction orders and solver differences</summary>
 
+![B03 diffraction orders](results/figures/B03/diffraction-orders.png)
+
 ![B03 geometry](results/figures/B03/geometry.png)
 
 ![B03 solver differences](results/figures/B03/solver-differences.png)
-
-![B03 diffraction orders](results/figures/B03/diffraction-orders.png)
 
 </details>
 
@@ -255,11 +255,11 @@ The common 1e-3 cutoff is descriptive. A pass also requires full coverage, the c
 <details>
 <summary>Geometry, additional spectra, diffraction orders and solver differences</summary>
 
+![B04 diffraction orders](results/figures/B04/diffraction-orders.png)
+
 ![B04 geometry](results/figures/B04/geometry.png)
 
 ![B04 solver differences](results/figures/B04/solver-differences.png)
-
-![B04 diffraction orders](results/figures/B04/diffraction-orders.png)
 
 </details>
 
@@ -280,11 +280,11 @@ The common 1e-3 cutoff is descriptive. A pass also requires full coverage, the c
 <details>
 <summary>Geometry, additional spectra, diffraction orders and solver differences</summary>
 
+![B05 diffraction orders](results/figures/B05/diffraction-orders.png)
+
 ![B05 geometry](results/figures/B05/geometry.png)
 
 ![B05 solver differences](results/figures/B05/solver-differences.png)
-
-![B05 diffraction orders](results/figures/B05/diffraction-orders.png)
 
 </details>
 
@@ -305,11 +305,11 @@ The common 1e-3 cutoff is descriptive. A pass also requires full coverage, the c
 <details>
 <summary>Geometry, additional spectra, diffraction orders and solver differences</summary>
 
+![B06 diffraction orders](results/figures/B06/diffraction-orders.png)
+
 ![B06 geometry](results/figures/B06/geometry.png)
 
 ![B06 solver differences](results/figures/B06/solver-differences.png)
-
-![B06 diffraction orders](results/figures/B06/diffraction-orders.png)
 
 </details>
 
@@ -330,11 +330,11 @@ The common 1e-3 cutoff is descriptive. A pass also requires full coverage, the c
 <details>
 <summary>Geometry, additional spectra, diffraction orders and solver differences</summary>
 
+![C01 diffraction orders](results/figures/C01/diffraction-orders.png)
+
 ![C01 geometry](results/figures/C01/geometry.png)
 
 ![C01 solver differences](results/figures/C01/solver-differences.png)
-
-![C01 diffraction orders](results/figures/C01/diffraction-orders.png)
 
 </details>
 
@@ -355,13 +355,13 @@ The common 1e-3 cutoff is descriptive. A pass also requires full coverage, the c
 <details>
 <summary>Geometry, additional spectra, diffraction orders and solver differences</summary>
 
-![C02 geometry](results/figures/C02/geometry.png)
-
-![C02 solver differences](results/figures/C02/solver-differences.png)
-
 ![C02 diffraction orders](results/figures/C02/diffraction-orders.png)
 
+![C02 geometry](results/figures/C02/geometry.png)
+
 ![C02 resonance diagnosis](results/figures/C02/resonance-diagnosis.png)
+
+![C02 solver differences](results/figures/C02/solver-differences.png)
 
 </details>
 
@@ -382,11 +382,11 @@ The common 1e-3 cutoff is descriptive. A pass also requires full coverage, the c
 <details>
 <summary>Geometry, additional spectra, diffraction orders and solver differences</summary>
 
+![C03 diffraction orders](results/figures/C03/diffraction-orders.png)
+
 ![C03 geometry](results/figures/C03/geometry.png)
 
 ![C03 solver differences](results/figures/C03/solver-differences.png)
-
-![C03 diffraction orders](results/figures/C03/diffraction-orders.png)
 
 </details>
 
@@ -407,11 +407,11 @@ The common 1e-3 cutoff is descriptive. A pass also requires full coverage, the c
 <details>
 <summary>Geometry, additional spectra, diffraction orders and solver differences</summary>
 
+![C04 diffraction orders](results/figures/C04/diffraction-orders.png)
+
 ![C04 geometry](results/figures/C04/geometry.png)
 
 ![C04 solver differences](results/figures/C04/solver-differences.png)
-
-![C04 diffraction orders](results/figures/C04/diffraction-orders.png)
 
 </details>
 
@@ -432,15 +432,15 @@ The common 1e-3 cutoff is descriptive. A pass also requires full coverage, the c
 <details>
 <summary>Geometry, additional spectra, diffraction orders and solver differences</summary>
 
+![C05 diffraction orders](results/figures/C05/diffraction-orders.png)
+
 ![C05 geometry](results/figures/C05/geometry.png)
+
+![C05 solver differences](results/figures/C05/solver-differences.png)
 
 ![C05 spectrum 1](results/figures/C05/spectrum-1.png)
 
 ![C05 spectrum 2](results/figures/C05/spectrum-2.png)
-
-![C05 solver differences](results/figures/C05/solver-differences.png)
-
-![C05 diffraction orders](results/figures/C05/diffraction-orders.png)
 
 </details>
 
@@ -461,11 +461,11 @@ The common 1e-3 cutoff is descriptive. A pass also requires full coverage, the c
 <details>
 <summary>Geometry, additional spectra, diffraction orders and solver differences</summary>
 
+![C06 diffraction orders](results/figures/C06/diffraction-orders.png)
+
 ![C06 geometry](results/figures/C06/geometry.png)
 
 ![C06 solver differences](results/figures/C06/solver-differences.png)
-
-![C06 diffraction orders](results/figures/C06/diffraction-orders.png)
 
 </details>
 

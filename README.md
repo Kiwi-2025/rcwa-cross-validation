@@ -5,6 +5,7 @@ A reproducible benchmark of meent, torcwa on CUDA, and grcwa against Lumerical R
 | Start here | Contents |
 | --- | --- |
 | [Benchmark report](BENCHMARK_REPORT.md) | Each solver's agreement with Lumerical, figures, software versions, and the conclusion |
+| [Class B convergence report](B_CONVERGENCE.md) | Independently refined solver settings, paired coverage, and agreement against Lumerical |
 | [Periodic-case diagnosis](PERIODIC_DIAGNOSIS.md) | Meent material-operator controls and Lumerical basis and phase checks |
 | [Case catalog](cases/README.md) | Physical scenarios, possible applications, notebooks, and Lumerical models |
 | [Numerical dataset](results/benchmark.json) | Point coordinates, normalized powers and complex amplitudes, settings, and comparison metrics |

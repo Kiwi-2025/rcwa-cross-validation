@@ -126,7 +126,8 @@ def report_text(dataset, figures_by_case):
         "# RCWA Benchmark Against Lumerical",
         f"Profile **{dataset['profile']}** · **{count} excitation points** · "
         f"**{len(cases)} cases** · s and p incidence at each point. "
-        "[Numerical dataset](results/benchmark.json) · [Periodic-case diagnosis](PERIODIC_DIAGNOSIS.md) · [Conclusion](#conclusion)",
+        "[Numerical dataset](results/benchmark.json) · [Periodic-case diagnosis](PERIODIC_DIAGNOSIS.md) · [Conclusion](#conclusion)"
+        + (" · [Class B convergence comparisons](B_CONVERGENCE.md)" if "b_convergence" in dataset else ""),
         "Each reported difference uses Lumerical as the reference at the same excitation point. "
         "The quick profile retains the published solver settings. The [periodic study](PERIODIC_DIAGNOSIS.md) "
         "checks the effect of aligning the actual Fourier basis.",

@@ -25,6 +25,23 @@ def probe():
             "device": str(device), "gpu": gpu.name, "precision": "complex128", "tf32": False}
 
 
+def _exterior_matrix(sim, case, settings, torch, device):
+    # The native product can omit interior coupling matrices for a far-field sweep.
+    empty = [[], []]
+    scattering = None
+    for layer in case.layers:
+        eps = (torch.as_tensor(raster(layer, case, settings.grid, midpoint=True), device=device)
+               if layer.shapes else layer.epsilon)
+        sim.add_layer(layer.thickness, eps=eps)
+        layer_matrix = [sim.layer_S11[0], sim.layer_S21[0], sim.layer_S12[0], sim.layer_S22[0]]
+        scattering = layer_matrix if scattering is None else sim._RS_prod(scattering, layer_matrix, empty, empty)[0]
+        for name in ("eps_conv", "mu_conv", "P", "Q", "kz_norm", "E_eigvec", "H_eigvec", "Cf", "Cb",
+                     "layer_S11", "layer_S21", "layer_S12", "layer_S22"):
+            getattr(sim, name).clear()
+    scattering = sim._RS_prod(sim.Sin, scattering, empty, empty)[0]
+    sim.S = sim._RS_prod(scattering, sim.Sout, empty, empty)[0]
+
+
 def solve(case, settings):
     metadata = probe()
     import torch
@@ -49,11 +66,14 @@ def solve(case, settings):
         sim.add_input_layer(eps=case.incident)
         sim.add_output_layer(eps=case.exit)
         sim.set_incident_angle(*np.deg2rad([case.theta, case.phi]))
-        for layer in case.layers:
-            eps = (torch.as_tensor(raster(layer, case, settings.grid, midpoint=True), device=device)
-                   if layer.shapes else layer.epsilon)
-            sim.add_layer(layer.thickness, eps=eps)
-        sim.solve_global_smatrix()
+        if len(case.layers) > 1:
+            _exterior_matrix(sim, case, settings, torch, device)
+        else:
+            for layer in case.layers:
+                eps = (torch.as_tensor(raster(layer, case, settings.grid, midpoint=True), device=device)
+                       if layer.shapes else layer.epsilon)
+                sim.add_layer(layer.thickness, eps=eps)
+            sim.solve_global_smatrix()
         for n, port in enumerate(("reflection", "transmission")):
             mask = kz2[n] > 1e-10
             if not mask.any():

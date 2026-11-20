@@ -13,6 +13,7 @@ def probe():
 
 def solve(case, settings):
     import grcwa
+    from grcwa.rcwa import GetSMatrix
 
     grcwa.set_backend("numpy")
     metadata = probe()
@@ -41,12 +42,12 @@ def solve(case, settings):
     source, kzi = incident_basis(case)
     transverse, kz2 = wavevectors(case, orders)
     fields = np.zeros((2, len(orders), 2, 2), complex)
+    transmit, _, reflect, _ = GetSMatrix(0, solver.Layer_N-1, solver.q_list, solver.phi_list,
+                                          solver.kp_list, solver.thickness_list)
     for p in range(2):
-        solver.MakeExcitationPlanewave(0, 0, 0, 0, order=int(zero))
         magnetic = np.cross([*transverse[zero], kzi], source[:, p])
-        solver.a0[[zero, zero+len(orders)]] = magnetic[:2]
-        modes = (solver.GetAmplitudes(0, 0)[1],
-                 solver.GetAmplitudes(solver.Layer_N-1, 0)[0])
+        columns = [zero, zero+len(orders)]
+        modes = (reflect[:, columns] @ magnetic[:2], transmit[:, columns] @ magnetic[:2])
         for port, eps in enumerate((case.incident, case.exit)):
             mask = kz2[port] > 1e-10
             kz = np.sqrt(kz2[port, mask]) * (-1 if port == 0 else 1)
