@@ -12,7 +12,7 @@ def probe():
     return {"version": version("meent"), "device": "CPU"}
 
 
-def solve(case, settings):
+def solve(case, settings, *, material_operator="native"):
     import meent
 
     theta, phi = np.deg2rad([case.theta, case.phi])
@@ -32,7 +32,11 @@ def solve(case, settings):
         period=case.period, thickness=[layer.thickness for layer in layers],
         ucell=index, fourier_type=1, type_complex=np.complex128,
     )
-    result = solver.conv_solve()
+    if material_operator == "native":
+        result = solver.conv_solve()
+    else:
+        matrices = _direct_matrices(cells, index, int(mx), int(my), material_operator)
+        result = solver.solve_for_conv(case.wavelength, matrices, matrices, np.linalg.inv(matrices))
     amplitude = np.zeros((2, len(orders), 2, 2), complex)
     power = np.zeros((2, len(orders), 2))
     transverse, kz2 = wavevectors(case, orders)
@@ -51,5 +55,28 @@ def solve(case, settings):
             normalize = np.sqrt(np.maximum(kz2[port], 0)**.5/kzi)
             amplitude[port, :, :, i] = np.column_stack((s, p)) * (signs*normalize)[:, None] * (-1 if i else 1)
             power[port, :, i] = getattr(columns, "de_ri" if port == 0 else "de_ti").T.ravel()
-    return result_from_amplitudes(case, orders, amplitude, dict(probe(), formulation="continuous raster"),
+    formulation = "continuous raster" if material_operator == "native" else material_operator
+    return result_from_amplitudes(case, orders, amplitude, dict(probe(), formulation=formulation),
                                   power, power.sum(axis=1))
+
+
+def _direct_matrices(cells, index, mx, my, operator):
+    """Diagnostic controls that preserve Meent's eigensolver and output adapter."""
+    if operator == "direct-cfs":
+        from meent.on_numpy.emsolver.convolution_matrix import cell_compression
+        from meent.on_numpy.emsolver.fourier_analysis import cfs2d
+
+        return np.stack([cfs2d(n**2, x, y, 1, 1, mx, my)
+                         for n, x, y in map(cell_compression, index)])
+    if operator != "direct-dfs":
+        raise ValueError(f"Unknown diagnostic material operator: {operator}")
+    # Meent flattens orders with x varying fastest and indexes coefficients by
+    # column mode minus row mode. Conjugate the material for its field convention.
+    # The midpoint phase centers the FFT cells.
+    modes = np.array([(x, y) for y in range(-my, my+1) for x in range(-mx, mx+1)])
+    dx, dy = (modes - modes[:, None]).transpose(2, 0, 1)
+    return np.stack([
+        np.fft.fft2(cell.conj())[dx, dy] / cell.size
+        * np.exp(-1j*np.pi*(dx/cell.shape[0]+dy/cell.shape[1]))
+        for cell in cells
+    ])

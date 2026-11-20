@@ -66,7 +66,7 @@ def _value(value):
     return f"{value:.17g}"
 
 
-def build_script(case, settings, output=None):
+def build_script(case, settings, output=None, *, match_fourier_order=False):
     """Generate a standalone LSF model from the resolved benchmark point."""
     lines = ["# Generated RCWA benchmark. Run in a new Lumerical FDTD document.",
              "switchtolayout;", "deleteall;"]
@@ -124,13 +124,17 @@ def build_script(case, settings, output=None):
                               z, top, shape.epsilon, 1, shape.rotation)
         z = top
         interfaces.append(z)
-    # A 3D cell with a single ky term retains conical incidence for 1D gratings.
+    # The v252 rectangular solver interprets these values as half-orders.
+    # Keep the published profile unless the diagnostic requests a matched basis.
+    # The minimum native ky half-order is 1. Invariant geometries couple only
+    # within the incident ky sector, which also supports conical incidence.
+    native_order = settings.order if match_fourier_order else 2 * settings.order + 1
     add("addrcwa", name="RCWA", simulation_region="3D", propagation_axis="z",
         propagation_direction="forward", x=0, y=0, x_span=lx*nm, y_span=ly*nm,
         z_min=(start-20)*nm, z_max=(case.thickness+20)*nm,
         interface_position="absolute", interface_absolute_positions=[z*nm for z in interfaces],
-        k_vectors_domain="rectangular", max_number_ku=2*settings.order+1 if case.dimensions else 1,
-        max_number_kv=2*settings.order+1 if case.dimensions == 2 else 1,
+         k_vectors_domain="rectangular", max_number_ku=native_order if case.dimensions else 1,
+         max_number_kv=native_order if case.dimensions == 2 else 1,
         mesh_type="custom", mesh_cells_x=max(10, settings.grid if case.dimensions else 2),
         mesh_cells_y=max(10, settings.grid if case.dimensions == 2 else 2), mesh_cells_z=10,
         fit_materials_with_multi_coefficient_model=0,
@@ -197,12 +201,12 @@ def normalize(case, power, amplitudes, totals, modes, fields, metadata):
     return result_from_amplitudes(case, orders[keep], amp[:, keep], metadata, eff[:, keep], total)
 
 
-def solve(case, settings):
+def solve(case, settings, *, match_fourier_order=False):
     if _session is None:
         with session():
-            return solve(case, settings)
+            return solve(case, settings, match_fourier_order=match_fourier_order)
     start = perf_counter()
-    script = build_script(case, settings)
+    script = build_script(case, settings, match_fourier_order=match_fourier_order)
     _session.eval(script)
     datasets = [_session.getv(key) for key in ("power", "amplitudes", "totals", "modes", "fields")]
     return normalize(case, *datasets, dict(probe(), build=_session.version(), compute_seconds=perf_counter()-start))

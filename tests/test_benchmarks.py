@@ -31,6 +31,10 @@ def test_case_notebooks_and_models_are_present():
     for path in catalog():
         case_id = path.parent.name
         notebook = json.loads((path.parent/f"{case_id}.ipynb").read_text(encoding="utf-8"))
+        description = "".join(notebook["cells"][0]["source"])
+        assert description.index("## Mathematical and physical model") < description.index("## Physical scenario")
+        assert "## Possible applications" in description
+        assert not (path.parent/"README.md").exists()
         code = "\n".join("".join(cell["source"]) for cell in notebook["cells"] if cell["cell_type"]=="code")
         compile(code, f"{case_id}.ipynb", "exec")
         for name, module in MODULES.items():
@@ -86,3 +90,11 @@ def test_grating_translation_changes_only_diffraction_phase():
     assert np.max(abs(first.amplitude[1, first.orders[:,0]==1])) > .1
     assert np.allclose(second.power, first.power, atol=1e-10)
     assert np.allclose(second.amplitude, first.amplitude*factor, atol=1e-10)
+
+
+def test_matched_meent_operator_for_asymmetric_supercell():
+    settings = SolverSettings(order=3, grid=96, slices=1)
+    case = resolve(load_case(catalog("C06")[0]), "nominal", {"wavelength_nm":1420}, settings)
+    reference = adapter("grcwa").solve(case, settings)
+    result = adapter("meent").solve(case, settings, material_operator="direct-dfs")
+    assert meets(differences(reference, result), 1e-8)

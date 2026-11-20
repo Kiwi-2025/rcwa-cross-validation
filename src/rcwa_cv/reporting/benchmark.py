@@ -64,7 +64,7 @@ def pair_overview(cases):
                            "Cases with both deltas ≤ 1e-3"), rows)
 
 
-def conclusion(cases):
+def conclusion(cases, has_periodic_diagnostics=False):
     planar = [case for case in cases if case["case"].startswith("A")]
     periodic = [case for case in cases if not case["case"].startswith("A")]
     pass_count = sum(case["summary"]["status"]=="PASS" for case in planar)
@@ -78,6 +78,17 @@ def conclusion(cases):
                   if set(pair["solvers"]) == {"grcwa", "torcwa"} and pair["points"]]
     grid_power = max(pair[key] for pair in grid_pairs for key in POWER_METRICS)
     grid_amp = max(pair["max_amplitude"] for pair in grid_pairs)
+    periodic_followup = (
+        "**Periodic diagnosis.** Matching the finite-order material operator resolves the selected "
+        "Meent–grcwa differences. Lumerical's actual basis was larger than the open-source basis "
+        "at the same nominal settings. The detailed study documents resonance shifts in C02, "
+        "order-power redistribution in C06, and a half-mesh phase offset in B06. "
+        "[Experiments and case-by-case findings](PERIODIC_DIAGNOSIS.md)."
+        if has_periodic_diagnostics else
+        "**Priority for further validation.** Densely sample the C02 resonances and refine Fourier order "
+        "and geometry sampling independently. Resolve order-by-order power balance for C06 and check loss "
+        "and polarization convergence for the metallic B05 and C01 cases."
+    )
     return (
         f"**Planar validation.** {pass_count}/{len(planar)} cases pass. Against the independent Fresnel or "
         f"multilayer reference, the largest absolute power and complex-amplitude differences are "
@@ -88,10 +99,8 @@ def conclusion(cases):
         f"in {largest['case']} ({largest['title']}). Across the periodic cases, grcwa and torcwa differ "
         f"by at most {pretty(grid_power)} in power and {pretty(grid_amp)} in complex amplitude at the tested "
         "points. Their common raster can produce shared discretization error. These results support "
-        "a comparison of consistency under the reported settings, with no overall accuracy ranking.\n\n"
-        "**Priority for further validation.** Densely sample the C02 resonances and refine Fourier order "
-        "and geometry sampling independently. Resolve order-by-order power balance for C06 and check loss "
-        "and polarization convergence for the metallic B05 and C01 cases."
+        "a comparison of consistency under the reported settings.\n\n"
+        + periodic_followup
     )
 
 
@@ -109,7 +118,7 @@ def report_text(dataset, figures_by_case):
         "# RCWA Benchmark Report",
         f"Profile **{dataset['profile']}** · **{count} excitation points** · "
         f"**{len(cases)} cases** · s and p incidence at each point. "
-        "[Numerical dataset](results/benchmark.json) · [Conclusion](#conclusion)",
+        "[Numerical dataset](results/benchmark.json) · [Periodic-case diagnosis](PERIODIC_DIAGNOSIS.md) · [Conclusion](#conclusion)",
         "## Case overview",
         markdown_table(("Case", "Optical problem", "Points", "Coverage", "Max Δpower",
                         "Max |Δamplitude|", "Status"), rows),
@@ -134,13 +143,14 @@ def report_text(dataset, figures_by_case):
         sections.extend([
             f"### {case_id}",
             f'**{case["title"]}**',
-            f"[Physical context and application]({case_dir}/README.md) · [Notebook]({case_dir}/{case_id}.ipynb)",
+            f"[Notebook, physical model and applications]({case_dir}/{case_id}.ipynb)"
+            + (f" · [Diagnosis](PERIODIC_DIAGNOSIS.md#{case_id.lower()})" if case_id[0] in "BC" else ""),
             comparison_table(case["pairs"], len(case["points"])),
             pictures.pop("spectrum-0.png"),
             "<details>\n<summary>Geometry, additional spectra, diffraction orders and solver differences</summary>\n\n"
             + "\n\n".join(pictures.values()) + "\n\n</details>",
         ])
-    sections.extend(["## Conclusion", conclusion(cases)])
+    sections.extend(["## Conclusion", conclusion(cases, "periodic_diagnostics" in dataset)])
     return "\n\n".join(sections) + "\n"
 
 

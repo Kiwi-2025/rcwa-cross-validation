@@ -57522,5 +57522,5875 @@
         }
       ]
     }
-  ]
+  ],
+  "periodic_diagnostics": {
+    "software": {
+      "Python": "3.11.8",
+      "rcwa-cross-validation": "0.2.0",
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "matplotlib": "3.10.8",
+      "PyYAML": "6.0.3",
+      "threadpoolctl": "3.8.0",
+      "meent": "0.13.2",
+      "grcwa": "0.1.2",
+      "torcwa": "0.1.4.2",
+      "torch": "2.8.0+cu128",
+      "jupyterlab": "4.6.6",
+      "ipykernel": "7.4.0",
+      "Lumerical RCWA": "v252 / build 8.34.4175",
+      "torcwa device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "PyTorch CUDA runtime": "12.8"
+    },
+    "scope": "all four solvers",
+    "point_selection": "Largest absolute complex-amplitude discrepancy in the quick benchmark for each case.",
+    "reference_for_control": "grcwa at the same numerical settings, used as a matched operator control.",
+    "cases": [
+      {
+        "case": "B01",
+        "point_index": 0,
+        "point": {
+          "variant": "nominal",
+          "wavelength_nm": 620.0,
+          "theta_deg": 0,
+          "phi_deg": 0
+        },
+        "worst_amplitude_channel": "T(0, 0) p to p",
+        "settings": {
+          "quick": {
+            "settings": {
+              "order": 8,
+              "grid": 128,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.008178177484214524,
+                "amplitude": 0.02627235773768283,
+                "phase_deg": 4.721623412004793,
+                "matched_orders": true
+              },
+              "torcwa": {
+                "power": 4.5630166312093934e-14,
+                "amplitude": 9.828362196997683e-14,
+                "phase_deg": 3.1033983397489805e-11,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.00447520027695221,
+                "amplitude": 0.020669650106913216,
+                "phase_deg": 4.31293630058537,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.1102230246251565e-16,
+                "conservation_or_passivity_error": 6.217248937900877e-15,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 4.518607710224387e-14,
+                "negative_power": 0.0
+              },
+              "torcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 4.440892098500626e-16,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 2.7755575615628914e-16,
+                "amplitude_power_error": 4.3021142204224816e-16,
+                "conservation_or_passivity_error": 1.5543122344752192e-15,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 105
+          },
+          "order": {
+            "settings": {
+              "order": 12,
+              "grid": 128,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.005271127555667325,
+                "amplitude": 0.017051244198555516,
+                "phase_deg": 3.089338494867904,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.0027564228997992365,
+                "amplitude": 0.01381047936923555,
+                "phase_deg": 2.90362938819478,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.1102230246251565e-16,
+                "conservation_or_passivity_error": 2.1094237467877974e-15,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 3.1530333899354446e-14,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 2.7755575615628914e-16,
+                "amplitude_power_error": 4.2327252813834093e-16,
+                "conservation_or_passivity_error": 2.5091040356528538e-14,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 153
+          },
+          "grid": {
+            "settings": {
+              "order": 8,
+              "grid": 256,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.008300382902736214,
+                "amplitude": 0.026481050467100867,
+                "phase_deg": 4.73716168863927,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.004410397846451683,
+                "amplitude": 0.014743110902836254,
+                "phase_deg": 3.0442061052058977,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.1102230246251565e-16,
+                "conservation_or_passivity_error": 6.217248937900877e-15,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 2.3314683517128287e-15,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 2.7755575615628914e-16,
+                "amplitude_power_error": 4.0939474033052647e-16,
+                "conservation_or_passivity_error": 3.774758283725532e-15,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 105
+          },
+          "combined": {
+            "settings": {
+              "order": 12,
+              "grid": 256,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.005435470613061856,
+                "amplitude": 0.017390987941377337,
+                "phase_deg": 3.127477550777534,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.0028568195014126926,
+                "amplitude": 0.012053886237285736,
+                "phase_deg": 2.5258507461812263,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.1102230246251565e-16,
+                "conservation_or_passivity_error": 2.1094237467877974e-15,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 1.8762769116165146e-14,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 2.7755575615628914e-16,
+                "amplitude_power_error": 4.0939474033052647e-16,
+                "conservation_or_passivity_error": 5.88418203051333e-15,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 153
+          },
+          "finer_open": {
+            "settings": {
+              "order": 32,
+              "grid": 512,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.0020119062106910765,
+                "amplitude": 0.006427997851749594,
+                "phase_deg": 1.1595114248974034,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.6653345369377348e-16,
+                "conservation_or_passivity_error": 3.064215547965432e-14,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 6.894484982922222e-14,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": null
+          }
+        },
+        "solver_sensitivity": {
+          "order": {
+            "meent": {
+              "power": 0.0004229590551836776,
+              "amplitude": 0.001282830916714715,
+              "phase_deg": 0.26159953912023876,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.002908235728586714,
+              "amplitude": 0.008561077660679638,
+              "phase_deg": 1.4354294933258704,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.0011894583514337406,
+              "amplitude": 0.006358588246363018,
+              "phase_deg": 1.3401338628716457,
+              "matched_orders": true
+            }
+          },
+          "grid": {
+            "meent": {
+              "power": 0.0,
+              "amplitude": 0.0,
+              "phase_deg": 1.81272355599694e-15,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.00012220541852168976,
+              "amplitude": 0.00025567725889414185,
+              "phase_deg": 0.04707769348218486,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.00018700784902221657,
+              "amplitude": 0.007830158295709164,
+              "phase_deg": 1.2879657643757945,
+              "matched_orders": true
+            }
+          },
+          "combined": {
+            "meent": {
+              "power": 0.0004229590551836776,
+              "amplitude": 0.001282830916714715,
+              "phase_deg": 0.26159953912023876,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.002743892671192183,
+              "amplitude": 0.008221220572658667,
+              "phase_deg": 1.3972904374162407,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.0011255118956526658,
+              "amplitude": 0.008109626318438475,
+              "phase_deg": 1.7151193083919887,
+              "matched_orders": true
+            }
+          },
+          "finer_open": {
+            "meent": {
+              "power": 0.0005981997373688958,
+              "amplitude": 0.0020002996500265175,
+              "phase_deg": 0.40944362374877036,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.006169954615411914,
+              "amplitude": 0.018770887307035067,
+              "phase_deg": 3.2392347508113413,
+              "matched_orders": true
+            }
+          }
+        },
+        "meent_controls_at_quick": {
+          "direct-cfs": {
+            "power": 0.00016289318950729603,
+            "amplitude": 0.00034077903621118546,
+            "phase_deg": 0.06274949793435579,
+            "matched_orders": true
+          },
+          "direct-dfs": {
+            "power": 4.542199949497672e-14,
+            "amplitude": 9.927772105592588e-14,
+            "phase_deg": 3.1649587518191155e-11,
+            "matched_orders": true
+          }
+        },
+        "fourfold_symmetry": {},
+        "meent_native_axis_exchange": {},
+        "lumerical_matched_basis": {
+          "native_bounds": [
+            8,
+            1
+          ],
+          "native_orders": 51,
+          "relative_to_grcwa": {
+            "power": 4.381217610927024e-14,
+            "amplitude": 0.017243297814979065,
+            "phase_deg": 2.812500000001658,
+            "matched_orders": true
+          },
+          "relative_to_published_basis": {
+            "power": 0.004475200276948144,
+            "amplitude": 0.013350275234353946,
+            "phase_deg": 2.2653578460686177,
+            "matched_orders": true
+          },
+          "transmittance": [
+            0.9428194617528916,
+            0.9426696795617749
+          ]
+        }
+      },
+      {
+        "case": "B02",
+        "point_index": 0,
+        "point": {
+          "variant": "nominal",
+          "wavelength_nm": 1200.0,
+          "theta_deg": 0,
+          "phi_deg": 0
+        },
+        "worst_amplitude_channel": "R(0, 0) p to p",
+        "settings": {
+          "quick": {
+            "settings": {
+              "order": 8,
+              "grid": 128,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.11639271110047689,
+                "amplitude": 0.14683013444794069,
+                "phase_deg": 9.658618610540936,
+                "matched_orders": true
+              },
+              "torcwa": {
+                "power": 1.021405182655144e-14,
+                "amplitude": 1.7750813597282938e-14,
+                "phase_deg": 1.123549473991567e-12,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.05761955424885001,
+                "amplitude": 0.07397572954563371,
+                "phase_deg": 4.7806636953364565,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.1102230246251565e-16,
+                "conservation_or_passivity_error": 8.881784197001252e-16,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 6.661338147750939e-16,
+                "negative_power": 0.0
+              },
+              "torcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 4.440892098500626e-15,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 1.354472090042691e-14,
+                "amplitude_power_error": 3.885780586188048e-15,
+                "conservation_or_passivity_error": 2.4868995751603507e-14,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 105
+          },
+          "order": {
+            "settings": {
+              "order": 12,
+              "grid": 128,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.07892953078555909,
+                "amplitude": 0.09817195346093284,
+                "phase_deg": 6.432919643423647,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.0393860574255559,
+                "amplitude": 0.049511541496026254,
+                "phase_deg": 3.211190726871721,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.1102230246251565e-16,
+                "conservation_or_passivity_error": 5.551115123125783e-16,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 2.886579864025407e-15,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 1.3489209749195652e-14,
+                "amplitude_power_error": 3.6637359812630166e-15,
+                "conservation_or_passivity_error": 5.972999872483342e-14,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 153
+          },
+          "grid": {
+            "settings": {
+              "order": 8,
+              "grid": 256,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.11762640442704014,
+                "amplitude": 0.1484884840047915,
+                "phase_deg": 9.760797628730014,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.05664405400600114,
+                "amplitude": 0.07287964541990535,
+                "phase_deg": 4.707480526844048,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.1102230246251565e-16,
+                "conservation_or_passivity_error": 8.881784197001252e-16,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 3.4083846855992306e-14,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 1.3655743202889425e-14,
+                "amplitude_power_error": 3.885780586188048e-15,
+                "conservation_or_passivity_error": 3.197442310920451e-14,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 105
+          },
+          "combined": {
+            "settings": {
+              "order": 12,
+              "grid": 256,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.08085891290841529,
+                "amplitude": 0.10066626775116022,
+                "phase_deg": 6.588978192210825,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.04048489743837369,
+                "amplitude": 0.05098657322246117,
+                "phase_deg": 3.301585431885955,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.1102230246251565e-16,
+                "conservation_or_passivity_error": 5.551115123125783e-16,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 4.440892098500626e-16,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 1.354472090042691e-14,
+                "amplitude_power_error": 3.9968028886505635e-15,
+                "conservation_or_passivity_error": 2.3092638912203256e-14,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 153
+          },
+          "finer_open": {
+            "settings": {
+              "order": 32,
+              "grid": 512,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.03191851730704409,
+                "amplitude": 0.039010229180415475,
+                "phase_deg": 2.545702395940195,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 2.220446049250313e-16,
+                "conservation_or_passivity_error": 1.0547118733938987e-14,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 6.084022174945858e-14,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": null
+          }
+        },
+        "solver_sensitivity": {
+          "order": {
+            "meent": {
+              "power": 0.002206840050550607,
+              "amplitude": 0.00415790181288058,
+              "phase_deg": 0.24508657334644438,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.036609208012413186,
+              "amplitude": 0.047743988851397905,
+              "phase_deg": 3.0716882897954765,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.018375711189116406,
+              "amplitude": 0.02323988440805988,
+              "phase_deg": 1.5022153213307423,
+              "matched_orders": true
+            }
+          },
+          "grid": {
+            "meent": {
+              "power": 0.0,
+              "amplitude": 0.0,
+              "phase_deg": 7.050554529837555e-16,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.0012336933265640893,
+              "amplitude": 0.0016740988526962638,
+              "phase_deg": 0.1021790181890802,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.002209193569435386,
+              "amplitude": 0.002770978937209273,
+              "phase_deg": 0.17536218668148887,
+              "matched_orders": true
+            }
+          },
+          "combined": {
+            "meent": {
+              "power": 0.002206840050550607,
+              "amplitude": 0.00415790181288058,
+              "phase_deg": 0.24508657334644438,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.034679825889554594,
+              "amplitude": 0.04524033492774833,
+              "phase_deg": 2.9156297410082974,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.017545169079112855,
+              "amplitude": 0.022212557008156032,
+              "phase_deg": 1.4365514775577968,
+              "matched_orders": true
+            }
+          },
+          "finer_open": {
+            "meent": {
+              "power": 0.0030700476203954774,
+              "amplitude": 0.005779123169074082,
+              "phase_deg": 0.34069987547842767,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.0837375428346665,
+              "amplitude": 0.10684172126174435,
+              "phase_deg": 6.9118621991926545,
+              "matched_orders": true
+            }
+          }
+        },
+        "meent_controls_at_quick": {
+          "direct-cfs": {
+            "power": 0.001643487977503022,
+            "amplitude": 0.002230808546636073,
+            "phase_deg": 0.13615006371372493,
+            "matched_orders": true
+          },
+          "direct-dfs": {
+            "power": 1.0103029524088925e-14,
+            "amplitude": 1.9942646658551384e-14,
+            "phase_deg": 1.2825201951620393e-12,
+            "matched_orders": true
+          }
+        },
+        "fourfold_symmetry": {},
+        "meent_native_axis_exchange": {},
+        "lumerical_matched_basis": {
+          "native_bounds": [
+            8,
+            1
+          ],
+          "native_orders": 51,
+          "relative_to_grcwa": {
+            "power": 1.3533618670180658e-13,
+            "amplitude": 2.04213342815914e-13,
+            "phase_deg": 1.273415601467698e-11,
+            "matched_orders": true
+          },
+          "relative_to_published_basis": {
+            "power": 0.05761955424871468,
+            "amplitude": 0.07397572954543144,
+            "phase_deg": 4.780663695324113,
+            "matched_orders": true
+          },
+          "transmittance": [
+            0.8695224009152048,
+            0.27561451726262975
+          ]
+        }
+      },
+      {
+        "case": "B03",
+        "point_index": 1,
+        "point": {
+          "variant": "nominal",
+          "wavelength_nm": 920.0,
+          "theta_deg": 30,
+          "phi_deg": 45
+        },
+        "worst_amplitude_channel": "T(1, 0) s to s",
+        "settings": {
+          "quick": {
+            "settings": {
+              "order": 8,
+              "grid": 128,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.00628306445297816,
+                "amplitude": 0.01130195369229296,
+                "phase_deg": 7.703571317567639,
+                "matched_orders": true
+              },
+              "torcwa": {
+                "power": 1.3933298959045715e-14,
+                "amplitude": 1.4431618236704824e-14,
+                "phase_deg": 5.450188205527692e-12,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.0030258375025359885,
+                "amplitude": 0.013604478929247309,
+                "phase_deg": 3.355161030421294,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 5.551115123125783e-17,
+                "conservation_or_passivity_error": 4.6629367034256575e-15,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 3.4416913763379853e-15,
+                "negative_power": 0.0
+              },
+              "torcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 6.439293542825908e-15,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 2.3314683517128287e-15,
+                "amplitude_power_error": 5.915407053080912e-16,
+                "conservation_or_passivity_error": 1.3811174426336947e-13,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 105
+          },
+          "order": {
+            "settings": {
+              "order": 12,
+              "grid": 128,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.004159182421793639,
+                "amplitude": 0.007425636421777566,
+                "phase_deg": 5.3971350975814945,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.0020399740732208738,
+                "amplitude": 0.009117983119281442,
+                "phase_deg": 2.3751343485778924,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.1102230246251565e-16,
+                "conservation_or_passivity_error": 1.9317880628477724e-14,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 4.440892098500626e-15,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 2.3314683517128287e-15,
+                "amplitude_power_error": 5.828670879282072e-16,
+                "conservation_or_passivity_error": 3.815836535636663e-13,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 153
+          },
+          "grid": {
+            "settings": {
+              "order": 8,
+              "grid": 256,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.0063823980408332925,
+                "amplitude": 0.011388037772051619,
+                "phase_deg": 7.694767103015828,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.0029803527215195302,
+                "amplitude": 0.006870119200720436,
+                "phase_deg": 3.278395062070705,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 5.551115123125783e-17,
+                "conservation_or_passivity_error": 4.6629367034256575e-15,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 1.4210854715202004e-14,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 2.3314683517128287e-15,
+                "amplitude_power_error": 5.950101522600448e-16,
+                "conservation_or_passivity_error": 1.4666046155298318e-13,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 105
+          },
+          "combined": {
+            "settings": {
+              "order": 12,
+              "grid": 256,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.004288624776035477,
+                "amplitude": 0.007566326374893878,
+                "phase_deg": 5.424547570324325,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.002119408564908276,
+                "amplitude": 0.006838619966347907,
+                "phase_deg": 2.3681065085079953,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.1102230246251565e-16,
+                "conservation_or_passivity_error": 1.9317880628477724e-14,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 3.1086244689504383e-15,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 2.3314683517128287e-15,
+                "amplitude_power_error": 5.828670879282072e-16,
+                "conservation_or_passivity_error": 1.212363542890671e-13,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 153
+          },
+          "finer_open": {
+            "settings": {
+              "order": 32,
+              "grid": 512,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.00163345244347457,
+                "amplitude": 0.0028375118868286375,
+                "phase_deg": 2.1579456630187983,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.1102230246251565e-16,
+                "conservation_or_passivity_error": 4.1522341120980855e-14,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 1.0591527654923993e-13,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": null
+          }
+        },
+        "solver_sensitivity": {
+          "order": {
+            "meent": {
+              "power": 0.00031479932044350956,
+              "amplitude": 0.000496187353632162,
+              "phase_deg": 0.24476637134277054,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.0018744647222073696,
+              "amplitude": 0.003638378416843975,
+              "phase_deg": 2.4311523071334955,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.0008886012928922549,
+              "amplitude": 0.005395190947613,
+              "phase_deg": 1.4487013006282108,
+              "matched_orders": true
+            }
+          },
+          "grid": {
+            "meent": {
+              "power": 0.0,
+              "amplitude": 0.0,
+              "phase_deg": 2.24517044303766e-15,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 9.933358785513269e-05,
+              "amplitude": 0.00011968833103810562,
+              "phase_deg": 0.03936608451865963,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.00014481836887159094,
+              "amplitude": 0.0070458714605917275,
+              "phase_deg": 0.6519223034953942,
+              "matched_orders": true
+            }
+          },
+          "combined": {
+            "meent": {
+              "power": 0.00031479932044350956,
+              "amplitude": 0.000496187353632162,
+              "phase_deg": 0.24476637134277054,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.001745022367965532,
+              "amplitude": 0.0034640146675729215,
+              "phase_deg": 2.357296943863503,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.0008385934303378195,
+              "amplitude": 0.007626802167166053,
+              "phase_deg": 1.6041394613499755,
+              "matched_orders": true
+            }
+          },
+          "finer_open": {
+            "meent": {
+              "power": 0.0004756466833852613,
+              "amplitude": 0.0006931241738378992,
+              "phase_deg": 0.5890832461961285,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.004285298912339142,
+              "amplitude": 0.007945042149822425,
+              "phase_deg": 5.228652173815207,
+              "matched_orders": true
+            }
+          }
+        },
+        "meent_controls_at_quick": {
+          "direct-cfs": {
+            "power": 0.00013241019827642253,
+            "amplitude": 0.00015950290456690503,
+            "phase_deg": 0.05246006769817184,
+            "matched_orders": true
+          },
+          "direct-dfs": {
+            "power": 5.218048215738236e-15,
+            "amplitude": 6.078977989837151e-15,
+            "phase_deg": 8.969474978511807e-12,
+            "matched_orders": true
+          }
+        },
+        "fourfold_symmetry": {},
+        "meent_native_axis_exchange": {},
+        "lumerical_matched_basis": {
+          "native_bounds": [
+            8,
+            1
+          ],
+          "native_orders": 51,
+          "relative_to_grcwa": {
+            "power": 1.0164091790443308e-13,
+            "amplitude": 0.01609987951648217,
+            "phase_deg": 1.4062500000237066,
+            "matched_orders": true
+          },
+          "relative_to_published_basis": {
+            "power": 0.0030258375026376294,
+            "amplitude": 0.005688934587868497,
+            "phase_deg": 3.8444491695333185,
+            "matched_orders": true
+          },
+          "transmittance": [
+            0.9284701637815218,
+            0.9390504865335252
+          ]
+        }
+      },
+      {
+        "case": "B04",
+        "point_index": 0,
+        "point": {
+          "variant": "nominal",
+          "wavelength_nm": 620.0,
+          "theta_deg": 0,
+          "phi_deg": 0
+        },
+        "worst_amplitude_channel": "T(1, 0) p to p",
+        "settings": {
+          "quick": {
+            "settings": {
+              "order": 8,
+              "grid": 128,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.005788549999113657,
+                "amplitude": 0.015224743485391606,
+                "phase_deg": 4.8970759808281565,
+                "matched_orders": true
+              },
+              "torcwa": {
+                "power": 1.0103029524088925e-14,
+                "amplitude": 1.57655154939171e-14,
+                "phase_deg": 8.379448608280313e-12,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.001784092653541569,
+                "amplitude": 0.015264513399976186,
+                "phase_deg": 3.8317496898095995,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.6653345369377348e-16,
+                "conservation_or_passivity_error": 6.983302824892235e-14,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 9.769962616701378e-15,
+                "negative_power": 0.0
+              },
+              "torcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 1.1102230246251565e-15,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 2.220446049250313e-16,
+                "amplitude_power_error": 2.220446049250313e-16,
+                "conservation_or_passivity_error": 2.864375403532904e-14,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 105
+          },
+          "order": {
+            "settings": {
+              "order": 12,
+              "grid": 128,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.0038747416735295803,
+                "amplitude": 0.010246959816014412,
+                "phase_deg": 3.210903156779529,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.0011874775390288972,
+                "amplitude": 0.011301411450063492,
+                "phase_deg": 4.3269193219178606,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.1102230246251565e-16,
+                "conservation_or_passivity_error": 8.72635297355373e-14,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 1.2434497875801753e-14,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 1.734723475976807e-16,
+                "amplitude_power_error": 2.220446049250313e-16,
+                "conservation_or_passivity_error": 1.021405182655144e-14,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 153
+          },
+          "grid": {
+            "settings": {
+              "order": 8,
+              "grid": 256,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.005940528808786205,
+                "amplitude": 0.015392705807847415,
+                "phase_deg": 5.264192441155009,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.0019014206796507671,
+                "amplitude": 0.009409175468883074,
+                "phase_deg": 1.6045888609594865,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.1102230246251565e-16,
+                "conservation_or_passivity_error": 7.460698725481052e-14,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 3.3306690738754696e-15,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 1.734723475976807e-16,
+                "amplitude_power_error": 2.220446049250313e-16,
+                "conservation_or_passivity_error": 2.0650148258027912e-14,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 105
+          },
+          "combined": {
+            "settings": {
+              "order": 12,
+              "grid": 256,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.004040686865927623,
+                "amplitude": 0.0104481548901316,
+                "phase_deg": 3.498311959767319,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.0009786238265194758,
+                "amplitude": 0.008797997383109197,
+                "phase_deg": 2.859311266885772,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 5.551115123125783e-17,
+                "conservation_or_passivity_error": 7.704947790898586e-14,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 1.4876988529977098e-14,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 1.7694179454963432e-16,
+                "amplitude_power_error": 1.951563910473908e-16,
+                "conservation_or_passivity_error": 8.681944052568724e-14,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 153
+          },
+          "finer_open": {
+            "settings": {
+              "order": 32,
+              "grid": 512,
+              "slices": 32
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.0014878089418273177,
+                "amplitude": 0.003941386082615412,
+                "phase_deg": 1.5931741527982877,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.1102230246251565e-16,
+                "conservation_or_passivity_error": 4.8627768478581856e-14,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 1.6786572132332367e-13,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": null
+          },
+          "slices": {
+            "settings": {
+              "order": 12,
+              "grid": 256,
+              "slices": 32
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.003898115563011062,
+                "amplitude": 0.01037649065080156,
+                "phase_deg": 4.0281970094697455,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.0025483322265723585,
+                "amplitude": 0.00870368166319214,
+                "phase_deg": 3.074455244842248,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.1102230246251565e-16,
+                "conservation_or_passivity_error": 2.1227464230832993e-13,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 2.8199664825478976e-14,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 1.7694179454963432e-16,
+                "amplitude_power_error": 2.0903417885520525e-16,
+                "conservation_or_passivity_error": 1.0902390101819037e-13,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 153
+          }
+        },
+        "solver_sensitivity": {
+          "order": {
+            "meent": {
+              "power": 9.030055080930244e-05,
+              "amplitude": 0.0013869782747859692,
+              "phase_deg": 2.2543373199778958,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.0019336841069158006,
+              "amplitude": 0.0038005734446833472,
+              "phase_deg": 1.331172249943815,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.0006424509923243504,
+              "amplitude": 0.005095272540228412,
+              "phase_deg": 1.2192439604263356,
+              "matched_orders": true
+            }
+          },
+          "grid": {
+            "meent": {
+              "power": 0.00035727516005712445,
+              "amplitude": 0.002121584730537568,
+              "phase_deg": 0.8861731325420176,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.00036492416026298255,
+              "amplitude": 0.002123461114412842,
+              "phase_deg": 0.9364716829187458,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.00015515272544519565,
+              "amplitude": 0.0063105049252131845,
+              "phase_deg": 1.2935961355680057,
+              "matched_orders": true
+            }
+          },
+          "combined": {
+            "meent": {
+              "power": 0.0003044341336621015,
+              "amplitude": 0.001948240126319408,
+              "phase_deg": 1.296982209160866,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.0019310202944817778,
+              "amplitude": 0.0036200101375250203,
+              "phase_deg": 1.1181069312036813,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.0008200468351904355,
+              "amplitude": 0.007208878945755489,
+              "phase_deg": 1.5666367862841903,
+              "matched_orders": true
+            }
+          },
+          "finer_open": {
+            "meent": {
+              "power": 0.0019587151380328627,
+              "amplitude": 0.006080510993231562,
+              "phase_deg": 2.665741796837708,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.005217124910657123,
+              "amplitude": 0.01134709259762606,
+              "phase_deg": 2.3423898695190406,
+              "matched_orders": true
+            }
+          },
+          "slices": {
+            "meent": {
+              "power": 0.0018224216579701968,
+              "amplitude": 0.004254233474803012,
+              "phase_deg": 2.3303938226290497,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.0018224580274205648,
+              "amplitude": 0.004269434486973193,
+              "phase_deg": 1.8262987770610213,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.0020569369328238274,
+              "amplitude": 0.003603470538801872,
+              "phase_deg": 1.2949677346437025,
+              "matched_orders": true
+            }
+          }
+        },
+        "meent_controls_at_quick": {
+          "direct-cfs": {
+            "power": 0.0001667549091887155,
+            "amplitude": 0.00018334654166924554,
+            "phase_deg": 0.07563097430556999,
+            "matched_orders": true
+          },
+          "direct-dfs": {
+            "power": 9.43689570931383e-15,
+            "amplitude": 1.7866600832381346e-14,
+            "phase_deg": 1.9233879436001545e-11,
+            "matched_orders": true
+          }
+        },
+        "fourfold_symmetry": {},
+        "meent_native_axis_exchange": {},
+        "lumerical_matched_basis": {
+          "native_bounds": [
+            8,
+            1
+          ],
+          "native_orders": 51,
+          "relative_to_grcwa": {
+            "power": 0.0011659825127937617,
+            "amplitude": 0.015974580807460698,
+            "phase_deg": 4.970940159666149,
+            "matched_orders": true
+          },
+          "relative_to_published_basis": {
+            "power": 0.0026318261859897274,
+            "amplitude": 0.005712862386244011,
+            "phase_deg": 1.7442869642744336,
+            "matched_orders": true
+          },
+          "transmittance": [
+            0.9817836884977904,
+            0.9812082375740114
+          ]
+        }
+      },
+      {
+        "case": "B05",
+        "point_index": 0,
+        "point": {
+          "variant": "nominal",
+          "wavelength_nm": 1200.0,
+          "theta_deg": 0,
+          "phi_deg": 0
+        },
+        "worst_amplitude_channel": "T(0, 0) p to p",
+        "settings": {
+          "quick": {
+            "settings": {
+              "order": 8,
+              "grid": 128,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.2676344593904515,
+                "amplitude": 0.2027308404695786,
+                "phase_deg": 8.671203038286066,
+                "matched_orders": true
+              },
+              "torcwa": {
+                "power": 3.984590435379687e-13,
+                "amplitude": 3.7530700168010917e-13,
+                "phase_deg": 2.0206283977119445e-11,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.2484959293004101,
+                "amplitude": 0.17967334870243482,
+                "phase_deg": 7.307637725381186,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 2.220446049250313e-16,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              },
+              "torcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 9.992007221626409e-16,
+                "amplitude_power_error": 1.7763568394002505e-15,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 105
+          },
+          "order": {
+            "settings": {
+              "order": 12,
+              "grid": 128,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.08589705199946107,
+                "amplitude": 0.08739328646810363,
+                "phase_deg": 4.641366653692058,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.0785933652589238,
+                "amplitude": 0.08171907805412795,
+                "phase_deg": 4.383558393684917,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 3.3306690738754696e-16,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 8.881784197001252e-16,
+                "amplitude_power_error": 1.5543122344752192e-15,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 153
+          },
+          "grid": {
+            "settings": {
+              "order": 8,
+              "grid": 256,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.2643388124360837,
+                "amplitude": 0.20504826745381738,
+                "phase_deg": 9.071952615702896,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.2459248730386674,
+                "amplitude": 0.18288808798367132,
+                "phase_deg": 7.571514217262364,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 2.220446049250313e-16,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 9.992007221626409e-16,
+                "amplitude_power_error": 1.3322676295501878e-15,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 105
+          },
+          "combined": {
+            "settings": {
+              "order": 12,
+              "grid": 256,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.08372884504444589,
+                "amplitude": 0.08556706530031002,
+                "phase_deg": 4.550775612601024,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.07640550926248046,
+                "amplitude": 0.08112315273833387,
+                "phase_deg": 4.3845330750135565,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 3.3306690738754696e-16,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 8.881784197001252e-16,
+                "amplitude_power_error": 1.9984014443252818e-15,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 153
+          },
+          "finer_open": {
+            "settings": {
+              "order": 48,
+              "grid": 512,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.007927383099446739,
+                "amplitude": 0.010011119717934442,
+                "phase_deg": 0.5578867417151209,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 3.3306690738754696e-16,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": null
+          }
+        },
+        "solver_sensitivity": {
+          "order": {
+            "meent": {
+              "power": 0.0019335389010800702,
+              "amplitude": 0.0038651864638941176,
+              "phase_deg": 0.23637571390165923,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.18090737506487997,
+              "amplitude": 0.12205404467292921,
+              "phase_deg": 6.678721578238359,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.01100481102339379,
+              "amplitude": 0.019016410190775088,
+              "phase_deg": 1.1195947731901472,
+              "matched_orders": true
+            }
+          },
+          "grid": {
+            "meent": {
+              "power": 0.0,
+              "amplitude": 0.0,
+              "phase_deg": 8.830474177420997e-16,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.007459691196153084,
+              "amplitude": 0.005827418537969214,
+              "phase_deg": 0.4601929981689673,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.0009860709357905062,
+              "amplitude": 0.0018617625757993863,
+              "phase_deg": 0.11314807785829896,
+              "matched_orders": true
+            }
+          },
+          "combined": {
+            "meent": {
+              "power": 0.0019335389010800702,
+              "amplitude": 0.0038651864638941176,
+              "phase_deg": 0.23637571390165923,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.18307558201989516,
+              "amplitude": 0.12375546207928931,
+              "phase_deg": 6.6741690309913455,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.01137544430355894,
+              "amplitude": 0.02042123234803456,
+              "phase_deg": 1.2111604956098183,
+              "matched_orders": true
+            }
+          },
+          "finer_open": {
+            "meent": {
+              "power": 0.002625211173139408,
+              "amplitude": 0.0027805278110499447,
+              "phase_deg": 0.28905743953694085,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.26144153040646223,
+              "amplitude": 0.19338608975107185,
+              "phase_deg": 7.952249877388168,
+              "matched_orders": true
+            }
+          }
+        },
+        "meent_controls_at_quick": {
+          "direct-cfs": {
+            "power": 0.010714965747966487,
+            "amplitude": 0.008123634625800765,
+            "phase_deg": 0.6787541950968471,
+            "matched_orders": true
+          },
+          "direct-dfs": {
+            "power": 3.772537837676282e-13,
+            "amplitude": 3.772642593507688e-13,
+            "phase_deg": 2.1300004365320746e-11,
+            "matched_orders": true
+          }
+        },
+        "fourfold_symmetry": {},
+        "meent_native_axis_exchange": {},
+        "lumerical_matched_basis": {
+          "native_bounds": [
+            8,
+            1
+          ],
+          "native_orders": 51,
+          "relative_to_grcwa": {
+            "power": 4.030109579389318e-13,
+            "amplitude": 4.02069778356304e-13,
+            "phase_deg": 2.2666158188935234e-11,
+            "matched_orders": true
+          },
+          "relative_to_published_basis": {
+            "power": 0.24849592930081232,
+            "amplitude": 0.17967334870283,
+            "phase_deg": 7.307637725388025,
+            "matched_orders": true
+          },
+          "transmittance": [
+            0.003623385268330846,
+            0.6002968526617964
+          ]
+        }
+      },
+      {
+        "case": "B06",
+        "point_index": 3,
+        "point": {
+          "variant": "nominal",
+          "wavelength_nm": 633,
+          "theta_deg": 12.0,
+          "phi_deg": 0
+        },
+        "worst_amplitude_channel": "T(-1, 0) s to s",
+        "settings": {
+          "quick": {
+            "settings": {
+              "order": 8,
+              "grid": 128,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 9.060311082803585e-05,
+                "amplitude": 8.664039691632486e-05,
+                "phase_deg": 0.004726381439514531,
+                "matched_orders": true
+              },
+              "torcwa": {
+                "power": 8.049116928532385e-15,
+                "amplitude": 5.670504175932661e-14,
+                "phase_deg": 1.1429698204207903e-11,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.00017023346080191626,
+                "amplitude": 0.0195596653890702,
+                "phase_deg": 2.647969191373475,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.1102230246251565e-16,
+                "conservation_or_passivity_error": 2.0872192862952943e-14,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 5.88418203051333e-15,
+                "negative_power": 0.0
+              },
+              "torcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 8.215650382226158e-15,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 1.3552527156068805e-20,
+                "amplitude_power_error": 1.1102230246251565e-16,
+                "conservation_or_passivity_error": 4.326539126964235e-13,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 105
+          },
+          "order": {
+            "settings": {
+              "order": 12,
+              "grid": 128,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 9.060311072667249e-05,
+                "amplitude": 8.66403968083514e-05,
+                "phase_deg": 0.0047263821139933845,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.00012742379771557566,
+                "amplitude": 0.013301722343050004,
+                "phase_deg": 1.800639971467817,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.1102230246251565e-16,
+                "conservation_or_passivity_error": 4.75175454539567e-14,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 9.281464485866309e-14,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 1.1102230246251565e-16,
+                "amplitude_power_error": 1.1102230246251565e-16,
+                "conservation_or_passivity_error": 6.583622536027178e-13,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 153
+          },
+          "grid": {
+            "settings": {
+              "order": 8,
+              "grid": 256,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 2.265042644594706e-05,
+                "amplitude": 2.166109169738989e-05,
+                "phase_deg": 0.0011816800539859445,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 3.7558844923069046e-12,
+                "amplitude": 0.010383485664817147,
+                "phase_deg": 1.4062499999090825,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 3.3306690738754696e-16,
+                "conservation_or_passivity_error": 1.0103029524088925e-14,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 4.696243394164412e-14,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 1.1102230246251565e-16,
+                "amplitude_power_error": 2.220446049250313e-16,
+                "conservation_or_passivity_error": 7.482903185973555e-14,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 105
+          },
+          "combined": {
+            "settings": {
+              "order": 12,
+              "grid": 256,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 2.2650426512949018e-05,
+                "amplitude": 2.1661091778784613e-05,
+                "phase_deg": 0.0011816813091426437,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 4.2982284398362935e-12,
+                "amplitude": 0.010383485666740758,
+                "phase_deg": 1.4062500002478042,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.6653345369377348e-16,
+                "conservation_or_passivity_error": 1.199040866595169e-14,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 1.4477308241112041e-13,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 2.220446049250313e-16,
+                "amplitude_power_error": 2.220446049250313e-16,
+                "conservation_or_passivity_error": 3.4705571749782393e-13,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 153
+          },
+          "finer_open": {
+            "settings": {
+              "order": 32,
+              "grid": 512,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 5.662584084076272e-06,
+                "amplitude": 5.415334348866533e-06,
+                "phase_deg": 0.00029542560617640197,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.1102230246251565e-16,
+                "conservation_or_passivity_error": 1.1213252548714081e-13,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 3.5504932327512506e-13,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": null
+          }
+        },
+        "solver_sensitivity": {
+          "order": {
+            "meent": {
+              "power": 5.861977570020827e-14,
+              "amplitude": 1.015511994511838e-13,
+              "phase_deg": 6.759070362925288e-12,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 9.892087149410145e-14,
+              "amplitude": 2.034223520291305e-12,
+              "phase_deg": 6.792333699083907e-10,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 4.280966304359701e-05,
+              "amplitude": 0.006258153752687783,
+              "phase_deg": 0.8473292198831863,
+              "matched_orders": true
+            }
+          },
+          "grid": {
+            "meent": {
+              "power": 6.795268442083557e-05,
+              "amplitude": 6.497930523593275e-05,
+              "phase_deg": 0.0035447001647623266,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 5.773159728050814e-14,
+              "amplitude": 4.1207734409003565e-12,
+              "phase_deg": 1.220766654857392e-09,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.00017023346449496213,
+              "amplitude": 0.009177407793541242,
+              "phase_deg": 1.2417191915188324,
+              "matched_orders": true
+            }
+          },
+          "combined": {
+            "meent": {
+              "power": 6.795268431297741e-05,
+              "amplitude": 6.497930512541687e-05,
+              "phase_deg": 0.0035447001632131106,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 1.9273471707492718e-13,
+              "amplitude": 2.1654318970715822e-13,
+              "phase_deg": 3.2841712607821406e-11,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.00017023346489675184,
+              "amplitude": 0.009177407791662536,
+              "phase_deg": 1.2417191913547132,
+              "matched_orders": true
+            }
+          },
+          "finer_open": {
+            "meent": {
+              "power": 8.494052643875927e-05,
+              "amplitude": 8.122506224613367e-05,
+              "phase_deg": 0.004430955766887717,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 3.610445276081009e-13,
+              "amplitude": 1.6784453800347125e-12,
+              "phase_deg": 1.4291866618976663e-10,
+              "matched_orders": true
+            }
+          }
+        },
+        "meent_controls_at_quick": {
+          "direct-cfs": {
+            "power": 9.060311082803585e-05,
+            "amplitude": 8.664039691632486e-05,
+            "phase_deg": 0.004726381439514531,
+            "matched_orders": true
+          },
+          "direct-dfs": {
+            "power": 5.972999872483342e-14,
+            "amplitude": 2.430793000262259e-13,
+            "phase_deg": 2.3646397159385624e-11,
+            "matched_orders": true
+          }
+        },
+        "fourfold_symmetry": {},
+        "meent_native_axis_exchange": {},
+        "lumerical_matched_basis": {
+          "native_bounds": [
+            8,
+            1
+          ],
+          "native_orders": 51,
+          "relative_to_grcwa": {
+            "power": 3.226308109560705e-13,
+            "amplitude": 0.020766580398559373,
+            "phase_deg": 2.812500000017393,
+            "matched_orders": true
+          },
+          "relative_to_published_basis": {
+            "power": 0.00017023346110706106,
+            "amplitude": 0.0012101665985174207,
+            "phase_deg": 0.16457793998162898,
+            "matched_orders": true
+          },
+          "transmittance": [
+            0.999924850454655,
+            0.9999553679790629
+          ]
+        }
+      },
+      {
+        "case": "C01",
+        "point_index": 0,
+        "point": {
+          "variant": "nominal",
+          "wavelength_nm": 1220.0,
+          "theta_deg": 0,
+          "phi_deg": 0
+        },
+        "worst_amplitude_channel": "T(-1, 0) p to p",
+        "settings": {
+          "quick": {
+            "settings": {
+              "order": 3,
+              "grid": 96,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.12585764860668228,
+                "amplitude": 0.11662049527820181,
+                "phase_deg": 9.332735093631602,
+                "matched_orders": true
+              },
+              "torcwa": {
+                "power": 3.2751579226442118e-15,
+                "amplitude": 2.932944952876816e-15,
+                "phase_deg": 7.047325893839341e-13,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.05065880290281452,
+                "amplitude": 0.052377959346663935,
+                "phase_deg": 7.667966090617378,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 2.220446049250313e-16,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              },
+              "torcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 2.55351295663786e-15,
+                "amplitude_power_error": 1.5543122344752192e-15,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 225
+          },
+          "order": {
+            "settings": {
+              "order": 4,
+              "grid": 96,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.052466982657916036,
+                "amplitude": 0.05024648711480738,
+                "phase_deg": 11.583449169996607,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.031123538109968818,
+                "amplitude": 0.034437656497232474,
+                "phase_deg": 8.66991799061651,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 2.220446049250313e-16,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 2.3314683517128287e-15,
+                "amplitude_power_error": 1.5543122344752192e-15,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 361
+          },
+          "grid": {
+            "settings": {
+              "order": 3,
+              "grid": 192,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.12534022084545138,
+                "amplitude": 0.11824674438152212,
+                "phase_deg": 12.150679316254607,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.05601310250037646,
+                "amplitude": 0.05255846122743033,
+                "phase_deg": 5.689465271932634,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 2.220446049250313e-16,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 2.4424906541753444e-15,
+                "amplitude_power_error": 1.5543122344752192e-15,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 225
+          },
+          "combined": {
+            "settings": {
+              "order": 4,
+              "grid": 192,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.14209936942749335,
+                "amplitude": 0.10356973815039792,
+                "phase_deg": 6.418965069462265,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.04545030781443944,
+                "amplitude": 0.05653823008511537,
+                "phase_deg": 11.67699633754623,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.1102230246251565e-16,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 2.7755575615628914e-15,
+                "amplitude_power_error": 1.7763568394002505e-15,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 361
+          },
+          "finer_open": {
+            "settings": {
+              "order": 6,
+              "grid": 384,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.09492027035503296,
+                "amplitude": 0.08062014634286485,
+                "phase_deg": 5.670026583649044,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.1102230246251565e-16,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 0.0,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": null
+          }
+        },
+        "solver_sensitivity": {
+          "order": {
+            "meent": {
+              "power": 0.14496872045531478,
+              "amplitude": 0.1088464483087439,
+              "phase_deg": 16.427629054800974,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.10664035930743924,
+              "amplitude": 0.09527479016270252,
+              "phase_deg": 4.1505956218478905,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.03241646791351874,
+              "amplitude": 0.037677622559728285,
+              "phase_deg": 9.634096145287925,
+              "matched_orders": true
+            }
+          },
+          "grid": {
+            "meent": {
+              "power": 0.019572389531690493,
+              "amplitude": 0.027389097369831927,
+              "phase_deg": 13.639016328731875,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.002934926627294887,
+              "amplitude": 0.002645580981214059,
+              "phase_deg": 0.49920121061214373,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.00802601625926129,
+              "amplitude": 0.007865533221329055,
+              "phase_deg": 1.6359443868656485,
+              "matched_orders": true
+            }
+          },
+          "combined": {
+            "meent": {
+              "power": 0.05959826446752925,
+              "amplitude": 0.04150949385080424,
+              "phase_deg": 6.0066047227806,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.11090229008922359,
+              "amplitude": 0.09957988088669131,
+              "phase_deg": 4.522328186914493,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.015142004073989135,
+              "amplitude": 0.04545362575827477,
+              "phase_deg": 14.14559737944752,
+              "matched_orders": true
+            }
+          },
+          "finer_open": {
+            "meent": {
+              "power": 0.13124002447725952,
+              "amplitude": 0.08211690439414145,
+              "phase_deg": 8.633951130714692,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.008537287881680178,
+              "amplitude": 0.012661782396473632,
+              "phase_deg": 1.6812537255586986,
+              "matched_orders": true
+            }
+          }
+        },
+        "meent_controls_at_quick": {
+          "direct-cfs": {
+            "power": 0.0018637053727504904,
+            "amplitude": 0.0016653246548500396,
+            "phase_deg": 0.30328791054272897,
+            "matched_orders": true
+          },
+          "direct-dfs": {
+            "power": 1.27675647831893e-15,
+            "amplitude": 1.9100999153570945e-15,
+            "phase_deg": 5.695870167350155e-13,
+            "matched_orders": true
+          }
+        },
+        "fourfold_symmetry": {
+          "quick": {
+            "meent": 0.2166529924124792,
+            "grcwa": 2.0816681711721685e-15,
+            "torcwa": 2.4702462297909733e-15,
+            "lumerical": 6.217248937900877e-15
+          },
+          "combined": {
+            "meent": 0.12154463199829574,
+            "grcwa": 2.6645352591003757e-15,
+            "lumerical": 2.986499936241671e-14
+          },
+          "finer_open": {
+            "meent": 0.060054447073982345,
+            "grcwa": 1.3433698597964394e-14
+          }
+        },
+        "meent_native_axis_exchange": {
+          "quick": {
+            "transverse_relative_max": 0.23761061660302074,
+            "longitudinal_relative_max": 2.0125979710350304e-15
+          },
+          "combined": {
+            "transverse_relative_max": 0.19670658031392416,
+            "longitudinal_relative_max": 1.0778892903187199e-13
+          },
+          "finer_open": {
+            "transverse_relative_max": 0.17075610626131535,
+            "longitudinal_relative_max": 1.2594746352704445e-13
+          }
+        },
+        "lumerical_matched_basis": {
+          "native_bounds": [
+            3,
+            3
+          ],
+          "native_orders": 49,
+          "relative_to_grcwa": {
+            "power": 2.7200464103316335e-15,
+            "amplitude": 0.0075519469105779224,
+            "phase_deg": 1.875000000000638,
+            "matched_orders": true
+          },
+          "relative_to_published_basis": {
+            "power": 0.0506588029028118,
+            "amplitude": 0.04923317258335259,
+            "phase_deg": 5.973684193106427,
+            "matched_orders": true
+          },
+          "transmittance": [
+            0.1816915979799024,
+            0.1816915979799034
+          ]
+        }
+      },
+      {
+        "case": "C02",
+        "point_index": 2,
+        "point": {
+          "variant": "nominal",
+          "wavelength_nm": 1901.1406844106464,
+          "theta_deg": 0,
+          "phi_deg": 0,
+          "normalized_frequency": 0.526
+        },
+        "worst_amplitude_channel": "T(0, 0) s to s",
+        "settings": {
+          "quick": {
+            "settings": {
+              "order": 3,
+              "grid": 96,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.5310834495826444,
+                "amplitude": 1.016667705640466,
+                "phase_deg": 92.71881827997709,
+                "matched_orders": true
+              },
+              "torcwa": {
+                "power": 3.018141292443488e-13,
+                "amplitude": 3.188413820828334e-13,
+                "phase_deg": 1.8703161186002647e-11,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.45944516111312933,
+                "amplitude": 0.4637872645759499,
+                "phase_deg": 27.75327212754554,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.1102230246251565e-16,
+                "conservation_or_passivity_error": 1.4988010832439613e-14,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 4.5075054799781356e-14,
+                "negative_power": 0.0
+              },
+              "torcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 2.2426505097428162e-14,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 3.064215547965432e-14,
+                "amplitude_power_error": 2.1371793224034263e-15,
+                "conservation_or_passivity_error": 9.43689570931383e-14,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 225
+          },
+          "order": {
+            "settings": {
+              "order": 4,
+              "grid": 96,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.6264450587576307,
+                "amplitude": 1.011487661007193,
+                "phase_deg": 92.74947796670266,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.5128335118285052,
+                "amplitude": 0.5315887381039844,
+                "phase_deg": 32.16685779236636,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.1102230246251565e-16,
+                "conservation_or_passivity_error": 2.1538326677728037e-14,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 1.0769163338864018e-13,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 2.7422508708241367e-14,
+                "amplitude_power_error": 1.7208456881689926e-15,
+                "conservation_or_passivity_error": 1.9584334154387761e-13,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 361
+          },
+          "grid": {
+            "settings": {
+              "order": 3,
+              "grid": 192,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.5190998522858764,
+                "amplitude": 1.0114267516663926,
+                "phase_deg": 96.95507058152397,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.5508935149080716,
+                "amplitude": 0.554094757694234,
+                "phase_deg": 33.8118384867577,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.1102230246251565e-16,
+                "conservation_or_passivity_error": 4.440892098500626e-15,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 1.1124434706744069e-13,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 3.0309088572266774e-14,
+                "amplitude_power_error": 2.0261570199409107e-15,
+                "conservation_or_passivity_error": 1.7186252421197423e-13,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 225
+          },
+          "combined": {
+            "settings": {
+              "order": 4,
+              "grid": 192,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.6652022896312862,
+                "amplitude": 1.0130987022080462,
+                "phase_deg": 91.46168193802615,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.6022131380168143,
+                "amplitude": 0.6176060951630308,
+                "phase_deg": 38.22576086546532,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.1102230246251565e-16,
+                "conservation_or_passivity_error": 1.9984014443252818e-15,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 6.927791673660977e-14,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 2.7533531010703882e-14,
+                "amplitude_power_error": 1.609823385706477e-15,
+                "conservation_or_passivity_error": 8.337774914934926e-14,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 361
+          },
+          "finer_open": {
+            "settings": {
+              "order": 6,
+              "grid": 384,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.2409861488180956,
+                "amplitude": 0.8738011809921457,
+                "phase_deg": 119.71719661424031,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 2.220446049250313e-16,
+                "conservation_or_passivity_error": 2.4202861936828413e-14,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 1.8762769116165146e-13,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": null
+          }
+        },
+        "solver_sensitivity": {
+          "order": {
+            "meent": {
+              "power": 0.1346841202378154,
+              "amplitude": 0.25371435027409583,
+              "phase_deg": 14.42261870549042,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.03932251106310275,
+              "amplitude": 0.04374138153529154,
+              "phase_deg": 2.5608649019206733,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.09271086177950338,
+              "amplitude": 0.1212781221768492,
+              "phase_deg": 6.974450566812227,
+              "matched_orders": true
+            }
+          },
+          "grid": {
+            "meent": {
+              "power": 0.08058057550793762,
+              "amplitude": 0.1022928142304304,
+              "phase_deg": 5.882354496923129,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.06859697821116151,
+              "amplitude": 0.07750594085146033,
+              "phase_deg": 4.463346544551261,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.02285137558488959,
+              "amplitude": 0.02780809316188425,
+              "phase_deg": 1.5952198147324783,
+              "matched_orders": true
+            }
+          },
+          "combined": {
+            "meent": {
+              "power": 0.10316952864424211,
+              "amplitude": 0.1715788295757034,
+              "phase_deg": 9.561125288581895,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.03094931140441659,
+              "amplitude": 0.033393763481670787,
+              "phase_deg": 1.8429412546962762,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.11181866550061736,
+              "amplitude": 0.14988372332273708,
+              "phase_deg": 8.629547483312354,
+              "matched_orders": true
+            }
+          },
+          "finer_open": {
+            "meent": {
+              "power": 0.1518035317890399,
+              "amplitude": 0.3270483490565182,
+              "phase_deg": 18.458461113738842,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.4419008325537905,
+              "amplitude": 0.4451751609397156,
+              "phase_deg": 26.548317387452897,
+              "matched_orders": true
+            }
+          }
+        },
+        "meent_controls_at_quick": {
+          "direct-cfs": {
+            "power": 0.015881395671131338,
+            "amplitude": 0.017251613184997756,
+            "phase_deg": 0.9862094160015021,
+            "matched_orders": true
+          },
+          "direct-dfs": {
+            "power": 2.0661250488274163e-13,
+            "amplitude": 2.2367057542436458e-13,
+            "phase_deg": 1.291309110135183e-11,
+            "matched_orders": true
+          }
+        },
+        "fourfold_symmetry": {
+          "quick": {
+            "meent": 0.16428838338973073,
+            "grcwa": 2.7494673204842e-13,
+            "torcwa": 2.527422715559169e-13,
+            "lumerical": 1.301736496372996e-12
+          },
+          "combined": {
+            "meent": 0.2231116511847383,
+            "grcwa": 3.8746783559417963e-14,
+            "lumerical": 6.118439088709238e-13
+          },
+          "finer_open": {
+            "meent": 0.23390992087979692,
+            "grcwa": 8.223310921096072e-12
+          }
+        },
+        "meent_native_axis_exchange": {
+          "quick": {
+            "transverse_relative_max": 0.07272320154268323,
+            "longitudinal_relative_max": 5.026468649650594e-16
+          },
+          "combined": {
+            "transverse_relative_max": 0.07000065867800474,
+            "longitudinal_relative_max": 6.537958393186963e-16
+          },
+          "finer_open": {
+            "transverse_relative_max": 0.06755369068912334,
+            "longitudinal_relative_max": 1.0861619846575229e-15
+          }
+        },
+        "lumerical_matched_basis": {
+          "native_bounds": [
+            3,
+            3
+          ],
+          "native_orders": 49,
+          "relative_to_grcwa": {
+            "power": 0.05227322196613721,
+            "amplitude": 0.058830873883198145,
+            "phase_deg": 3.393896007115134,
+            "matched_orders": true
+          },
+          "relative_to_published_basis": {
+            "power": 0.511718383079236,
+            "amplitude": 0.5147568189702542,
+            "phase_deg": 31.147168134660678,
+            "matched_orders": true
+          },
+          "transmittance": [
+            0.25932690724278046,
+            0.25932690724280716
+          ]
+        }
+      },
+      {
+        "case": "C03",
+        "point_index": 2,
+        "point": {
+          "variant": "nominal",
+          "wavelength_nm": 633,
+          "theta_deg": 0,
+          "phi_deg": 0,
+          "radius_nm": 90.0
+        },
+        "worst_amplitude_channel": "T(0, 0) s to s",
+        "settings": {
+          "quick": {
+            "settings": {
+              "order": 3,
+              "grid": 96,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.007428356870462394,
+                "amplitude": 0.26590402757287357,
+                "phase_deg": 15.414354843093943,
+                "matched_orders": true
+              },
+              "torcwa": {
+                "power": 1.787459069646502e-14,
+                "amplitude": 1.6865636183550513e-13,
+                "phase_deg": 9.764919702359567e-12,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.004347303925683943,
+                "amplitude": 0.14025064127364714,
+                "phase_deg": 8.118724671030119,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 3.3306690738754696e-16,
+                "conservation_or_passivity_error": 7.327471962526033e-15,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 2.4424906541753444e-15,
+                "negative_power": 0.0
+              },
+              "torcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 1.509903313490213e-14,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 4.544975507059235e-16,
+                "amplitude_power_error": 4.440892098500626e-16,
+                "conservation_or_passivity_error": 1.1812772982011666e-13,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 225
+          },
+          "order": {
+            "settings": {
+              "order": 4,
+              "grid": 96,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.005265844409795644,
+                "amplitude": 0.1903399114255959,
+                "phase_deg": 11.011201045044965,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.0027229360660767643,
+                "amplitude": 0.0878963754075023,
+                "phase_deg": 5.081817694009661,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 5.551115123125783e-16,
+                "conservation_or_passivity_error": 2.1649348980190553e-14,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 2.3314683517128287e-15,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 4.510281037539698e-16,
+                "amplitude_power_error": 3.5388358909926865e-16,
+                "conservation_or_passivity_error": 6.59472476627343e-14,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 361
+          },
+          "grid": {
+            "settings": {
+              "order": 3,
+              "grid": 192,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.0074397515682137,
+                "amplitude": 0.2655567610786369,
+                "phase_deg": 15.393975099481318,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.004376459108523911,
+                "amplitude": 0.1409714659805415,
+                "phase_deg": 8.160419286819154,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 4.440892098500626e-16,
+                "conservation_or_passivity_error": 3.1086244689504383e-15,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 3.6637359812630166e-15,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 4.544975507059235e-16,
+                "amplitude_power_error": 4.440892098500626e-16,
+                "conservation_or_passivity_error": 2.2870594307278225e-14,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 225
+          },
+          "combined": {
+            "settings": {
+              "order": 4,
+              "grid": 192,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.00526197385303474,
+                "amplitude": 0.18981497560183275,
+                "phase_deg": 10.980428230080419,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.0027213081581975995,
+                "amplitude": 0.08762685310290162,
+                "phase_deg": 5.066077201971016,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 2.220446049250313e-16,
+                "conservation_or_passivity_error": 5.773159728050814e-15,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 1.1324274851176597e-14,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 4.510281037539698e-16,
+                "amplitude_power_error": 3.677613769070831e-16,
+                "conservation_or_passivity_error": 7.172040739078511e-14,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 361
+          },
+          "finer_open": {
+            "settings": {
+              "order": 6,
+              "grid": 384,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.0038001421576492386,
+                "amplitude": 0.13303313810881157,
+                "phase_deg": 7.686843424571045,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 4.440892098500626e-16,
+                "conservation_or_passivity_error": 2.1094237467877974e-15,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 2.0317081350640365e-14,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": null
+          }
+        },
+        "solver_sensitivity": {
+          "order": {
+            "meent": {
+              "power": 0.0007650086340694438,
+              "amplitude": 0.025033519691022185,
+              "phase_deg": 1.445892475526593,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.00223016983357871,
+              "amplitude": 0.07184128287282299,
+              "phase_deg": 4.158366688437845,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.000605801974208342,
+              "amplitude": 0.01941358510834961,
+              "phase_deg": 1.121459711407334,
+              "matched_orders": true
+            }
+          },
+          "grid": {
+            "meent": {
+              "power": 3.560494641983644e-05,
+              "amplitude": 0.0009843276200726778,
+              "phase_deg": 0.10740457300344622,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 9.302491034812732e-06,
+              "amplitude": 0.0003687608009681795,
+              "phase_deg": 0.021353165828264624,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 3.8457674098268946e-05,
+              "amplitude": 0.0010913171537276615,
+              "phase_deg": 0.0787921230458221,
+              "matched_orders": true
+            }
+          },
+          "combined": {
+            "meent": {
+              "power": 0.0008072608352749158,
+              "amplitude": 0.026346368180286805,
+              "phase_deg": 1.5217073773473029,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.0022870239242608337,
+              "amplitude": 0.07372465594901544,
+              "phase_deg": 4.267370072175351,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.0006610281570113008,
+              "amplitude": 0.02102833407903163,
+              "phase_deg": 1.214722603121849,
+              "matched_orders": true
+            }
+          },
+          "finer_open": {
+            "meent": {
+              "power": 0.0015271805354593066,
+              "amplitude": 0.04644705787662677,
+              "phase_deg": 2.6823057601644917,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.0037366955324105167,
+              "amplitude": 0.12100694879413662,
+              "phase_deg": 7.004355410873106,
+              "matched_orders": true
+            }
+          }
+        },
+        "meent_controls_at_quick": {
+          "direct-cfs": {
+            "power": 1.890744780346648e-05,
+            "amplitude": 0.0005394555051148073,
+            "phase_deg": 0.038490569781312746,
+            "matched_orders": true
+          },
+          "direct-dfs": {
+            "power": 8.548717289613705e-15,
+            "amplitude": 1.583707363739581e-13,
+            "phase_deg": 9.166665321970528e-12,
+            "matched_orders": true
+          }
+        },
+        "fourfold_symmetry": {
+          "quick": {
+            "meent": 0.002840530088658087,
+            "grcwa": 4.107825191113079e-15,
+            "torcwa": 2.531308496145357e-14,
+            "lumerical": 2.327027459614328e-13
+          },
+          "combined": {
+            "meent": 0.002153910160218264,
+            "grcwa": 9.658940314238862e-15,
+            "lumerical": 1.035838081975271e-13
+          },
+          "finer_open": {
+            "meent": 0.0014218303727997483,
+            "grcwa": 5.795364188543317e-14
+          }
+        },
+        "meent_native_axis_exchange": {
+          "quick": {
+            "transverse_relative_max": 0.05468497806684543,
+            "longitudinal_relative_max": 3.0518656904825343e-16
+          },
+          "combined": {
+            "transverse_relative_max": 0.05076646409735063,
+            "longitudinal_relative_max": 6.012202669522916e-16
+          },
+          "finer_open": {
+            "transverse_relative_max": 0.04620981761620193,
+            "longitudinal_relative_max": 7.443922164254815e-16
+          }
+        },
+        "lumerical_matched_basis": {
+          "native_bounds": [
+            3,
+            3
+          ],
+          "native_orders": 49,
+          "relative_to_grcwa": {
+            "power": 5.403307910023525e-05,
+            "amplitude": 0.002190898675345275,
+            "phase_deg": 0.12686344543071681,
+            "matched_orders": true
+          },
+          "relative_to_published_basis": {
+            "power": 0.004293270846583708,
+            "amplitude": 0.13806467631424668,
+            "phase_deg": 7.991861225599399,
+            "matched_orders": true
+          },
+          "transmittance": [
+            0.9789523284682136,
+            0.9789523284682051
+          ]
+        }
+      },
+      {
+        "case": "C04",
+        "point_index": 2,
+        "point": {
+          "variant": "nominal",
+          "wavelength_nm": 633,
+          "theta_deg": 0,
+          "phi_deg": 0,
+          "rotation_deg": 45.0
+        },
+        "worst_amplitude_channel": "T(0, 0) s to p",
+        "settings": {
+          "quick": {
+            "settings": {
+              "order": 3,
+              "grid": 96,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.14842744109868378,
+                "amplitude": 0.34506570287993227,
+                "phase_deg": 24.768550828288813,
+                "matched_orders": true
+              },
+              "torcwa": {
+                "power": 1.049160758270773e-12,
+                "amplitude": 9.584218170618454e-13,
+                "phase_deg": 1.9067484318858786e-10,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.08129763982823535,
+                "amplitude": 0.4679824254784732,
+                "phase_deg": 94.99191278533077,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 4.440892098500626e-16,
+                "conservation_or_passivity_error": 3.552713678800501e-15,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 7.30526750203353e-14,
+                "negative_power": 0.0
+              },
+              "torcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 4.1378012127779584e-13,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 1.2989609388114332e-14,
+                "amplitude_power_error": 7.494005416219807e-16,
+                "conservation_or_passivity_error": 1.0547118733938987e-13,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 225
+          },
+          "order": {
+            "settings": {
+              "order": 4,
+              "grid": 96,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.17904603366683985,
+                "amplitude": 0.3108808914304284,
+                "phase_deg": 31.65249145099872,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.15396572667683084,
+                "amplitude": 0.4735062755810298,
+                "phase_deg": 87.8580775116938,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 3.3306690738754696e-16,
+                "conservation_or_passivity_error": 4.9960036108132044e-14,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 7.103206911551752e-13,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 1.3766765505351941e-14,
+                "amplitude_power_error": 7.216449660063518e-16,
+                "conservation_or_passivity_error": 9.192646643896296e-14,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 361
+          },
+          "grid": {
+            "settings": {
+              "order": 3,
+              "grid": 192,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.3375704247371215,
+                "amplitude": 0.44728801453129813,
+                "phase_deg": 60.435419118291556,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.3426179513636526,
+                "amplitude": 0.5245004038997464,
+                "phase_deg": 63.58061454981577,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 4.440892098500626e-16,
+                "conservation_or_passivity_error": 1.199040866595169e-14,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 2.4935609133081016e-13,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 1.2212453270876722e-14,
+                "amplitude_power_error": 7.216449660063518e-16,
+                "conservation_or_passivity_error": 8.08242361927114e-14,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 225
+          },
+          "combined": {
+            "settings": {
+              "order": 4,
+              "grid": 192,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.27595587988110815,
+                "amplitude": 0.39917982768231014,
+                "phase_deg": 52.28296110154252,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.36849140959476545,
+                "amplitude": 0.4668137771125993,
+                "phase_deg": 54.03988247843794,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.1102230246251565e-16,
+                "conservation_or_passivity_error": 3.419486915845482e-14,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 1.8751666885918894e-13,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 1.2989609388114332e-14,
+                "amplitude_power_error": 6.938893903907228e-16,
+                "conservation_or_passivity_error": 7.482903185973555e-14,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 361
+          },
+          "finer_open": {
+            "settings": {
+              "order": 6,
+              "grid": 384,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.13277823194766875,
+                "amplitude": 0.26689647244442344,
+                "phase_deg": 21.90498628625602,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 2.220446049250313e-16,
+                "conservation_or_passivity_error": 3.774758283725532e-14,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 1.3156142841808105e-13,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": null
+          }
+        },
+        "solver_sensitivity": {
+          "order": {
+            "meent": {
+              "power": 0.04782159814953746,
+              "amplitude": 0.0769807899658198,
+              "phase_deg": 5.200714561772239,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.07844019071777386,
+              "amplitude": 0.1076370545238122,
+              "phase_deg": 24.447361231913124,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.005772103869179146,
+              "amplitude": 0.01565887392471395,
+              "phase_deg": 1.3322761482792682,
+              "matched_orders": true
+            }
+          },
+          "grid": {
+            "meent": {
+              "power": 0.07172687215751575,
+              "amplitude": 0.1193242470210613,
+              "phase_deg": 8.758691181646913,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.2570108727179937,
+              "amplitude": 0.2981882328992512,
+              "phase_deg": 49.39382116251249,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.004309438817507255,
+              "amplitude": 0.006266137678616535,
+              "phase_deg": 0.4127548270861871,
+              "matched_orders": true
+            }
+          },
+          "combined": {
+            "meent": {
+              "power": 0.16092071844724698,
+              "amplitude": 0.20503643536413757,
+              "phase_deg": 17.93552027714552,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.28844915722972386,
+              "amplitude": 0.370485552465892,
+              "phase_deg": 53.34925742897521,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.0012553874630993889,
+              "amplitude": 0.011384502998691294,
+              "phase_deg": 0.9238516016469854,
+              "matched_orders": true
+            }
+          },
+          "finer_open": {
+            "meent": {
+              "power": 0.2532863446173974,
+              "amplitude": 0.46476138939558315,
+              "phase_deg": 99.22605777678832,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.02791932842900735,
+              "amplitude": 0.4881605552847579,
+              "phase_deg": 90.58955265579618,
+              "matched_orders": true
+            }
+          }
+        },
+        "meent_controls_at_quick": {
+          "direct-cfs": {
+            "power": 0.02437226633831524,
+            "amplitude": 0.02612725551994311,
+            "phase_deg": 3.9773167159852085,
+            "matched_orders": true
+          },
+          "direct-dfs": {
+            "power": 1.1745326933265687e-12,
+            "amplitude": 1.2672910851060135e-12,
+            "phase_deg": 2.0263537529735735e-10,
+            "matched_orders": true
+          }
+        },
+        "fourfold_symmetry": {},
+        "meent_native_axis_exchange": {},
+        "lumerical_matched_basis": {
+          "native_bounds": [
+            3,
+            3
+          ],
+          "native_orders": 49,
+          "relative_to_grcwa": {
+            "power": 0.09084580554228372,
+            "amplitude": 0.4435790016191378,
+            "phase_deg": 95.74092160431213,
+            "matched_orders": true
+          },
+          "relative_to_published_basis": {
+            "power": 0.00954816571416367,
+            "amplitude": 0.07355146844485473,
+            "phase_deg": 5.868207930482499,
+            "matched_orders": true
+          },
+          "transmittance": [
+            0.8728696532004719,
+            0.8728696532004699
+          ]
+        }
+      },
+      {
+        "case": "C05",
+        "point_index": 8,
+        "point": {
+          "variant": "half_shift",
+          "wavelength_nm": 1200.0,
+          "theta_deg": 0,
+          "phi_deg": 0,
+          "shift_nm": 350
+        },
+        "worst_amplitude_channel": "T(0, 0) s to s",
+        "settings": {
+          "quick": {
+            "settings": {
+              "order": 3,
+              "grid": 96,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.0208242292764404,
+                "amplitude": 0.12332615933437792,
+                "phase_deg": 7.1588509096422275,
+                "matched_orders": true
+              },
+              "torcwa": {
+                "power": 1.7541523789077473e-14,
+                "amplitude": 7.556370715894526e-14,
+                "phase_deg": 3.533772925415202e-11,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.014036444316724003,
+                "amplitude": 0.07044388016177948,
+                "phase_deg": 7.866685287257884,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 2.220446049250313e-16,
+                "conservation_or_passivity_error": 4.6629367034256575e-15,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 1.2878587085651816e-14,
+                "negative_power": 0.0
+              },
+              "torcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 1.199040866595169e-14,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 1.2212453270876722e-15,
+                "amplitude_power_error": 6.175615574477433e-16,
+                "conservation_or_passivity_error": 6.128431095930864e-14,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 225
+          },
+          "order": {
+            "settings": {
+              "order": 4,
+              "grid": 96,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.01695690762937585,
+                "amplitude": 0.09931838126141684,
+                "phase_deg": 5.757985709307763,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.01208665552761147,
+                "amplitude": 0.06292209544367793,
+                "phase_deg": 4.6157268086341965,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 4.440892098500626e-16,
+                "conservation_or_passivity_error": 3.9968028886505635e-15,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 2.731148640577885e-14,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 1.2212453270876722e-15,
+                "amplitude_power_error": 6.106226635438361e-16,
+                "conservation_or_passivity_error": 1.7419399256368706e-13,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 361
+          },
+          "grid": {
+            "settings": {
+              "order": 3,
+              "grid": 192,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.019361955279425636,
+                "amplitude": 0.12181476665459168,
+                "phase_deg": 7.06075039746038,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.009630839707569394,
+                "amplitude": 0.05343172313868081,
+                "phase_deg": 3.068352950655631,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 3.3306690738754696e-16,
+                "conservation_or_passivity_error": 4.6629367034256575e-15,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 1.1324274851176597e-14,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 1.2212453270876722e-15,
+                "amplitude_power_error": 6.38378239159465e-16,
+                "conservation_or_passivity_error": 7.66053886991358e-14,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 225
+          },
+          "combined": {
+            "settings": {
+              "order": 4,
+              "grid": 192,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.015441302202097749,
+                "amplitude": 0.09704010618332438,
+                "phase_deg": 5.61833102936701,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.00774955011493228,
+                "amplitude": 0.04215289781503607,
+                "phase_deg": 2.4418150504966043,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 3.3306690738754696e-16,
+                "conservation_or_passivity_error": 1.6653345369377348e-15,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 9.314771176605063e-14,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 1.2212453270876722e-15,
+                "amplitude_power_error": 5.93275428784068e-16,
+                "conservation_or_passivity_error": 2.5990321006474915e-13,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 361
+          },
+          "finer_open": {
+            "settings": {
+              "order": 6,
+              "grid": 384,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.010069367718298361,
+                "amplitude": 0.06581284196501686,
+                "phase_deg": 3.8065785838101895,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 3.3306690738754696e-16,
+                "conservation_or_passivity_error": 8.881784197001252e-15,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 5.551115123125783e-14,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": null
+          }
+        },
+        "solver_sensitivity": {
+          "order": {
+            "meent": {
+              "power": 0.00010241627327312042,
+              "amplitude": 0.005513798119479654,
+              "phase_deg": 0.9385590780909375,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.003764905373812251,
+              "amplitude": 0.029320185411389567,
+              "phase_deg": 3.386230129422546,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.0018151165846997247,
+              "amplitude": 0.011137530428666814,
+              "phase_deg": 0.6409524644195002,
+              "matched_orders": true
+            }
+          },
+          "grid": {
+            "meent": {
+              "power": 0.0029167136061273753,
+              "amplitude": 0.018594847074495893,
+              "phase_deg": 8.580237714124511,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.004378987603153459,
+              "amplitude": 0.02014737895573206,
+              "phase_deg": 6.163181095613135,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 2.741893656055261e-05,
+              "amplitude": 0.0003558400672882928,
+              "phase_deg": 0.18164918070257974,
+              "matched_orders": true
+            }
+          },
+          "combined": {
+            "meent": {
+              "power": 0.0027014333861324694,
+              "amplitude": 0.012689289908237214,
+              "phase_deg": 8.645896234283558,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.008084360460475122,
+              "amplitude": 0.042558137178554736,
+              "phase_deg": 9.250164628819647,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.001797466258713909,
+              "amplitude": 0.010781342183434007,
+              "phase_deg": 0.624027921725618,
+              "matched_orders": true
+            }
+          },
+          "finer_open": {
+            "meent": {
+              "power": 0.0020074241124081738,
+              "amplitude": 0.008575376007747866,
+              "phase_deg": 4.947202812722233,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.012762285670610458,
+              "amplitude": 0.06351095642032618,
+              "phase_deg": 6.718431827772203,
+              "matched_orders": true
+            }
+          }
+        },
+        "meent_controls_at_quick": {
+          "direct-cfs": {
+            "power": 8.188560769295528e-05,
+            "amplitude": 0.0003336052996784786,
+            "phase_deg": 0.019375168784068763,
+            "matched_orders": true
+          },
+          "direct-dfs": {
+            "power": 2.375877272697835e-14,
+            "amplitude": 1.023471523988614e-13,
+            "phase_deg": 4.995108329738027e-11,
+            "matched_orders": true
+          }
+        },
+        "fourfold_symmetry": {},
+        "meent_native_axis_exchange": {},
+        "lumerical_matched_basis": {
+          "native_bounds": [
+            3,
+            3
+          ],
+          "native_orders": 49,
+          "relative_to_grcwa": {
+            "power": 0.003306108964920222,
+            "amplitude": 0.014916021189622168,
+            "phase_deg": 3.8593126058304534,
+            "matched_orders": true
+          },
+          "relative_to_published_basis": {
+            "power": 0.010730335351803833,
+            "amplitude": 0.059053235532480715,
+            "phase_deg": 4.007372681427432,
+            "matched_orders": true
+          },
+          "transmittance": [
+            0.9612846827019373,
+            0.9934682677151354
+          ]
+        }
+      },
+      {
+        "case": "C06",
+        "point_index": 0,
+        "point": {
+          "variant": "nominal",
+          "wavelength_nm": 1420.0,
+          "theta_deg": 0,
+          "phi_deg": 0
+        },
+        "worst_amplitude_channel": "T(1, 0) p to p",
+        "settings": {
+          "quick": {
+            "settings": {
+              "order": 3,
+              "grid": 96,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.47777143208766815,
+                "amplitude": 1.2088839745698188,
+                "phase_deg": 170.2215897244564,
+                "matched_orders": true
+              },
+              "torcwa": {
+                "power": 1.6678325387431414e-13,
+                "amplitude": 3.5326869338580786e-13,
+                "phase_deg": 8.664408022158883e-11,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.23778537873599892,
+                "amplitude": 0.8239799943580319,
+                "phase_deg": 175.5465183815415,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 2.220446049250313e-16,
+                "conservation_or_passivity_error": 1.4876988529977098e-14,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 2.1649348980190553e-14,
+                "negative_power": 0.0
+              },
+              "torcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 5.551115123125783e-15,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 3.7192471324942744e-15,
+                "amplitude_power_error": 4.996003610813204e-16,
+                "conservation_or_passivity_error": 1.7319479184152442e-13,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 225
+          },
+          "order": {
+            "settings": {
+              "order": 4,
+              "grid": 96,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.30715861571779796,
+                "amplitude": 1.1037541645300206,
+                "phase_deg": 174.70881806815794,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.4455244915109082,
+                "amplitude": 0.3995593472452352,
+                "phase_deg": 159.34271554439593,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.1102230246251565e-16,
+                "conservation_or_passivity_error": 5.662137425588298e-15,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 4.870548409030562e-13,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 3.3861802251067274e-15,
+                "amplitude_power_error": 6.245004513516506e-16,
+                "conservation_or_passivity_error": 2.8954616482224083e-13,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 361
+          },
+          "grid": {
+            "settings": {
+              "order": 3,
+              "grid": 192,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.48320897744976543,
+                "amplitude": 1.1963649907102067,
+                "phase_deg": 174.9778011810341,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.2229130191878413,
+                "amplitude": 0.7989037416515212,
+                "phase_deg": 177.64874552910513,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 3.3306690738754696e-16,
+                "conservation_or_passivity_error": 1.509903313490213e-14,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 1.099120794378905e-14,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 3.6914915568786455e-15,
+                "amplitude_power_error": 4.996003610813204e-16,
+                "conservation_or_passivity_error": 3.9968028886505635e-14,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 225
+          },
+          "combined": {
+            "settings": {
+              "order": 4,
+              "grid": 192,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.2691684013542943,
+                "amplitude": 1.08720497111884,
+                "phase_deg": 168.94928609979348,
+                "matched_orders": true
+              },
+              "lumerical": {
+                "power": 0.40644626572189796,
+                "amplitude": 0.3823382893045114,
+                "phase_deg": 160.79270666988995,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 5.551115123125783e-17,
+                "conservation_or_passivity_error": 1.9539925233402755e-14,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 1.7541523789077473e-13,
+                "negative_power": 0.0
+              },
+              "lumerical": {
+                "order_sum_error": 3.3861802251067274e-15,
+                "amplitude_power_error": 6.245004513516506e-16,
+                "conservation_or_passivity_error": 4.8183679268731794e-14,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": 361
+          },
+          "finer_open": {
+            "settings": {
+              "order": 6,
+              "grid": 384,
+              "slices": 8
+            },
+            "relative_to_grcwa": {
+              "meent": {
+                "power": 0.3199598523249386,
+                "amplitude": 0.5861260936531894,
+                "phase_deg": 148.78053119484255,
+                "matched_orders": true
+              }
+            },
+            "physics": {
+              "meent": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 1.1102230246251565e-16,
+                "conservation_or_passivity_error": 8.570921750106208e-14,
+                "negative_power": 0.0
+              },
+              "grcwa": {
+                "order_sum_error": 0.0,
+                "amplitude_power_error": 0.0,
+                "conservation_or_passivity_error": 6.727951529228449e-14,
+                "negative_power": 0.0
+              }
+            },
+            "lumerical_native_orders": null
+          }
+        },
+        "solver_sensitivity": {
+          "order": {
+            "meent": {
+              "power": 0.5532006851138638,
+              "amplitude": 0.6558757751370164,
+              "phase_deg": 91.30892414760694,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.23573350678286387,
+              "amplitude": 0.5453171969705812,
+              "phase_deg": 179.36864732486066,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.02174258947515237,
+              "amplitude": 0.042998148776837726,
+              "phase_deg": 7.0381484583572105,
+              "matched_orders": true
+            }
+          },
+          "grid": {
+            "meent": {
+              "power": 0.011348368070130288,
+              "amplitude": 0.01712893875386858,
+              "phase_deg": 4.2001055568364976,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.032008755161355595,
+              "amplitude": 0.050020654731061334,
+              "phase_deg": 8.457893194148914,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.004693127028058464,
+              "amplitude": 0.016475954910774682,
+              "phase_deg": 2.453041844802938,
+              "matched_orders": true
+            }
+          },
+          "combined": {
+            "meent": {
+              "power": 0.5493207941888905,
+              "amplitude": 0.6431332782226346,
+              "phase_deg": 91.58172482975549,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.2226627148851681,
+              "amplitude": 0.5601564336263463,
+              "phase_deg": 178.39625482833878,
+              "matched_orders": true
+            },
+            "lumerical": {
+              "power": 0.02189965269349428,
+              "amplitude": 0.042705976232880916,
+              "phase_deg": 7.321086967014222,
+              "matched_orders": true
+            }
+          },
+          "finer_open": {
+            "meent": {
+              "power": 0.4302485756699398,
+              "amplitude": 1.020078393436286,
+              "phase_deg": 179.64416739987945,
+              "matched_orders": true
+            },
+            "grcwa": {
+              "power": 0.3281534433329994,
+              "amplitude": 0.9300181102648127,
+              "phase_deg": 161.91899664213219,
+              "matched_orders": true
+            }
+          }
+        },
+        "meent_controls_at_quick": {
+          "direct-cfs": {
+            "power": 0.007494171396521754,
+            "amplitude": 0.015836866993180067,
+            "phase_deg": 4.851225723001122,
+            "matched_orders": true
+          },
+          "direct-dfs": {
+            "power": 1.488809076022335e-13,
+            "amplitude": 1.3262826900471584e-13,
+            "phase_deg": 8.058420974828746e-12,
+            "matched_orders": true
+          }
+        },
+        "fourfold_symmetry": {},
+        "meent_native_axis_exchange": {},
+        "lumerical_matched_basis": {
+          "native_bounds": [
+            3,
+            3
+          ],
+          "native_orders": 49,
+          "relative_to_grcwa": {
+            "power": 0.1271886395083326,
+            "amplitude": 0.19413424369956236,
+            "phase_deg": 62.152704373631494,
+            "matched_orders": true
+          },
+          "relative_to_published_basis": {
+            "power": 0.19705833375587498,
+            "amplitude": 0.8144320908966171,
+            "phase_deg": 170.7496463567567,
+            "matched_orders": true
+          },
+          "transmittance": [
+            0.8812509646042936,
+            0.8590338240997812
+          ]
+        }
+      }
+    ],
+    "translation_control": {
+      "case": "B01",
+      "shift_nm": 250.0,
+      "translation_covariance": {
+        "meent": {
+          "power": 4.884981308350689e-15,
+          "amplitude": 5.806490300210872e-15,
+          "phase_deg": 6.274550474022576e-13,
+          "matched_orders": true
+        },
+        "grcwa": {
+          "power": 8.112954752448331e-14,
+          "amplitude": 1.8118839761882555e-13,
+          "phase_deg": 6.020157334905119e-11,
+          "matched_orders": true
+        },
+        "torcwa": {
+          "power": 2.4424906541753444e-15,
+          "amplitude": 3.608224830031759e-15,
+          "phase_deg": 4.4070058960107765e-13,
+          "matched_orders": true
+        },
+        "lumerical": {
+          "power": 7.05546732149287e-14,
+          "amplitude": 1.541788911122352e-13,
+          "phase_deg": 2.5100084373025042e-11,
+          "matched_orders": true
+        }
+      }
+    },
+    "c02_spectrum": {
+      "normalized_frequency": [
+        0.514,
+        0.5145,
+        0.515,
+        0.5155000000000001,
+        0.516,
+        0.5165,
+        0.517,
+        0.5175000000000001,
+        0.518,
+        0.5185,
+        0.519,
+        0.5195000000000001,
+        0.52,
+        0.5205,
+        0.521,
+        0.5215000000000001,
+        0.522,
+        0.5225,
+        0.523,
+        0.5235000000000001,
+        0.524,
+        0.5245,
+        0.525,
+        0.5255000000000001,
+        0.526,
+        0.5265,
+        0.527,
+        0.5275000000000001,
+        0.528,
+        0.5285,
+        0.529,
+        0.5295000000000001,
+        0.53,
+        0.5305,
+        0.531,
+        0.5315000000000001,
+        0.532,
+        0.5325,
+        0.533,
+        0.5335000000000001,
+        0.534,
+        0.5345,
+        0.535,
+        0.5355000000000001,
+        0.536,
+        0.5365,
+        0.537,
+        0.5375000000000001,
+        0.538
+      ],
+      "traces": [
+        {
+          "solver": "meent",
+          "settings": {
+            "order": 3,
+            "grid": 96,
+            "slices": 1
+          },
+          "transmission": [
+            [
+              0.4639054172088285,
+              0.5119538502060691
+            ],
+            [
+              0.4675384681953271,
+              0.5190775974259322
+            ],
+            [
+              0.47145729324136,
+              0.5268721811354835
+            ],
+            [
+              0.4756602518004424,
+              0.5353920720078607
+            ],
+            [
+              0.48015040582856894,
+              0.5447064866111043
+            ],
+            [
+              0.48493499462509515,
+              0.5549010359010912
+            ],
+            [
+              0.49002514954149123,
+              0.5660801018597686
+            ],
+            [
+              0.4954357939455989,
+              0.5783699983636245
+            ],
+            [
+              0.5011856958709502,
+              0.5919229980647195
+            ],
+            [
+              0.5072976557785647,
+              0.6069223031959187
+            ],
+            [
+              0.5137988227178114,
+              0.6235879758852302
+            ],
+            [
+              0.5207211406529477,
+              0.6421836576727767
+            ],
+            [
+              0.5281019339274734,
+              0.6630234588376985
+            ],
+            [
+              0.5359846474711917,
+              0.6864773893639076
+            ],
+            [
+              0.5444197638498391,
+              0.7129715042775118
+            ],
+            [
+              0.5534659258047333,
+              0.7429742008825323
+            ],
+            [
+              0.5631912994321718,
+              0.7769499663216107
+            ],
+            [
+              0.5736752190379436,
+              0.81524031667223
+            ],
+            [
+              0.5850101585710439,
+              0.8577867126692318
+            ],
+            [
+              0.5973040734335686,
+              0.9035213430318968
+            ],
+            [
+              0.6106831445043931,
+              0.9491000847178459
+            ],
+            [
+              0.6252949219955023,
+              0.9865059035515115
+            ],
+            [
+              0.6413117883652449,
+              0.9994290514274042
+            ],
+            [
+              0.6589344949329637,
+              0.9610326711210282
+            ],
+            [
+              0.6783951954018407,
+              0.8426835787915574
+            ],
+            [
+              0.6999587457295856,
+              0.6433909417325473
+            ],
+            [
+              0.7239197630096134,
+              0.4132070352804338
+            ],
+            [
+              0.7505904543821303,
+              0.21960716178254244
+            ],
+            [
+              0.7802694218109694,
+              0.09395320778848738
+            ],
+            [
+              0.8131724154305108,
+              0.028678964512480275
+            ],
+            [
+              0.849288601932334,
+              0.003416796692923745
+            ],
+            [
+              0.8880945608736723,
+              0.0008889678403110293
+            ],
+            [
+              0.9280076639554073,
+              0.01001644319797178
+            ],
+            [
+              0.9654019990959405,
+              0.024468128974935343
+            ],
+            [
+              0.9930326671587696,
+              0.04081892360070628
+            ],
+            [
+              0.998146922609913,
+              0.05727737083251827
+            ],
+            [
+              0.9621240711022904,
+              0.07293812621110833
+            ],
+            [
+              0.8662649480999491,
+              0.08736762806208749
+            ],
+            [
+              0.707300722140194,
+              0.10037885203529763
+            ],
+            [
+              0.5115986225593613,
+              0.1119091846825167
+            ],
+            [
+              0.32445809692277794,
+              0.12195386799403171
+            ],
+            [
+              0.17979467072430982,
+              0.13052934335459945
+            ],
+            [
+              0.08558626169460946,
+              0.13765266406482207
+            ],
+            [
+              0.0327339340717023,
+              0.14332945622064502
+            ],
+            [
+              0.007963485153335902,
+              0.14754626938534002
+            ],
+            [
+              0.00022894439988013868,
+              0.15026496084340663
+            ],
+            [
+              0.001963141935288493,
+              0.15141773854317817
+            ],
+            [
+              0.008412639533884315,
+              0.15090205139477605
+            ],
+            [
+              0.016703507072867357,
+              0.14857490998969877
+            ]
+          ],
+          "sampled_peaks": [
+            {
+              "polarization": "s",
+              "frequency": 0.5315000000000001,
+              "transmittance": 0.998146922609913,
+              "prominence": 0.5342415054010845
+            },
+            {
+              "polarization": "p",
+              "frequency": 0.525,
+              "transmittance": 0.9994290514274042,
+              "prominence": 0.48747520122133514
+            }
+          ]
+        },
+        {
+          "solver": "grcwa",
+          "settings": {
+            "order": 3,
+            "grid": 96,
+            "slices": 1
+          },
+          "transmission": [
+            [
+              0.5274308740618269,
+              0.5274308740618023
+            ],
+            [
+              0.5359535474226986,
+              0.5359535474226678
+            ],
+            [
+              0.5453288914831607,
+              0.5453288914831779
+            ],
+            [
+              0.5556472111962546,
+              0.5556472111962936
+            ],
+            [
+              0.5670205837250298,
+              0.5670205837250338
+            ],
+            [
+              0.5795863293431193,
+              0.5795863293431057
+            ],
+            [
+              0.5935115544866539,
+              0.5935115544866821
+            ],
+            [
+              0.6089988340324367,
+              0.6089988340324074
+            ],
+            [
+              0.6262930154125166,
+              0.6262930154125788
+            ],
+            [
+              0.6456888680883339,
+              0.6456888680883074
+            ],
+            [
+              0.6675386694261264,
+              0.6675386694261021
+            ],
+            [
+              0.6922573826630101,
+              0.6922573826630151
+            ],
+            [
+              0.7203199173118406,
+              0.720319917311882
+            ],
+            [
+              0.752238063963532,
+              0.7522380639635976
+            ],
+            [
+              0.7884897640851979,
+              0.7884897640852777
+            ],
+            [
+              0.8293414317306692,
+              0.8293414317305856
+            ],
+            [
+              0.8744378044954393,
+              0.8744378044954229
+            ],
+            [
+              0.9219075460453827,
+              0.9219075460452739
+            ],
+            [
+              0.9665461674867553,
+              0.9665461674867563
+            ],
+            [
+              0.9966111666816194,
+              0.9966111666816094
+            ],
+            [
+              0.9900042747988824,
+              0.9900042747988663
+            ],
+            [
+              0.9157707437067464,
+              0.9157707437070406
+            ],
+            [
+              0.7539604252625999,
+              0.7539604252627109
+            ],
+            [
+              0.5300326199794984,
+              0.5300326199788931
+            ],
+            [
+              0.3116001292086389,
+              0.31160012920891383
+            ],
+            [
+              0.15170867132300586,
+              0.15170867132322727
+            ],
+            [
+              0.05846446055771404,
+              0.05846446055764286
+            ],
+            [
+              0.014611275485507733,
+              0.014611275485545437
+            ],
+            [
+              0.0006079518461134851,
+              0.0006079518461280351
+            ],
+            [
+              0.0026376318637556843,
+              0.0026376318637449507
+            ],
+            [
+              0.012445672494019377,
+              0.012445672493958488
+            ],
+            [
+              0.025445222689956932,
+              0.02544522268995051
+            ],
+            [
+              0.039172910586261885,
+              0.03917291058627398
+            ],
+            [
+              0.052331196369783346,
+              0.0523311963697756
+            ],
+            [
+              0.06424600978288489,
+              0.06424600978290096
+            ],
+            [
+              0.07456871483502843,
+              0.07456871483499557
+            ],
+            [
+              0.08311287572953943,
+              0.08311287572956273
+            ],
+            [
+              0.08976370495976761,
+              0.0897637049597868
+            ],
+            [
+              0.09442639203138811,
+              0.094426392031399
+            ],
+            [
+              0.09699517937531653,
+              0.096995179375316
+            ],
+            [
+              0.0973336736668688,
+              0.0973336736668587
+            ],
+            [
+              0.09526204155529024,
+              0.09526204155525693
+            ],
+            [
+              0.0905508647295622,
+              0.09055086472952999
+            ],
+            [
+              0.08292694429091761,
+              0.08292694429093625
+            ],
+            [
+              0.07210739802863729,
+              0.0721073980286464
+            ],
+            [
+              0.057904613239096216,
+              0.057904613239059724
+            ],
+            [
+              0.040510713418855857,
+              0.04051071341885472
+            ],
+            [
+              0.02124059633885193,
+              0.021240596338861696
+            ],
+            [
+              0.004443305711009983,
+              0.0044433057110161754
+            ]
+          ],
+          "sampled_peaks": [
+            {
+              "polarization": "s",
+              "frequency": 0.5235000000000001,
+              "transmittance": 0.9966111666816194,
+              "prominence": 0.46918029261979255
+            },
+            {
+              "polarization": "s",
+              "frequency": 0.534,
+              "transmittance": 0.0973336736668688,
+              "prominence": 0.09289036795585882
+            },
+            {
+              "polarization": "p",
+              "frequency": 0.5235000000000001,
+              "transmittance": 0.9966111666816094,
+              "prominence": 0.4691802926198071
+            },
+            {
+              "polarization": "p",
+              "frequency": 0.534,
+              "transmittance": 0.0973336736668587,
+              "prominence": 0.09289036795584253
+            }
+          ]
+        },
+        {
+          "solver": "meent",
+          "settings": {
+            "order": 6,
+            "grid": 384,
+            "slices": 1
+          },
+          "transmission": [
+            [
+              0.47259479131502025,
+              0.5008813105013111
+            ],
+            [
+              0.4768207590466815,
+              0.5072117106172094
+            ],
+            [
+              0.4813788070285794,
+              0.5141047369354036
+            ],
+            [
+              0.4862757777562705,
+              0.5216006990137291
+            ],
+            [
+              0.4915239394638587,
+              0.5297512830380184
+            ],
+            [
+              0.49714075899373,
+              0.5386206033651519
+            ],
+            [
+              0.5031489264880448,
+              0.5482868007977683
+            ],
+            [
+              0.5095765971750155,
+              0.5588442257186808
+            ],
+            [
+              0.5164578363736839,
+              0.5704062767181718
+            ],
+            [
+              0.5238332696480202,
+              0.5831089888876847
+            ],
+            [
+              0.5317509532197469,
+              0.5971154740874852
+            ],
+            [
+              0.5402674917996069,
+              0.612621290645291
+            ],
+            [
+              0.5494494427936673,
+              0.6298607226545834
+            ],
+            [
+              0.5593750576966885,
+              0.6491136948590795
+            ],
+            [
+              0.5701364229849084,
+              0.6707124594417578
+            ],
+            [
+              0.581842072295865,
+              0.6950458880870785
+            ],
+            [
+              0.5946201450743768,
+              0.7225563840549424
+            ],
+            [
+              0.6086221554484748,
+              0.7537183863864367
+            ],
+            [
+              0.624027390907091,
+              0.7889745544134068
+            ],
+            [
+              0.6410478470121961,
+              0.8285785284808914
+            ],
+            [
+              0.6599333486652177,
+              0.8722373612236044
+            ],
+            [
+              0.6809759628294145,
+              0.9183405283346318
+            ],
+            [
+              0.7045116736892063,
+              0.9624002726108416
+            ],
+            [
+              0.7309149633336146,
+              0.9942618974626767
+            ],
+            [
+              0.7605771897008287,
+              0.9944871105805881
+            ],
+            [
+              0.7938500069070704,
+              0.9342599581183124
+            ],
+            [
+              0.8309157160495673,
+              0.7901541809937688
+            ],
+            [
+              0.8715087466499284,
+              0.5763443002979081
+            ],
+            [
+              0.9143444518011202,
+              0.35319538150369223
+            ],
+            [
+              0.956011889981877,
+              0.17975540265544415
+            ],
+            [
+              0.9890391160843469,
+              0.07336451207327106
+            ],
+            [
+              0.9992547836750216,
+              0.020604645618264007
+            ],
+            [
+              0.964591600723492,
+              0.0017115889069122389
+            ],
+            [
+              0.8618584507731076,
+              0.001578079371086878
+            ],
+            [
+              0.6875564218485749,
+              0.010850321412288297
+            ],
+            [
+              0.4765737577791685,
+              0.024235404691734654
+            ],
+            [
+              0.2840801971782893,
+              0.03886393397265661
+            ],
+            [
+              0.144843032424613,
+              0.05321929135094578
+            ],
+            [
+              0.06113363050498733,
+              0.0665173501801222
+            ],
+            [
+              0.01878822470051462,
+              0.07836235923603242
+            ],
+            [
+              0.0023517611670872836,
+              0.08855817415695472
+            ],
+            [
+              0.00047913785364200634,
+              0.09700417769201668
+            ],
+            [
+              0.0060128730483456514,
+              0.10363687366174645
+            ],
+            [
+              0.014725114291021881,
+              0.10839597774440167
+            ],
+            [
+              0.024182029647209728,
+              0.11120353386804713
+            ],
+            [
+              0.03298457456300045,
+              0.1119499022427648
+            ],
+            [
+              0.0403102538476206,
+              0.1104836027571736
+            ],
+            [
+              0.04564732367131735,
+              0.10660436342024845
+            ],
+            [
+              0.04864386220613574,
+              0.10006158556674458
+            ]
+          ],
+          "sampled_peaks": [
+            {
+              "polarization": "s",
+              "frequency": 0.5295000000000001,
+              "transmittance": 0.9992547836750216,
+              "prominence": 0.5266599923600014
+            },
+            {
+              "polarization": "p",
+              "frequency": 0.526,
+              "transmittance": 0.9944871105805881,
+              "prominence": 0.493605800079277
+            }
+          ]
+        },
+        {
+          "solver": "grcwa",
+          "settings": {
+            "order": 6,
+            "grid": 384,
+            "slices": 1
+          },
+          "transmission": [
+            [
+              0.5108664948888716,
+              0.5108664948888286
+            ],
+            [
+              0.518059124325355,
+              0.5180591243252999
+            ],
+            [
+              0.5259293867795425,
+              0.5259293867796652
+            ],
+            [
+              0.5345383649338309,
+              0.5345383649339601
+            ],
+            [
+              0.5439627231319789,
+              0.5439627231319675
+            ],
+            [
+              0.5542968104237832,
+              0.5542968104237919
+            ],
+            [
+              0.5656555637057292,
+              0.5656555637055821
+            ],
+            [
+              0.5781783062234762,
+              0.578178306223411
+            ],
+            [
+              0.5920335630724596,
+              0.5920335630725895
+            ],
+            [
+              0.6074250081498298,
+              0.6074250081499989
+            ],
+            [
+              0.6245985769102445,
+              0.6245985769100393
+            ],
+            [
+              0.6438505375210716,
+              0.6438505375208863
+            ],
+            [
+              0.665535716100211,
+              0.6655357161004304
+            ],
+            [
+              0.6900736998075313,
+              0.690073699807324
+            ],
+            [
+              0.7179477817809454,
+              0.7179477817814728
+            ],
+            [
+              0.7496846736331656,
+              0.749684673632733
+            ],
+            [
+              0.7857882731416173,
+              0.78578827314118
+            ],
+            [
+              0.8265688766913437,
+              0.8265688766909822
+            ],
+            [
+              0.8717421174004369,
+              0.871742117399329
+            ],
+            [
+              0.9195412630943405,
+              0.9195412630936323
+            ],
+            [
+              0.9648847831142027,
+              0.9648847831138454
+            ],
+            [
+              0.9960770726162651,
+              0.9960770726165106
+            ],
+            [
+              0.9907238924654056,
+              0.9907238924650322
+            ],
+            [
+              0.9168967072795884,
+              0.9168967072790956
+            ],
+            [
+              0.753500961754481,
+              0.7535009617627043
+            ],
+            [
+              0.5266438489716961,
+              0.5266438489743417
+            ],
+            [
+              0.30641321756644413,
+              0.3064132175666318
+            ],
+            [
+              0.14691670843238566,
+              0.14691670843525143
+            ],
+            [
+              0.05527858100145133,
+              0.055278581000540054
+            ],
+            [
+              0.013106888230465814,
+              0.01310688823034639
+            ],
+            [
+              0.00036032633650919573,
+              0.00036032633650767503
+            ],
+            [
+              0.0031476851002858247,
+              0.0031476851003338605
+            ],
+            [
+              0.013288470168907392,
+              0.013288470168997561
+            ],
+            [
+              0.02628859128814033,
+              0.026288591287650247
+            ],
+            [
+              0.03975669257468538,
+              0.03975669257466388
+            ],
+            [
+              0.05244124415070912,
+              0.052441244150565496
+            ],
+            [
+              0.06369205246882911,
+              0.06369205246863062
+            ],
+            [
+              0.07316691908549226,
+              0.07316691908545635
+            ],
+            [
+              0.0806718359458186,
+              0.08067183594588595
+            ],
+            [
+              0.08607246795144581,
+              0.08607246795151773
+            ],
+            [
+              0.08924355290025456,
+              0.08924355290022248
+            ],
+            [
+              0.09003880814387707,
+              0.09003880814364941
+            ],
+            [
+              0.08827311979818193,
+              0.08827311979821255
+            ],
+            [
+              0.08371539532534773,
+              0.08371539532543208
+            ],
+            [
+              0.07609820096705709,
+              0.07609820096692224
+            ],
+            [
+              0.0651648578063492,
+              0.06516485780649034
+            ],
+            [
+              0.05080871760695872,
+              0.05080871760709069
+            ],
+            [
+              0.033445194946801676,
+              0.03344519494675414
+            ],
+            [
+              0.014978002148509728,
+              0.014978002148329344
+            ]
+          ],
+          "sampled_peaks": [
+            {
+              "polarization": "s",
+              "frequency": 0.5245,
+              "transmittance": 0.9960770726162651,
+              "prominence": 0.4852105777273935
+            },
+            {
+              "polarization": "s",
+              "frequency": 0.5345,
+              "transmittance": 0.09003880814387707,
+              "prominence": 0.07506080599536735
+            },
+            {
+              "polarization": "p",
+              "frequency": 0.5245,
+              "transmittance": 0.9960770726165106,
+              "prominence": 0.48521057772768195
+            },
+            {
+              "polarization": "p",
+              "frequency": 0.5345,
+              "transmittance": 0.09003880814364941,
+              "prominence": 0.07506080599532007
+            }
+          ]
+        },
+        {
+          "solver": "lumerical",
+          "settings": {
+            "order": 3,
+            "grid": 96,
+            "slices": 1
+          },
+          "transmission": [
+            [
+              0.5098581702169134,
+              0.5098581702168573
+            ],
+            [
+              0.5169966050805062,
+              0.5169966050804977
+            ],
+            [
+              0.5248046228009984,
+              0.5248046228009929
+            ],
+            [
+              0.5333423658004705,
+              0.5333423658004657
+            ],
+            [
+              0.5426853011133288,
+              0.5426853011133418
+            ],
+            [
+              0.5529262864216014,
+              0.5529262864216827
+            ],
+            [
+              0.5641784236588484,
+              0.5641784236588758
+            ],
+            [
+              0.5765787962048659,
+              0.576578796204886
+            ],
+            [
+              0.5902932139418233,
+              0.5902932139418009
+            ],
+            [
+              0.6055220881220221,
+              0.6055220881220278
+            ],
+            [
+              0.622507488848972,
+              0.6225074888489645
+            ],
+            [
+              0.6415412197522038,
+              0.641541219752236
+            ],
+            [
+              0.6629731973719105,
+              0.662973197371965
+            ],
+            [
+              0.6872181562616914,
+              0.6872181562617046
+            ],
+            [
+              0.7147558644541598,
+              0.7147558644541327
+            ],
+            [
+              0.7461137701719858,
+              0.7461137701719656
+            ],
+            [
+              0.7818072653680567,
+              0.781807265367962
+            ],
+            [
+              0.8221829198027417,
+              0.8221829198025815
+            ],
+            [
+              0.8670468771665321,
+              0.8670468771663086
+            ],
+            [
+              0.9148359045259395,
+              0.9148359045261543
+            ],
+            [
+              0.960888023880324,
+              0.9608880238800971
+            ],
+            [
+              0.9942632081036251,
+              0.9942632081034792
+            ],
+            [
+              0.9935583791413025,
+              0.9935583791412038
+            ],
+            [
+              0.9270639989824601,
+              0.9270639989826515
+            ],
+            [
+              0.7710452903207414,
+              0.7710452903220432
+            ],
+            [
+              0.5466468995683366,
+              0.5466468995684103
+            ],
+            [
+              0.32262835185781963,
+              0.3226283518578138
+            ],
+            [
+              0.15696664186773598,
+              0.15696664186764203
+            ],
+            [
+              0.060283281573413706,
+              0.060283281573444994
+            ],
+            [
+              0.01500656848067791,
+              0.015006568480765333
+            ],
+            [
+              0.0006268291282687388,
+              0.0006268291282703187
+            ],
+            [
+              0.0026582852266053758,
+              0.0026582852266431338
+            ],
+            [
+              0.012514984143849887,
+              0.012514984143858491
+            ],
+            [
+              0.02547176135384214,
+              0.025471761353772104
+            ],
+            [
+              0.03901477624416007,
+              0.03901477624423723
+            ],
+            [
+              0.05182994232764524,
+              0.05182994232766728
+            ],
+            [
+              0.06323619933058976,
+              0.06323619933067237
+            ],
+            [
+              0.0728770556634663,
+              0.07287705566349367
+            ],
+            [
+              0.08055292282619754,
+              0.08055292282621321
+            ],
+            [
+              0.08612854588881194,
+              0.08612854588881841
+            ],
+            [
+              0.08948030476743986,
+              0.08948030476741022
+            ],
+            [
+              0.09046497767717103,
+              0.09046497767724902
+            ],
+            [
+              0.08890113949367666,
+              0.08890113949365346
+            ],
+            [
+              0.08456105087061652,
+              0.08456105087062502
+            ],
+            [
+              0.07717837247549103,
+              0.0771783724754268
+            ],
+            [
+              0.06649070000012403,
+              0.06649070000006767
+            ],
+            [
+              0.05236756011822645,
+              0.052367560118087894
+            ],
+            [
+              0.03515405335512749,
+              0.0351540533551401
+            ],
+            [
+              0.01656504821400617,
+              0.016565048214168977
+            ]
+          ],
+          "sampled_peaks": [
+            {
+              "polarization": "s",
+              "frequency": 0.5245,
+              "transmittance": 0.9942632081036251,
+              "prominence": 0.48440503788671174
+            },
+            {
+              "polarization": "s",
+              "frequency": 0.5345,
+              "transmittance": 0.09046497767717103,
+              "prominence": 0.07389992946316486
+            },
+            {
+              "polarization": "p",
+              "frequency": 0.5245,
+              "transmittance": 0.9942632081034792,
+              "prominence": 0.4844050378866219
+            },
+            {
+              "polarization": "p",
+              "frequency": 0.5345,
+              "transmittance": 0.09046497767724902,
+              "prominence": 0.07389992946308005
+            }
+          ]
+        },
+        {
+          "solver": "lumerical",
+          "settings": {
+            "order": 4,
+            "grid": 192,
+            "slices": 1
+          },
+          "transmission": [
+            [
+              0.5059348701258194,
+              0.5059348701258068
+            ],
+            [
+              0.5127424736782871,
+              0.5127424736782785
+            ],
+            [
+              0.5201776263113145,
+              0.5201776263113352
+            ],
+            [
+              0.5282933332249694,
+              0.5282933332249672
+            ],
+            [
+              0.5371564667920266,
+              0.5371564667920651
+            ],
+            [
+              0.5468494833115632,
+              0.5468494833115793
+            ],
+            [
+              0.557472844131036,
+              0.5574728441310324
+            ],
+            [
+              0.5691482223069654,
+              0.5691482223069981
+            ],
+            [
+              0.5820226100718148,
+              0.5820226100718285
+            ],
+            [
+              0.5962734581769493,
+              0.5962734581769277
+            ],
+            [
+              0.6121149546394224,
+              0.6121149546394274
+            ],
+            [
+              0.6298054379436602,
+              0.6298054379436523
+            ],
+            [
+              0.6496556291231325,
+              0.649655629123212
+            ],
+            [
+              0.6720366214464252,
+              0.6720366214463819
+            ],
+            [
+              0.6973848716484192,
+              0.6973848716487753
+            ],
+            [
+              0.7261976746666982,
+              0.7261976746665919
+            ],
+            [
+              0.7590043366781337,
+              0.7590043366783642
+            ],
+            [
+              0.7962802165358183,
+              0.7962802165358766
+            ],
+            [
+              0.8382319446601656,
+              0.8382319446601764
+            ],
+            [
+              0.8843014711752987,
+              0.8843014711753306
+            ],
+            [
+              0.9320853418846211,
+              0.9320853418847839
+            ],
+            [
+              0.975161072480046,
+              0.9751610724798015
+            ],
+            [
+              0.9994056124614914,
+              0.999405612460869
+            ],
+            [
+              0.9793457476402547,
+              0.9793457476394946
+            ],
+            [
+              0.8828639558213563,
+              0.8828639558207445
+            ],
+            [
+              0.6979837092776783,
+              0.697983709278986
+            ],
+            [
+              0.46565569645293237,
+              0.46565569645322585
+            ],
+            [
+              0.2580730232637207,
+              0.2580730232635431
+            ],
+            [
+              0.11722605739592515,
+              0.11722605739609955
+            ],
+            [
+              0.040586508684772045,
+              0.04058650868477358
+            ],
+            [
+              0.007734732364499045,
+              0.007734732364482721
+            ],
+            [
+              2.4964618591566587e-06,
+              2.496461859264753e-06
+            ],
+            [
+              0.0051712242392710555,
+              0.0051712242392418315
+            ],
+            [
+              0.016213711636597097,
+              0.016213711636672703
+            ],
+            [
+              0.029308258250070808,
+              0.029308258250018503
+            ],
+            [
+              0.042429307952756214,
+              0.0424293079526617
+            ],
+            [
+              0.05451641373612498,
+              0.05451641373607498
+            ],
+            [
+              0.06501421094175468,
+              0.06501421094172007
+            ],
+            [
+              0.07362213169520604,
+              0.07362213169519279
+            ],
+            [
+              0.08015750130355408,
+              0.08015750130354865
+            ],
+            [
+              0.08447908287735399,
+              0.08447908287724577
+            ],
+            [
+              0.08644300443969624,
+              0.08644300443972497
+            ],
+            [
+              0.08587693279065672,
+              0.08587693279064704
+            ],
+            [
+              0.082567086683784,
+              0.08256708668377184
+            ],
+            [
+              0.07626057277240911,
+              0.0762605727724741
+            ],
+            [
+              0.06669771993011896,
+              0.06669771993010831
+            ],
+            [
+              0.05371556513152966,
+              0.053715565131534374
+            ],
+            [
+              0.037528838474939305,
+              0.03752883847499196
+            ],
+            [
+              0.019461652043298097,
+              0.019461652043274245
+            ]
+          ],
+          "sampled_peaks": [
+            {
+              "polarization": "s",
+              "frequency": 0.525,
+              "transmittance": 0.9994056124614914,
+              "prominence": 0.493470742335672
+            },
+            {
+              "polarization": "s",
+              "frequency": 0.5345,
+              "transmittance": 0.08644300443969624,
+              "prominence": 0.06698135239639814
+            },
+            {
+              "polarization": "p",
+              "frequency": 0.525,
+              "transmittance": 0.999405612460869,
+              "prominence": 0.49347074233506216
+            },
+            {
+              "polarization": "p",
+              "frequency": 0.5345,
+              "transmittance": 0.08644300443972497,
+              "prominence": 0.06698135239645073
+            }
+          ]
+        }
+      ]
+    },
+    "b06_phase_ramp": {
+      "archived_quick_sweep": {
+        "phase_per_order_deg": 1.3245069229437285,
+        "equivalent_x_shift_nm": -3.6791858970659126,
+        "phase_rms_residual_deg": 0.004677838047560232,
+        "max_amplitude_before": 0.0195596653890702,
+        "max_amplitude_after": 0.00016318826909559716
+      },
+      "fixed_geometry_mesh_sweep": [
+        {
+          "mesh_cells_x": 64,
+          "phase_per_order_deg": 1.3245193514667477,
+          "equivalent_x_shift_nm": -3.679220420740966,
+          "phase_rms_residual_deg": 0.001454170661064983,
+          "max_amplitude_before": 0.0195596653890702,
+          "max_amplitude_after": 0.0001627761408982558,
+          "reported_x_samples": 136,
+          "reported_x_step_nm": 7.352941176470589,
+          "half_step_phase_deg": 1.323529411764706,
+          "material_first_harmonic_phase_deg": 0.0003029349993411318
+        },
+        {
+          "mesh_cells_x": 128,
+          "phase_per_order_deg": 1.3245193514667477,
+          "equivalent_x_shift_nm": -3.679220420740966,
+          "phase_rms_residual_deg": 0.001454170661064983,
+          "max_amplitude_before": 0.0195596653890702,
+          "max_amplitude_after": 0.0001627761408982558,
+          "reported_x_samples": 136,
+          "reported_x_step_nm": 7.352941176470589,
+          "half_step_phase_deg": 1.323529411764706,
+          "material_first_harmonic_phase_deg": 0.0003029349993411318
+        },
+        {
+          "mesh_cells_x": 256,
+          "phase_per_order_deg": 0.7033991249105259,
+          "equivalent_x_shift_nm": -1.9538864580847943,
+          "phase_rms_residual_deg": 0.0005804903112941468,
+          "max_amplitude_before": 0.010387717109532027,
+          "max_amplitude_after": 6.498194679264157e-05,
+          "reported_x_samples": 256,
+          "reported_x_step_nm": 3.9062500000000004,
+          "half_step_phase_deg": 0.7031250000000001,
+          "material_first_harmonic_phase_deg": -2.1205294596107132e-13
+        },
+        {
+          "mesh_cells_x": 512,
+          "phase_per_order_deg": 0.3519051484077877,
+          "equivalent_x_shift_nm": -0.9775143011327435,
+          "phase_rms_residual_deg": 0.0007255899032689569,
+          "max_amplitude_before": 0.0051973531414909015,
+          "max_amplitude_after": 8.122588531950204e-05,
+          "reported_x_samples": 512,
+          "reported_x_step_nm": 1.953125,
+          "half_step_phase_deg": 0.3515625,
+          "material_first_harmonic_phase_deg": 0.0
+        }
+      ],
+      "fixed_geometry_strips": 128,
+      "fixed_geometry_theta_deg": 12.0
+    },
+    "c04_rotation_control": [
+      {
+        "angle_deg": 22.5,
+        "settings": {
+          "order": 3,
+          "grid": 96,
+          "slices": 1
+        },
+        "same_angle": {
+          "power": 0.0005396689499493554,
+          "amplitude": 0.00872185340210537,
+          "phase_deg": 2.8550542340413365,
+          "matched_orders": true
+        },
+        "opposite_angle": {
+          "power": 0.0005396689499567175,
+          "amplitude": 1.140204053683826,
+          "phase_deg": 179.62812767884245,
+          "matched_orders": true
+        }
+      },
+      {
+        "angle_deg": 22.5,
+        "settings": {
+          "order": 6,
+          "grid": 384,
+          "slices": 1
+        },
+        "same_angle": {
+          "power": 2.1563245520567903e-05,
+          "amplitude": 0.00034920753963994875,
+          "phase_deg": 0.0971292456164973,
+          "matched_orders": true
+        },
+        "opposite_angle": {
+          "power": 2.156324545948135e-05,
+          "amplitude": 1.2058843140873696,
+          "phase_deg": 179.98776762640728,
+          "matched_orders": true
+        }
+      },
+      {
+        "angle_deg": 45.0,
+        "settings": {
+          "order": 3,
+          "grid": 96,
+          "slices": 1
+        },
+        "same_angle": {
+          "power": 0.09084580554228372,
+          "amplitude": 0.4435790016191378,
+          "phase_deg": 95.74092160431213,
+          "matched_orders": true
+        },
+        "opposite_angle": {
+          "power": 0.09084580554207466,
+          "amplitude": 1.4288271435899516,
+          "phase_deg": 152.32920880357398,
+          "matched_orders": true
+        }
+      },
+      {
+        "angle_deg": 45.0,
+        "settings": {
+          "order": 6,
+          "grid": 384,
+          "slices": 1
+        },
+        "same_angle": {
+          "power": 0.06242454424027988,
+          "amplitude": 0.08307766422421543,
+          "phase_deg": 6.752002335770671,
+          "matched_orders": true
+        },
+        "opposite_angle": {
+          "power": 0.06242454423977084,
+          "amplitude": 1.2232267031066508,
+          "phase_deg": 178.4722989079883,
+          "matched_orders": true
+        }
+      },
+      {
+        "angle_deg": 67.5,
+        "settings": {
+          "order": 3,
+          "grid": 96,
+          "slices": 1
+        },
+        "same_angle": {
+          "power": 0.0005396689499448139,
+          "amplitude": 0.008721853402112512,
+          "phase_deg": 2.855054234035816,
+          "matched_orders": true
+        },
+        "opposite_angle": {
+          "power": 0.0005396689499460108,
+          "amplitude": 1.1402040536838118,
+          "phase_deg": 179.62812767884793,
+          "matched_orders": true
+        }
+      },
+      {
+        "angle_deg": 67.5,
+        "settings": {
+          "order": 6,
+          "grid": 384,
+          "slices": 1
+        },
+        "same_angle": {
+          "power": 2.1563246104805422e-05,
+          "amplitude": 0.0003492075384723038,
+          "phase_deg": 0.09712924566636513,
+          "matched_orders": true
+        },
+        "opposite_angle": {
+          "power": 2.1563245902744832e-05,
+          "amplitude": 1.2058843140870297,
+          "phase_deg": 179.98776762641305,
+          "matched_orders": true
+        }
+      }
+    ]
+  }
 }

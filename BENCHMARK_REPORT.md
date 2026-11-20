@@ -1,6 +1,6 @@
 # RCWA Benchmark Report
 
-Profile **quick** · **91 excitation points** · **16 cases** · s and p incidence at each point. [Numerical dataset](results/benchmark.json) · [Conclusion](#conclusion)
+Profile **quick** · **91 excitation points** · **16 cases** · s and p incidence at each point. [Numerical dataset](results/benchmark.json) · [Periodic-case diagnosis](PERIODIC_DIAGNOSIS.md) · [Conclusion](#conclusion)
 
 ## Case overview
 
@@ -66,7 +66,7 @@ The last column counts cases for which both reported maximum differences are at 
 
 **Fresnel interface**
 
-[Physical context and application](cases/A/A01/README.md) · [Notebook](cases/A/A01/A01.ipynb)
+[Notebook, physical model and applications](cases/A/A01/A01.ipynb)
 
 | Solver pair | Matched points | Max ΔR | Max ΔT | Max ΔA | Max order ΔP | Max \|Δamplitude\| | Max phase Δ (deg) | Worst amplitude point | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -100,7 +100,7 @@ The last column counts cases for which both reported maximum differences are at 
 
 **Antireflection film**
 
-[Physical context and application](cases/A/A02/README.md) · [Notebook](cases/A/A02/A02.ipynb)
+[Notebook, physical model and applications](cases/A/A02/A02.ipynb)
 
 | Solver pair | Matched points | Max ΔR | Max ΔT | Max ΔA | Max order ΔP | Max \|Δamplitude\| | Max phase Δ (deg) | Worst amplitude point | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -132,7 +132,7 @@ The last column counts cases for which both reported maximum differences are at 
 
 **DBR mirror**
 
-[Physical context and application](cases/A/A03/README.md) · [Notebook](cases/A/A03/A03.ipynb)
+[Notebook, physical model and applications](cases/A/A03/A03.ipynb)
 
 | Solver pair | Matched points | Max ΔR | Max ΔT | Max ΔA | Max order ΔP | Max \|Δamplitude\| | Max phase Δ (deg) | Worst amplitude point | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -164,7 +164,7 @@ The last column counts cases for which both reported maximum differences are at 
 
 **Absorbing metal film**
 
-[Physical context and application](cases/A/A04/README.md) · [Notebook](cases/A/A04/A04.ipynb)
+[Notebook, physical model and applications](cases/A/A04/A04.ipynb)
 
 | Solver pair | Matched points | Max ΔR | Max ΔT | Max ΔA | Max order ΔP | Max \|Δamplitude\| | Max phase Δ (deg) | Worst amplitude point | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -196,7 +196,7 @@ The last column counts cases for which both reported maximum differences are at 
 
 **Binary dielectric grating**
 
-[Physical context and application](cases/B/B01/README.md) · [Notebook](cases/B/B01/B01.ipynb)
+[Notebook, physical model and applications](cases/B/B01/B01.ipynb) · [Diagnosis](PERIODIC_DIAGNOSIS.md#b01)
 
 | Solver pair | Matched points | Max ΔR | Max ΔT | Max ΔA | Max order ΔP | Max \|Δamplitude\| | Max phase Δ (deg) | Worst amplitude point | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -224,7 +224,7 @@ The last column counts cases for which both reported maximum differences are at 
 
 **High-contrast grating**
 
-[Physical context and application](cases/B/B02/README.md) · [Notebook](cases/B/B02/B02.ipynb)
+[Notebook, physical model and applications](cases/B/B02/B02.ipynb) · [Diagnosis](PERIODIC_DIAGNOSIS.md#b02)
 
 | Solver pair | Matched points | Max ΔR | Max ΔT | Max ΔA | Max order ΔP | Max \|Δamplitude\| | Max phase Δ (deg) | Worst amplitude point | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -252,7 +252,7 @@ The last column counts cases for which both reported maximum differences are at 
 
 **Conical incidence**
 
-[Physical context and application](cases/B/B03/README.md) · [Notebook](cases/B/B03/B03.ipynb)
+[Notebook, physical model and applications](cases/B/B03/B03.ipynb) · [Diagnosis](PERIODIC_DIAGNOSIS.md#b03)
 
 | Solver pair | Matched points | Max ΔR | Max ΔT | Max ΔA | Max order ΔP | Max \|Δamplitude\| | Max phase Δ (deg) | Worst amplitude point | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -280,7 +280,7 @@ The last column counts cases for which both reported maximum differences are at 
 
 **Trapezoidal grating**
 
-[Physical context and application](cases/B/B04/README.md) · [Notebook](cases/B/B04/B04.ipynb)
+[Notebook, physical model and applications](cases/B/B04/B04.ipynb) · [Diagnosis](PERIODIC_DIAGNOSIS.md#b04)
 
 | Solver pair | Matched points | Max ΔR | Max ΔT | Max ΔA | Max order ΔP | Max \|Δamplitude\| | Max phase Δ (deg) | Worst amplitude point | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -308,7 +308,7 @@ The last column counts cases for which both reported maximum differences are at 
 
 **Wire-grid polarizer**
 
-[Physical context and application](cases/B/B05/README.md) · [Notebook](cases/B/B05/B05.ipynb)
+[Notebook, physical model and applications](cases/B/B05/B05.ipynb) · [Diagnosis](PERIODIC_DIAGNOSIS.md#b05)
 
 | Solver pair | Matched points | Max ΔR | Max ΔT | Max ΔA | Max order ΔP | Max \|Δamplitude\| | Max phase Δ (deg) | Worst amplitude point | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -336,7 +336,7 @@ The last column counts cases for which both reported maximum differences are at 
 
 **Volume index grating**
 
-[Physical context and application](cases/B/B06/README.md) · [Notebook](cases/B/B06/B06.ipynb)
+[Notebook, physical model and applications](cases/B/B06/B06.ipynb) · [Diagnosis](PERIODIC_DIAGNOSIS.md#b06)
 
 | Solver pair | Matched points | Max ΔR | Max ΔT | Max ΔA | Max order ΔP | Max \|Δamplitude\| | Max phase Δ (deg) | Worst amplitude point | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -364,7 +364,7 @@ The last column counts cases for which both reported maximum differences are at 
 
 **Metal nanohole array**
 
-[Physical context and application](cases/C/C01/README.md) · [Notebook](cases/C/C01/C01.ipynb)
+[Notebook, physical model and applications](cases/C/C01/C01.ipynb) · [Diagnosis](PERIODIC_DIAGNOSIS.md#c01)
 
 | Solver pair | Matched points | Max ΔR | Max ΔT | Max ΔA | Max order ΔP | Max \|Δamplitude\| | Max phase Δ (deg) | Worst amplitude point | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -392,7 +392,7 @@ The last column counts cases for which both reported maximum differences are at 
 
 **Photonic crystal slab**
 
-[Physical context and application](cases/C/C02/README.md) · [Notebook](cases/C/C02/C02.ipynb)
+[Notebook, physical model and applications](cases/C/C02/C02.ipynb) · [Diagnosis](PERIODIC_DIAGNOSIS.md#c02)
 
 | Solver pair | Matched points | Max ΔR | Max ΔT | Max ΔA | Max order ΔP | Max \|Δamplitude\| | Max phase Δ (deg) | Worst amplitude point | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -412,6 +412,8 @@ The last column counts cases for which both reported maximum differences are at 
 
 ![C02 geometry](results/figures/C02/geometry.png)
 
+![C02 resonance diagnosis](results/figures/C02/resonance-diagnosis.png)
+
 ![C02 solver differences](results/figures/C02/solver-differences.png)
 
 </details>
@@ -420,7 +422,7 @@ The last column counts cases for which both reported maximum differences are at 
 
 **Cylindrical meta-atom**
 
-[Physical context and application](cases/C/C03/README.md) · [Notebook](cases/C/C03/C03.ipynb)
+[Notebook, physical model and applications](cases/C/C03/C03.ipynb) · [Diagnosis](PERIODIC_DIAGNOSIS.md#c03)
 
 | Solver pair | Matched points | Max ΔR | Max ΔT | Max ΔA | Max order ΔP | Max \|Δamplitude\| | Max phase Δ (deg) | Worst amplitude point | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -448,7 +450,7 @@ The last column counts cases for which both reported maximum differences are at 
 
 **Rotated nanofin**
 
-[Physical context and application](cases/C/C04/README.md) · [Notebook](cases/C/C04/C04.ipynb)
+[Notebook, physical model and applications](cases/C/C04/C04.ipynb) · [Diagnosis](PERIODIC_DIAGNOSIS.md#c04)
 
 | Solver pair | Matched points | Max ΔR | Max ΔT | Max ΔA | Max order ΔP | Max \|Δamplitude\| | Max phase Δ (deg) | Worst amplitude point | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -476,7 +478,7 @@ The last column counts cases for which both reported maximum differences are at 
 
 **Shifted bilayer**
 
-[Physical context and application](cases/C/C05/README.md) · [Notebook](cases/C/C05/C05.ipynb)
+[Notebook, physical model and applications](cases/C/C05/C05.ipynb) · [Diagnosis](PERIODIC_DIAGNOSIS.md#c05)
 
 | Solver pair | Matched points | Max ΔR | Max ΔT | Max ΔA | Max order ΔP | Max \|Δamplitude\| | Max phase Δ (deg) | Worst amplitude point | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -508,7 +510,7 @@ The last column counts cases for which both reported maximum differences are at 
 
 **Metagrating supercell**
 
-[Physical context and application](cases/C/C06/README.md) · [Notebook](cases/C/C06/C06.ipynb)
+[Notebook, physical model and applications](cases/C/C06/C06.ipynb) · [Diagnosis](PERIODIC_DIAGNOSIS.md#c06)
 
 | Solver pair | Matched points | Max ΔR | Max ΔT | Max ΔA | Max order ΔP | Max \|Δamplitude\| | Max phase Δ (deg) | Worst amplitude point | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -536,6 +538,6 @@ The last column counts cases for which both reported maximum differences are at 
 
 **Planar validation.** 4/4 cases pass. Against the independent Fresnel or multilayer reference, the largest absolute power and complex-amplitude differences are 2.54e-13 and 1.59e-13, respectively. This verifies the tested planar normalization, polarization and phase conventions.
 
-**Periodic structures.** 12/12 cases are inconclusive under the reported settings. The largest observed power discrepancy is 0.991 in C02 (Photonic crystal slab). Across the periodic cases, grcwa and torcwa differ by at most 1.05e-12 in power and 1.08e-11 in complex amplitude at the tested points. Their common raster can produce shared discretization error. These results support a comparison of consistency under the reported settings, with no overall accuracy ranking.
+**Periodic structures.** 12/12 cases are inconclusive under the reported settings. The largest observed power discrepancy is 0.991 in C02 (Photonic crystal slab). Across the periodic cases, grcwa and torcwa differ by at most 1.05e-12 in power and 1.08e-11 in complex amplitude at the tested points. Their common raster can produce shared discretization error. These results support a comparison of consistency under the reported settings.
 
-**Priority for further validation.** Densely sample the C02 resonances and refine Fourier order and geometry sampling independently. Resolve order-by-order power balance for C06 and check loss and polarization convergence for the metallic B05 and C01 cases.
+**Periodic diagnosis.** Matching the finite-order material operator resolves the selected Meent–grcwa differences. The detailed study documents resonance shifts in C02, order-power redistribution in C06, and an order-dependent phase ramp in the archived B06 Lumerical results. [Experiments and case-by-case findings](PERIODIC_DIAGNOSIS.md).
