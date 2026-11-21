@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def differences(a, b):
+def differences(a, b, *, include_fields=True):
     """Match by port, reciprocal-lattice order and polarization."""
     def channels(result, port):
         return {tuple(map(int, order)): i for i, order in enumerate(result.orders) if result.propagating[port, i]}
@@ -18,6 +18,8 @@ def differences(a, b):
             i, j = left[key], right[key]
             numbers = abs(a.power[p,i]-b.power[p,j])
             values["max_order_power"] = max(values["max_order_power"], float(numbers.max()))
+            if not include_fields:
+                continue
             f, g = a.amplitude[p,i], b.amplitude[p,j]
             delta = abs(f-g)
             if delta.max() > values["max_amplitude"]:

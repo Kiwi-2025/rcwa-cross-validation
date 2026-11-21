@@ -1,19 +1,18 @@
 from argparse import ArgumentParser
 from contextlib import ExitStack
 from pathlib import Path
-from tempfile import TemporaryDirectory
 import json
 
 import yaml
 
 from .case_loader import ROOT, catalog, load_case, points, resolve
-from .reporting.benchmark import publish_benchmark, refresh_published_report
+from .reporting.benchmark import refresh_published_report
 from .reporting.plots import save_figures
-from .reporting.tables import compare_to_lumerical, comparison_table, read_run, summarize
+from .reporting.tables import certified_results, compare_to_lumerical, comparison_table, read_run, summarize
 from .runner import RUNS, configure, import_lumerical, run
 from .solvers import MODULES, adapter
-from .storage import read_json
 from .validation.convergence import settings_series
+from .validation.study import CACHE, run_benchmark
 
 
 def parser():
@@ -22,9 +21,9 @@ def parser():
     commands.add_parser("doctor")
     commands.add_parser("list")
     benchmark = commands.add_parser("benchmark", help="Run every case and refresh the dataset and root report.")
-    benchmark.add_argument("--profile", choices=["quick","pilot","convergence"], default="quick")
-    benchmark.set_defaults(selection="all", solvers=",".join(MODULES),
-                           point_limit=None, representative=False, resume=None)
+    benchmark.add_argument("--profile", choices=["convergence"], default="convergence")
+    benchmark.add_argument("--cache", type=Path, default=CACHE)
+    benchmark.add_argument("--fresh-b", action="store_true", help="Recompute class B evidence in the selected cache.")
     for name in ("run", "converge"):
         cmd = commands.add_parser(name)
         cmd.add_argument("selection", help="Case ID, category, or all.")
@@ -70,7 +69,8 @@ def show_run(folder, figures=False):
     print(f"{manifest['case']}: {summary['status']} ({summary['coverage']})")
     print(comparison_table(pairs, len(manifest["points"])))
     if figures:
-        paths = save_figures(folder/"figures", manifest, results, catalog(manifest["case"])[0])
+        paths = save_figures(folder/"figures", manifest, certified_results(manifest, results),
+                             catalog(manifest["case"])[0])
         print(f"Figures: {paths[0].parent}")
 
 
@@ -78,6 +78,10 @@ def main():
     cli = parser()
     args = cli.parse_args()
     configure()
+    if args.command == "benchmark":
+        run_benchmark(args.cache, fresh_b=args.fresh_b)
+        print(f"Report: {ROOT/'BENCHMARK_REPORT.md'}", flush=True)
+        return
     if args.command=="doctor":
         for name in MODULES:
             try:
@@ -127,31 +131,16 @@ def main():
     resume = find_run(args.resume, cli) if args.resume else None
     if resume is not None and len(selected) != 1:
         cli.error("Resume applies to a single case.")
-    folders = []
     with ExitStack() as stack:
-        run_root = RUNS
-        if args.command == "benchmark":
-            RUNS.mkdir(exist_ok=True)
-            run_root = Path(stack.enter_context(TemporaryDirectory(dir=RUNS, prefix="benchmark-")))
         if "lumerical" in solvers and len(selected) > 1:
             try:
                 stack.enter_context(adapter("lumerical").session())
             except Exception as exc:
                 print(f"Lumerical session initialization: {exc}", flush=True)
         for p in selected:
-            folder = run(p, solvers, args.profile, args.point_limit, args.representative, resume, run_root)
-            folders.append(folder)
-            if args.command != "benchmark":
-                print(folder, flush=True)
-                show_run(folder)
-        if args.command == "benchmark":
-            manifests = [read_json(folder/"manifest.json") for folder in folders]
-            complete = all(manifest["solvers"].get(name, {}).get("status") == "COMPLETE"
-                           for manifest in manifests for name in MODULES)
-            if not complete:
-                cli.exit(1, "Benchmark incomplete. See the solver messages above. The published dataset is unchanged.\n")
-            publish_benchmark(folders)
-            print(f"Report: {ROOT/'BENCHMARK_REPORT.md'}", flush=True)
+            folder = run(p, solvers, args.profile, args.point_limit, args.representative, resume)
+            print(folder, flush=True)
+            show_run(folder)
 
 
 if __name__=="__main__":

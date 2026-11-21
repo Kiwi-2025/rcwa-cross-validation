@@ -48,6 +48,7 @@ class SolverSettings:
     order: int
     grid: int
     slices: int
+    order_y: int | None = None
 
 
 @dataclass

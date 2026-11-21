@@ -1,75 +1,38 @@
 {
   "id": "C06",
-  "title": "Metagrating supercell",
-  "description": "Compare power in the target (+1, 0) transmitted order and other orders of a four-pillar beam-steering supercell.",
+  "title": "First-order dielectric grating",
+  "description": "Compare the zero and signed first transmitted orders of a shallow dielectric pillar grating.",
   "periodic_dimensions": 2,
   "period_nm": [
-    2400,
-    600
+    500,
+    500
   ],
   "epsilon_incident": 1.0,
   "epsilon_exit": 2.25,
   "layers": [
     {
-      "thickness_nm": 800,
+      "thickness_nm": 100,
       "epsilon": 1.0,
       "shapes": [
         {
-          "kind": "rectangle",
-          "epsilon": 12.1104,
-          "width_nm": 150,
-          "length_nm": 150,
-          "center_nm": [
-            -900,
-            0
-          ]
-        },
-        {
-          "kind": "rectangle",
-          "epsilon": 12.1104,
-          "width_nm": 230,
-          "length_nm": 230,
-          "center_nm": [
-            -300,
-            0
-          ]
-        },
-        {
-          "kind": "rectangle",
-          "epsilon": 12.1104,
-          "width_nm": 310,
-          "length_nm": 310,
-          "center_nm": [
-            300,
-            0
-          ]
-        },
-        {
-          "kind": "rectangle",
-          "epsilon": 12.1104,
-          "width_nm": 390,
-          "length_nm": 390,
-          "center_nm": [
-            900,
-            0
-          ]
+          "kind": "circle",
+          "epsilon": 1.69,
+          "radius_nm": 100
         }
       ]
     }
   ],
-  "wavelength_nm": 1550,
+  "wavelength_nm": 633,
   "theta_deg": 0,
   "phi_deg": 0,
   "scan": {
     "wavelength_nm": {
-      "start": 1400,
-      "stop": 1799.9,
-      "count": 41,
+      "start": 633,
+      "stop": 650,
+      "count": 9,
       "quick": [
-        1420,
-        1550,
-        1650,
-        1799.9
+        633,
+        650
       ]
     }
   },

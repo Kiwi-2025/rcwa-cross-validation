@@ -3,7 +3,7 @@ from importlib.metadata import version
 import numpy as np
 
 from ..conventions import result_from_amplitudes, wavevectors
-from ..geometry import raster, rectangular_orders
+from ..geometry import raster, rectangular_orders, shape_fourier_grid
 from ..models import Layer
 
 
@@ -12,18 +12,22 @@ def probe():
     return {"version": version("meent"), "device": "CPU"}
 
 
-def solve(case, settings, *, material_operator="native"):
+def solve(case, settings, *, material_operator="native", exact_shapes=False):
     import meent
 
     theta, phi = np.deg2rad([case.theta, case.phi])
     orders = rectangular_orders(case, settings)
     mx, my = orders.max(axis=0)
     layers = case.layers or (Layer(0, complex(case.incident)),)
-    cells = [
-        (raster(layer, case, settings.grid, midpoint=True) if layer.shapes else
-         np.full((settings.grid, settings.grid if case.dimensions == 2 else 1), layer.epsilon))
-         for layer in layers
-    ]
+    if exact_shapes:
+        cells = [shape_fourier_grid(layer, case, settings.grid, int(max(mx, my))) for layer in layers]
+        material_operator = "direct-dfs"
+    else:
+        cells = [
+            (raster(layer, case, settings.grid, midpoint=True) if layer.shapes else
+             np.full((settings.grid, settings.grid if case.dimensions == 2 else 1), layer.epsilon))
+            for layer in layers
+        ]
     # Meent expects (layer, y, x), with y descending and passive n-imaginary.
     index = np.sqrt(np.stack(cells)).conj().transpose(0, 2, 1)[:, ::-1, :].copy()
     solver = meent.call_mee(
@@ -56,7 +60,10 @@ def solve(case, settings, *, material_operator="native"):
             amplitude[port, :, :, i] = np.column_stack((s, p)) * (signs*normalize)[:, None] * (-1 if i else 1)
             power[port, :, i] = getattr(columns, "de_ri" if port == 0 else "de_ti").T.ravel()
     formulation = "continuous raster" if material_operator == "native" else material_operator
-    return result_from_amplitudes(case, orders, amplitude, dict(probe(), formulation=formulation),
+    metadata = dict(probe(), formulation=formulation)
+    if exact_shapes:
+        metadata["numerical_mode"] = "Exact shape Fourier coefficients (direct operator)"
+    return result_from_amplitudes(case, orders, amplitude, metadata,
                                   power, power.sum(axis=1))
 
 

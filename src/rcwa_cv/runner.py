@@ -17,6 +17,7 @@ from .references import multilayer
 from .solvers import adapter
 from .solvers.base import Unavailable
 from .storage import read_json, save_result, write_json
+from .validation.compare import differences, meets
 from .validation.convergence import settings_series, check_axis, converged
 from .validation.physics import checks
 
@@ -104,10 +105,16 @@ def run(path, solvers, profile_name, point_limit=None, representative=False, res
                             all_results.append((label, measurement))
                         result = all_results[0][1]
                         refinements = check_axis(all_results[1:], result)
+                        physical = checks(result, point.lossy)
+                        if case["periodic_dimensions"] == 0:
+                            delta = differences(result, multilayer.solve(point, settings))
+                            refinements = [{"axis": "analytic", "differences": delta}]
+                            verified = meets(delta, 1e-8)
+                        else:
+                            verified = profile_name != "quick" and bool(refinements) and converged(refinements)
                         base_info["completed"].append({"index":j, "path":f"{name}/{j:04d}/00_base.npz",
-                            "physics":checks(result, point.lossy), "refinements":refinements,
-                            "converged": (case["periodic_dimensions"] == 0 or
-                                          (profile_name != "quick" and converged(refinements)))})
+                            "physics":physical, "refinements":refinements,
+                            "converged": verified and max(physical.values()) <= 1e-6})
                     except Exception as exc:
                         message = f"{type(exc).__name__}: {exc}"
                         base_info["errors"].append({"index":j, "error":message})

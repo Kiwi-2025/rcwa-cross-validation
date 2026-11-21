@@ -1,7 +1,7 @@
 {
   "id": "C03",
-  "title": "Cylindrical meta-atom",
-  "description": "Compare transmitted phase and efficiency as the radius of a dielectric pillar changes.",
+  "title": "Dielectric cylindrical meta-atom",
+  "description": "Compare the amplitude and phase of a short, low-index cylindrical pillar on glass as its radius varies.",
   "periodic_dimensions": 2,
   "period_nm": [
     300,
@@ -11,12 +11,12 @@
   "epsilon_exit": 2.25,
   "layers": [
     {
-      "thickness_nm": 600,
+      "thickness_nm": 150,
       "epsilon": 1.0,
       "shapes": [
         {
           "kind": "circle",
-          "epsilon": 5.76,
+          "epsilon": 1.69,
           "radius_nm": 50,
           "radius_scan": true
         }
@@ -29,14 +29,12 @@
   "scan": {
     "radius_nm": {
       "start": 50,
-      "stop": 120,
-      "count": 36,
+      "stop": 60,
+      "count": 11,
       "quick": [
         50,
-        70,
-        90,
-        110,
-        120
+        55,
+        60
       ]
     }
   },

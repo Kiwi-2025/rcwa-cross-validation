@@ -129,12 +129,13 @@ def build_script(case, settings, output=None, *, match_fourier_order=False):
     # The minimum native ky half-order is 1. Invariant geometries couple only
     # within the incident ky sector, which also supports conical incidence.
     native_order = settings.order if match_fourier_order else 2 * settings.order + 1
+    native_order_y = native_order if settings.order_y is None else settings.order_y
     add("addrcwa", name="RCWA", simulation_region="3D", propagation_axis="z",
         propagation_direction="forward", x=0, y=0, x_span=lx*nm, y_span=ly*nm,
         z_min=(start-20)*nm, z_max=(case.thickness+20)*nm,
         interface_position="absolute", interface_absolute_positions=[z*nm for z in interfaces],
          k_vectors_domain="rectangular", max_number_ku=native_order if case.dimensions else 1,
-         max_number_kv=native_order if case.dimensions == 2 else 1,
+         max_number_kv=native_order_y if case.dimensions == 2 else 1,
         mesh_type="custom", mesh_cells_x=max(10, settings.grid if case.dimensions else 2),
         mesh_cells_y=max(10, settings.grid if case.dimensions == 2 else 2), mesh_cells_z=10,
         fit_materials_with_multi_coefficient_model=0,
@@ -201,15 +202,44 @@ def normalize(case, power, amplitudes, totals, modes, fields, metadata):
     return result_from_amplitudes(case, orders[keep], amp[:, keep], metadata, eff[:, keep], total)
 
 
-def solve(case, settings, *, match_fourier_order=False):
+def transverse_mesh_x(fdtd, period_nm):
+    fdtd.eval('phase_index = getresult("RCWA","index"); phase_x = phase_index.x;')
+    x = np.asarray(fdtd.getv("phase_x")).ravel()
+    if len(x) < 2:
+        raise ValueError("The native transverse mesh has fewer than two samples.")
+    period = period_nm * 1e-9
+    dx = period / len(x)
+    expected = -period / 2 + (np.arange(len(x)) + 0.5) * dx
+    if not np.allclose(x, expected, rtol=1e-8, atol=1e-14):
+        raise ValueError("Transverse phase alignment requires a uniform midpoint mesh.")
+    return x
+
+
+def center_x_phase(result, sample_count):
+    result.amplitude *= np.exp(-1j * np.pi * result.orders[:, 0] / sample_count)[None, :, None, None]
+    result.metadata["phase_mesh_x_count"] = sample_count
+    return result
+
+
+def solve(case, settings, *, match_fourier_order=False, centered_x=False, tangent=False):
     if _session is None:
         with session():
-            return solve(case, settings, match_fourier_order=match_fourier_order)
+            return solve(case, settings, match_fourier_order=match_fourier_order,
+                         centered_x=centered_x, tangent=tangent)
     start = perf_counter()
     script = build_script(case, settings, match_fourier_order=match_fourier_order)
+    if centered_x:
+        script = script.replace('run("RCWA");', 'setnamed("RCWA","report index",1);\nrun("RCWA");', 1)
+    if tangent:
+        script = script.replace('run("RCWA");', 'setnamed("RCWA","use tangent vector field",1);\nrun("RCWA");', 1)
     _session.eval(script)
+    if tangent and not _session.getnamed("RCWA", "use tangent vector field"):
+        raise ValueError("Lumerical did not retain its tangent vector field option.")
     datasets = [_session.getv(key) for key in ("power", "amplitudes", "totals", "modes", "fields")]
-    return normalize(case, *datasets, dict(probe(), build=_session.version(), compute_seconds=perf_counter()-start))
+    result = normalize(case, *datasets, dict(probe(), build=_session.version(), compute_seconds=perf_counter()-start))
+    if centered_x:
+        center_x_phase(result, len(transverse_mesh_x(_session, case.period[0])))
+    return result
 
 
 def import_mat(case, path):

@@ -38,16 +38,30 @@ def reference_differences(results):
                      for index in sorted(samples.keys() & reference.keys())}
 
 
+def certified_results(manifest, results):
+    """Keep only independently converged samples paired with Lumerical."""
+    filtered = {
+        name: {row["index"]: results[name][row["index"]] for row in state["completed"]
+               if row["converged"] and row["index"] in results.get(name, {})}
+        for name, state in manifest["solvers"].items() if name in MODULES
+    }
+    reference = filtered.get(BASELINE, {})
+    matched = {name: {i: sample for i, sample in filtered.get(name, {}).items()
+                      if i in reference and differences(sample, reference[i], include_fields=False)["complete"]}
+               for name in OPEN_SOLVERS}
+    indices = set().union(*(samples.keys() for samples in matched.values()))
+    return {BASELINE: {i: sample for i, sample in reference.items() if i in indices}, **matched}
+
+
 def comparison_tolerance(case_id):
     return 1e-8 if case_id.startswith("A") else 1e-3
 
 
 def compare_to_lumerical(manifest, results):
+    results = certified_results(manifest, results)
     pairs = []
     count = len(manifest["points"])
     tolerance = comparison_tolerance(manifest["case"])
-    converged = {name: {row["index"] for row in state["completed"] if row["converged"]}
-                 for name, state in manifest["solvers"].items()}
     for name, samples in reference_differences(results):
         pair = {"solvers": [name, BASELINE], "points": len(samples), "status": "NOT_RUN"}
         if samples:
@@ -56,10 +70,10 @@ def compare_to_lumerical(manifest, results):
                          for key in METRICS})
             pair["worst_point"] = worst
             pair["worst_channel"] = samples[worst]["worst_amplitude_channel"]
-            comparable = (len(samples) == count and samples.keys() <= (converged[name] & converged[BASELINE])
-                          and all(d["complete"] for d in samples.values()))
-            pair["status"] = ("PASS" if all(meets(d, tolerance) for d in samples.values()) else "FAIL"
-                              ) if comparable else "INCONCLUSIVE"
+            if not all(meets(delta, tolerance) for delta in samples.values()):
+                pair["status"] = "FAIL"
+            else:
+                pair["status"] = "PASS" if len(samples) == count else "INCONCLUSIVE"
         pairs.append(pair)
     return pairs
 

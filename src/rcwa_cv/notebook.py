@@ -1,64 +1,120 @@
-"""Shared sweep and display helpers for the case notebooks."""
-import yaml
+"""Reproduce the validated solver-specific settings shown in each case notebook."""
+from contextlib import nullcontext
+
 from threadpoolctl import threadpool_limits
 
-from .case_loader import ROOT, load_case, points, resolve
-from .reporting.plots import diagnostic_figures, spectral_figures
-from .reporting.tables import POWER_METRICS, markdown_table, pretty, reference_differences
-from .runner import configure, software_versions
-from .validation.convergence import settings_series
+from .case_loader import load_case, points, resolve
+from .models import SolverSettings
+from .reporting.benchmark import DATASET, case_table, compare_certified, solver_label
+from .reporting.tables import BASELINE, comparison_tolerance, markdown_table
+from .runner import configure
+from .solvers import adapter, lumerical
+from .storage import read_json
+from .validation.study import study_solve, version_signature
 
 
 def case_setup(case_path):
-    """Load the same quick points and base settings used by the CLI."""
     configure()
-    case = load_case(case_path)
-    profile = yaml.safe_load((ROOT/"configs/quick.yaml").read_text(encoding="utf-8"))
-    settings = settings_series(case, profile, "meent")[0][1]
-    selected = list(points(case, "quick"))
-    samples = [resolve(case, variant, overrides, settings) for variant, overrides in selected]
-    meta = {"case":case["id"], "title":case["title"], "points":[
-        {"variant":sample.variant, "wavelength_nm":sample.wavelength, "theta_deg":sample.theta,
-         "phi_deg":sample.phi, **overrides} for sample, (_, overrides) in zip(samples, selected, strict=True)]}
-    return samples, settings, meta
+    spec = load_case(case_path)
+    data = read_json(DATASET)
+    record = next(c for c in data["cases"] if c["case"] == spec["id"])
+    current = [{"variant": variant, **point} for variant, point in points(spec, "quick")]
+    if current != record["points"] or record.get("case_definition") != spec:
+        raise ValueError("Rebuild the convergence benchmark for the current case before running the notebook.")
+    return spec, record
 
 
-def solve_sweep(solve, samples, settings):
-    """Run the supplied solver adapter at every selected point."""
-    with threadpool_limits(limits=1, user_api="blas"):
-        return {index:solve(point, settings) for index,point in enumerate(samples)}
+def show_settings(record):
+    from IPython.display import Markdown, display
+
+    rows = []
+    for name, samples in record["solvers"].items():
+        for i, row in enumerate(samples):
+            sample = row.get("sample", {})
+            settings = sample.get("settings", {})
+            order = settings.get("order", "—")
+            if settings.get("order_y") is not None:
+                order = f"{order}×{settings['order_y']}"
+            status = ("Full" if row["full_converged"] else "Power only" if row["power_converged"] else
+                      "Unverified")
+            rows.append((name, i, ", ".join(f"{k}={v}" for k, v in record["points"][i].items()),
+                         sample.get("numerical_mode", "native") if sample else "—",
+                         order, settings.get("grid", "—"), settings.get("slices", "—"), status))
+    display(Markdown(markdown_table(("Solver", "Point", "Excitation", "Mode", "Half-order", "Grid", "Slices",
+                                    "Convergence evidence"), rows)))
 
 
-def show_results(meta, results):
+def solve_sweep(solver, spec, record):
+    """Rerun the final settings on points eligible for a paired comparison."""
+    paired = record["comparisons"].values() if solver == BASELINE else [record["comparisons"][solver]]
+    indices = sorted({row["point"] for comparison in paired for row in comparison})
+    if not indices:
+        return {}
+    samples = record["solvers"][solver]
+    if solver == BASELINE:
+        from .validation.class_b import lumerical_resources
+        session = lumerical_resources() if spec["id"].startswith("B") else lumerical.session()
+    else:
+        session = nullcontext()
+    results = {}
+    with threadpool_limits(limits=3, user_api="blas"), session as fdtd:
+        software = adapter(solver).probe()
+        if fdtd is not None:
+            software["build"] = fdtd.version()
+        for i in indices:
+            row = samples[i]
+            if version_signature(row["software"]) != version_signature(software):
+                raise ValueError(f"Rebuild the benchmark settings for this {solver} version.")
+            settings = SolverSettings(**row["sample"]["settings"])
+            case = resolve(spec, row["variant"], row["point"], settings)
+            mode = row["sample"].get("numerical_mode", "native")
+            result = study_solve(case, settings, solver, numerical_mode=mode)
+            actual_mode = result.metadata.get("numerical_mode", "native")
+            if actual_mode != mode:
+                raise ValueError(f"The recorded numerical mode for {solver} differs at point {i}.")
+            results[i] = result
+    return results
+
+
+def show_results(record, results):
     from IPython.display import Markdown, display
     import matplotlib.pyplot as plt
 
-    rows = []
-    for name, samples in reference_differences(results):
-        metrics = list(samples.values())
-        if metrics:
-            rows.append([name, len(samples),
-                         pretty(max(row[k] for row in metrics for k in POWER_METRICS)),
-                         pretty(max(row["max_amplitude"] for row in metrics))])
-    if rows:
-        display(Markdown(markdown_table(
-            ("Solver vs Lumerical", "Matched points", "Max absolute power difference", "Max complex-amplitude difference"), rows)))
-    else:
-        display(Markdown("Comparison requires a Lumerical result and an open-source result at a common point."))
-    for _, fig in spectral_figures(meta, results)+diagnostic_figures(meta, results):
-        display(fig)
-        plt.close(fig)
+    pairs = compare_certified(record, results)
+    display(Markdown(case_table(pairs, len(record["points"]), record)))
+    if not any(pairs.values()):
+        message = ("No excitation has convergence evidence from all four solvers."
+                   if record.get("joint_convergence") else "This case has no points with paired convergence evidence.")
+        display(Markdown(message))
+        return
+    figure, axes = plt.subplots(1, 3, figsize=(12, 3.4), layout="constrained")
+    axes_spec = (("power", "Power difference", comparison_tolerance(record["case"])),
+                 ("amplitude", "Complex-amplitude difference", comparison_tolerance(record["case"])),
+                 ("phase_deg", "Phase difference (deg)", .5))
+    for axis, (metric, title, limit) in zip(axes, axes_spec, strict=True):
+        has_data = False
+        for name, rows in pairs.items():
+            values = [(row["point"], row[metric]) for row in rows if row.get(metric) is not None]
+            if values:
+                has_data = True
+                x, y = zip(*values, strict=True)
+                axis.scatter(x, [max(value, 1e-16) for value in y], label=solver_label(name, record))
+        if has_data:
+            axis.axhline(limit, color="#944632", linestyle="--", label="Comparison tolerance")
+            axis.set(yscale="log", xlabel="Point index", title=title)
+            axis.legend(fontsize=8)
+        else:
+            axis.text(.5, .5, "No paired evidence", ha="center", transform=axis.transAxes)
+            axis.set(title=title, xticks=[], yticks=[])
+    figure.suptitle(f"{record['case']} · Agreement with Lumerical")
+    display(figure)
+    plt.close(figure)
 
 
-def show_versions(results):
+def show_versions(record):
     from IPython.display import Markdown, display
 
-    versions = software_versions()
-    if results.get("lumerical"):
-        info = next(iter(results["lumerical"].values())).metadata
-        versions["Lumerical RCWA"] = f"{info['version']} / build {info['build']}"
-    if results.get("torcwa"):
-        info = next(iter(results["torcwa"].values())).metadata
-        versions["torcwa device"] = info["gpu"]
-        versions["CUDA runtime"] = info["cuda"]
-    display(Markdown(markdown_table(("Software or runtime", "Version or device"), list(versions.items()))))
+    rows = [(name, samples[0]["software"]["version"], samples[0]["software"].get("build", "—"),
+             samples[0]["software"].get("gpu", samples[0]["software"]["device"]))
+            for name, samples in record["solvers"].items()]
+    display(Markdown(markdown_table(("Solver", "Version", "Build", "Device"), rows)))
